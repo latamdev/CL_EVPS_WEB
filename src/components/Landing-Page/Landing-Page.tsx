@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import "./index.css";
+import "./LandingPage.css";
 import students from "../../assets/images/students.png";
 
 function LandingPage() {
   return (
-    <div className="container mx-auto mt-20">
+    <div className="container mx-auto mb-auto mt-20">
       <div className="columns-2 flex pt-10">
         <div className="container p-10">
           <h1 className="text-7xl text-blue-900">

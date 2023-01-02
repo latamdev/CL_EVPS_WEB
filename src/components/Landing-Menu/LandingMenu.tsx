@@ -1,11 +1,10 @@
-import React from "react";
-import "./index.css";
+import "./LandingMenu.css";
 import logo from "../../assets/images/plurality_logo.png";
 import { Link } from "react-router-dom";
 
 function LandingMenu() {
   return (
-    <div className="bg-blue-900 ">
+    <div className="bg-blue-900">
       <div className="container mx-auto flex items-center justify-between">
         <Link to={"/"} className="flex items-center">
           <img alt="logo" src={logo} className="object-contain h-20 mr-3" />
