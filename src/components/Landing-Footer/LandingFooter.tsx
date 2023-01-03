@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import "./LandingFooter.css";
 
 function LandingFooter() {
-  return (
-    <>
+  const renderWaves = () => {
+    return (
       <div className="wave-footer">
         <svg
           data-name="Layer 1"
@@ -17,6 +17,13 @@ function LandingFooter() {
           ></path>
         </svg>
       </div>
+    );
+  };
+
+  return (
+    <>
+      {renderWaves()}
+
       <div className="bg-blue-900 text-white ">
         <div className="container mx-auto flex justify-between p-5">
           <div className="flex flex-col space-y-2">

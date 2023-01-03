@@ -30,6 +30,27 @@ function LandingPage() {
           <img src={students} alt="students" />
         </div>
       </div>
+      <div className="columns-2 flex pt-10 border-2 border-blue-900">
+        <div className="container p-10">
+          <h1>Imagen</h1>
+        </div>
+        <div className="container p-10">
+          <h1>Texto</h1>
+        </div>
+      </div>
+      <div className="columns-2 flex pt-10 border-2 border-blue-900">
+        <div className="container p-10">
+          <h1>Texto</h1>
+        </div>
+        <div className="container p-10">
+          <h1>Imagen</h1>
+        </div>
+      </div>
+      <div className="flex pt-10 mb-20 border-2 border-blue-900">
+        <div className="container p-10 text-center">
+          <h1 className="text-4xl">Texto</h1>
+        </div>
+      </div>
     </div>
   );
 }
