@@ -8,7 +8,7 @@ function Login() {
     <div className="w-screen">
       <div className="columns-2 flex">
         <div className="h-screen w-4/12 flex justify-center items-center">
-          <div className="h-3/6 w-10/12">
+          <div className="w-10/12">
             <Link to={"/"} className="flex items-center">
               <img alt="logo" src={logo} className="h-20  relative -left-4" />
               <h3 className="text-gray-900">

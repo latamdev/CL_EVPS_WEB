@@ -32,7 +32,7 @@ function LandingMenu() {
   };
 
   return (
-    <div className="bg-blue-900">
+    <div className="bg-gradient-to-r from-blue-800 to-sky-500">
       <div className="container mx-auto flex items-center justify-between">
         <Link to={"/"} className="flex items-center">
           <img alt="logo" src={logo} className="object-contain h-20 mr-3" />
@@ -44,13 +44,13 @@ function LandingMenu() {
         <div className="flex items-center space-x-8">
           <Link
             to={"/sign-in"}
-            className="text-white pr-3 pl-3 rounded-full  hover:bg-gray-100 hover:text-black"
+            className="text-white pr-3 pl-3 rounded-full font-semibold  hover:bg-gray-100 hover:text-black"
           >
             Ingresar
           </Link>
           <Link
             to={"/create-account"}
-            className="rounded-full font-bold bg-blue-800 text-white p-2 pl-4 pr-4 hover:bg-blue-700"
+            className="rounded-full font-bold bg-gray-200  p-2 pl-4 pr-4 hover:bg-gray-100"
           >
             Comienza Ahora
           </Link>
