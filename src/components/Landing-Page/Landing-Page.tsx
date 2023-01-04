@@ -4,6 +4,9 @@ import students from "../../assets/images/students.png";
 import user_dashboard from "../../assets/images/user_dashboard.png";
 import VerticalTabs from "./VerticalTabs/VerticalTabs";
 import { useState } from "react";
+import Quote from "./Quote/Quote";
+import { TabData } from "./VerticalTabs/Interfaces";
+import { TABS_DATA } from "./VerticalTabs/TabsStubs";
 
 function LandingPage() {
   const [tabImage, setTabImage] = useState(user_dashboard);
@@ -62,7 +65,13 @@ function LandingPage() {
         <div className="container mx-auto mb-auto max-h-fit">
           <div className="columns-2 flex text-white">
             <div className="container">
-              <VerticalTabs changeImage={setTabImage} />
+              {TABS_DATA.map((data: TabData) => (
+                <VerticalTabs
+                  changeImage={setTabImage}
+                  data={data}
+                  active={tabImage === data.image}
+                />
+              ))}
             </div>
             <div className="container">
               <img
@@ -130,29 +139,7 @@ function LandingPage() {
             </div>
             <div className="container pr-10 pb-20 pl-10 flex flex-row space-x-5">
               {[0, 1, 2].map((element) => (
-                <div
-                  key={element}
-                  className="card border-2 divide-gray-300 divide-y-2"
-                >
-                  <p className="font-light pb-3 text-justify">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Repudiandae vero labore tenetur! Eligendi, excepturi ipsam
-                    perspiciatis obcaecati unde atque minima repellat, tempora
-                    culpa ducimus nihil laudantium similique sed enim quis.
-                  </p>
-                  <div className="flex pt-3 justify-between">
-                    <div className="flex flex-col space-y-1">
-                      <strong className="font-light">Andrew Alfred</strong>
-                      <span>Technical advisor</span>
-                    </div>
-
-                    <img
-                      className="rounded-full h-12 shadow-md"
-                      src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
-                      alt="quote"
-                    />
-                  </div>
-                </div>
+                <Quote key={element} />
               ))}
             </div>
           </div>
