@@ -31,16 +31,18 @@ function LandingPage() {
       <div className="container mx-auto mt-20">
         <div className="flex pt-10 h-[32rem] text-center">
           <div className="container p-10">
-            <h1 className="text-7xl text-blue-900 font-light">
-              <span className="font-bold text-7xl text-blue-900">Comienza</span>{" "}
+            <h1 className="text-7xl font-light">
+              <span className="font-bold text-7xl text-blue-800">Comienza</span>{" "}
               ahora a mejorar tu{" "}
-              <span className="underline decoration-blue-900">futuro</span>
+              <span className="underline decoration-dashed decoration-blue-800">
+                futuro
+              </span>
             </h1>
-            <div className="mt-10 mx-auto break-normal w-3/6">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto aut
-              sed iure necessitatibus nihil beatae ad, numquam nobis ipsam
-              incidunt repudiandae ducimus et earum qui optio dignissimos
-              maiores dolorem. Magnam.
+            <div className="mt-10 mx-auto break-normal w-4/6">
+              <b>Plurality</b> es la plataforma de videos, e-books y recursos de
+              idiomas que necesitas para mejorar tu nivel, lo mejor de todo es
+              que se adapta completamente a ti, solo paga por el recurso que
+              necesites y nada mas!
             </div>
             <div className="mt-10">
               <Link
@@ -117,8 +119,8 @@ function LandingPage() {
 
       <div className="">
         <div className="container mx-auto mb-auto">
-          <div className="flex flex-col space-y-5 text-center">
-            <div className="container p-10 ">
+          <div className="flex flex-col space-y-5">
+            <div className="container p-10 text-center">
               <h1 className="font-light text-5xl">
                 Nuestros estudiantes estan alcanzando sus <b>metas</b>
               </h1>
@@ -126,7 +128,33 @@ function LandingPage() {
                 Únete a <em>ellas y ellos</em> y mejora tu futuro hoy.
               </p>
             </div>
-            <div className="container p-10"></div>
+            <div className="container pr-10 pb-20 pl-10 flex flex-row space-x-5">
+              {[0, 1, 2].map((element) => (
+                <div
+                  key={element}
+                  className="card border-2 divide-gray-300 divide-y-2"
+                >
+                  <p className="font-light pb-3 text-justify">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Repudiandae vero labore tenetur! Eligendi, excepturi ipsam
+                    perspiciatis obcaecati unde atque minima repellat, tempora
+                    culpa ducimus nihil laudantium similique sed enim quis.
+                  </p>
+                  <div className="flex pt-3 justify-between">
+                    <div className="flex flex-col space-y-1">
+                      <strong className="font-light">Andrew Alfred</strong>
+                      <span>Technical advisor</span>
+                    </div>
+
+                    <img
+                      className="rounded-full h-12 shadow-md"
+                      src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=256&h=256&q=80"
+                      alt="quote"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
