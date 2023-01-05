@@ -3,11 +3,20 @@ import "./Login.css";
 import SocialLogin from "./SocialLogin/SocialLogin";
 import logo from "../../assets/images/plurality_logo.png";
 import { FormEvent } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { doLogin } from "./service";
 
 function Login() {
-  const handleLogin = (e: FormEvent) => {
+  const mutation = useMutation({
+    mutationFn: doLogin,
+    onSuccess: () => {
+      console.log("Login success");
+    },
+  });
+
+  const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
-    console.log("Doing Login...");
+    await mutation.mutate({ username: "test", password: "test" });
   };
 
   return (

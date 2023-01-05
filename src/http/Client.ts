@@ -15,8 +15,11 @@ export const httpGetRequest = async (
   return response.data;
 };
 
-export const httpPostRequest = async (url: string, data: any) => {
-  client
+export const httpPostRequest = async <T>(
+  url: string,
+  data: any
+): Promise<T> => {
+  return client
     .post(url, data, { headers: { "Content-Type": APPLICATION_JSON } })
     .then(({ data }) => data);
 };

@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./components/Login/Login";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
 const router = createBrowserRouter([
   {
@@ -20,9 +21,14 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
+const client = new QueryClient();
+
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={client}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </React.StrictMode>
 );
 
