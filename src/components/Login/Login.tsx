@@ -2,8 +2,14 @@ import { Link } from "react-router-dom";
 import "./Login.css";
 import SocialLogin from "./SocialLogin/SocialLogin";
 import logo from "../../assets/images/plurality_logo.png";
+import { FormEvent } from "react";
 
 function Login() {
+  const handleLogin = (e: FormEvent) => {
+    e.preventDefault();
+    console.log("Doing Login...");
+  };
+
   return (
     <div className="w-screen">
       <div className="columns-2 flex">
@@ -25,7 +31,10 @@ function Login() {
                 Registrate
               </Link>
             </p>
-            <form className="mt-10 flex flex-col space-y-4">
+            <form
+              onSubmit={(e) => handleLogin(e)}
+              className="mt-10 flex flex-col space-y-4"
+            >
               <label htmlFor="email">Correo:</label>
               <input
                 type="text"
@@ -38,12 +47,9 @@ function Login() {
                 id="password"
                 className="form-input px-4 py-3 rounded-lg"
               />
-              <Link
-                to={"/"}
-                className="rounded-lg text-center font-bold bg-blue-800 text-white p-2 pl-4 pr-4 hover:bg-blue-700"
-              >
+              <button className="rounded-lg text-center font-bold bg-blue-800 text-white p-2 pl-4 pr-4 hover:bg-blue-700">
                 Ingresar
-              </Link>
+              </button>
 
               <SocialLogin />
             </form>
