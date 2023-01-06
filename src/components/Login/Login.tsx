@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, redirect } from "react-router-dom";
 import "./Login.css";
 import SocialLogin from "./SocialLogin/SocialLogin";
 import logo from "../../assets/images/plurality_logo.png";
 import { FormEvent } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { doLogin } from "./service";
+import { MOCK_LOGIN_REQUEST } from "./LoginStubs";
 
 function Login() {
   const mutation = useMutation({
@@ -16,8 +17,12 @@ function Login() {
 
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
-    await mutation.mutate({ username: "test", password: "test" });
+    await mutation.mutate(MOCK_LOGIN_REQUEST);
   };
+
+  if (mutation.isSuccess) {
+    return <Navigate to={"/platform"} />;
+  }
 
   return (
     <div className="w-screen">

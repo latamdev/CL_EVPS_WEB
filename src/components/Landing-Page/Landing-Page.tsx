@@ -34,9 +34,9 @@ function LandingPage() {
       <div className="container mx-auto mt-20">
         <div className="flex pt-10 h-[32rem] text-center">
           <div className="container p-10">
-            <h1 className="text-7xl font-light">
-              <span className="font-bold text-7xl text-blue-800">Comienza</span>{" "}
-              ahora a mejorar tu{" "}
+            <h1 className="text-8xl font-light">
+              <span className="font-bold text-blue-800">Comienza</span> ahora{" "}
+              <br></br>a mejorar tu{" "}
               <span className="underline decoration-dashed decoration-blue-800">
                 futuro
               </span>
