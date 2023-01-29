@@ -13,7 +13,7 @@ function SidebarMenu() {
   return (
     <div className="flex">
       <div className="py-6 px-10 w-64 border-r border-gray-200">
-        <img alt="logo" src={logo}  className="w-28" />
+        <img alt="logo" src={logo}  className="w-40 mr-auto ml-auto" />
         <div
           id="sidebar-menu"
           className="flex flex-col gap-y-6 pt-20"

@@ -5,26 +5,27 @@ import vidPlaceholder from '../../assets/images/video_placeholder.jpg'
 
 const VideoListItem: FC<{ video: VideoResponse, callbackHandleVideoDetails: any }> = ({ video, callbackHandleVideoDetails }) => {
     return (
-        <tr className="hover:bg-gray-100 transition-colors group">
-            <td className="flex gap-x-4 items-center py-4 pl-10">
+        <tr className="hover:bg-yellow-100 transition-colors group flex space-x-5">
+            <td className="flex-1 gap-x-4 items-center py-4 pl-10">
                 <img alt="logo" src={vidPlaceholder} className="w-40 aspect-[3/2] rounded-lg object-cover object-top border border-gray-200" />
             </td>
-            <td className="font-medium text-left">
+            <td className="flex-1 font-medium text-left mt-auto mb-auto">
                 <div className="col-title text-morazul">
                     {video.title}
                 </div>
-                <div className="col-teacher text-morazul">
+                <div className="col-teacher text-gray-600">
                     by {video.teacher}
                 </div>
             </td>
-            <td className="font-medium text-center flex-row">
-                <ClockIcon className="h-6 h-6 text-gray-500" /><p className="text-morazul">{video.duration}</p>
+            <td className="flex-1 font-medium text-center flex mt-auto mb-auto">
+                <ClockIcon className="flex-1 h-6 h-6 text-blue-500 " />
+                <p className="flex-1 h-6 h-6 text-morazul ">{video.duration}</p>
             </td>
-            <td className="font-medium text-center flex-row">
-                <FireIcon className="h-6 h-6 text-gray-500" />
-                {video.rating}
+            <td className="flex-1 font-medium text-center flex mt-auto mb-auto">
+                <FireIcon className="flex-1 h-6 h-6 text-orange-600" />
+                <p className="flex-1 h-6 h-6 text-morazul ">{video.rating}</p>
             </td>
-            <td className="font-medium text-center">
+            <td className="flex-1 font-medium text-center mt-auto mb-auto pr-7">
                 <button onClick={callbackHandleVideoDetails} className="btn-custom btn-primary">Detalles</button>
             </td>
         </tr>

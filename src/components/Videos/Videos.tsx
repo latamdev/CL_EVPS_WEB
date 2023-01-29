@@ -23,7 +23,6 @@ const Videos = ({ }) => {
 
     const filters = [
         { name: "Todos" },
-        { name: "Recientes" },
         { name: "Mejor calificados" },
         { name: "Más populares" },
     ];
@@ -32,17 +31,17 @@ const Videos = ({ }) => {
         <div>
             <TopNavbar pathName={'Videos'} />
 
-            <div className="flex flex-row flex-2">
-                <div className="flex flex-col">
+            <div className="flex space-x-20 overflow-auto">
+                <div className="flex flex-col shadow-2xl ">
                     <div className="flex gap-x-24 items-center px-4 border-y border-gray-200">
                         {filters.map((filter) => {
                             return (
                                 <button
-                                    className="flex gap-x-2 items-center py-5 px-6 text-gray-500 hover:text-indigo-600 relative group"
+                                    className="flex gap-x-2 items-center py-5 px-6 text-gray-500 hover:text-morazul relative group"
                                 >
                                     <span className="font-medium"> {filter.name} </span>
                                     <span
-                                        className="absolute w-full h-0.5 left-3 bg-indigo-600 rounded bottom-0 scale-x-0 group-hover:scale-x-100 transition-transform ease-in-out"
+                                        className="absolute w-full h-1 left-3 bg-customYellow rounded bottom-0 scale-x-0 group-hover:scale-x-100 transition-transform ease-in-out"
                                     />
                                 </button>
                             )
@@ -51,17 +50,6 @@ const Videos = ({ }) => {
                     </div>
                     <table className="w-full border-b border-gray-200">
                         <thead>
-                            <tr className="text-sm font-medium text-gray-700 border-b border-gray-200">
-                                <td className="pl-10">
-                                    <div className="flex items-center gap-x-4">
-                                        <span>Producto</span>
-                                    </div>
-                                </td>
-                                <td className="py-4 px-4 text-center">Descripción</td>
-                                <td className="py-4 px-4 text-center">Duración</td>
-                                <td className="py-4 px-4 text-center">Calificación</td>
-                                <td className="py-4 px-4 text-center"></td>
-                            </tr>
                         </thead>
                         <tbody>
                             {
@@ -73,16 +61,60 @@ const Videos = ({ }) => {
                             }
                         </tbody>
                     </table>
+                    <div className="ml-auto mr-auto mt-6">
+
+                        <nav aria-label="Page navigation example">
+                            <ul className="inline-flex items-center -space-x-px">
+                                <li>
+                                    <a href="#" className="block px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-yellow-100 hover:text-yellow-700 ">
+                                        <span className="sr-only">Previous</span>
+                                        <svg aria-hidden="true" className="w-5 h-5" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" className="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-yellow-100 hover:text-yellow-700">1</a>
+                                </li>
+                                <li>
+                                    <a href="#" className="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-yellow-100 hover:text-yellow-700 ">2</a>
+                                </li>
+                                <li>
+                                    <a href="#" aria-current="page" className="z-10 px-3 py-2 leading-tight text-yellow-600 border border-yellow-300 bg-yellow-100 hover:bg-customYellow hover:text-yellow-700">3</a>
+                                </li>
+                                <li>
+                                    <a href="#" className="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-yellow-100 hover:text-yellow-700">4</a>
+                                </li>
+                                <li>
+                                    <a href="#" className="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-yellow-100 hover:text-yellow-700 ">5</a>
+                                </li>
+                                <li>
+                                    <a href="#" className="block px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-yellow-100 hover:text-yellow-700">
+                                        <span className="sr-only">Next</span>
+                                        <svg aria-hidden="true" className="w-5 h-5" fill="currentColor" >
+                                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                    </div>
+
+
                 </div>
-                <div className="mr-16"></div>
-                <div className="">
-                <h1 className="text-center font-bold text-5xl">
-                {videoDetails.title}
-                    </h1>
-                    <div className="pt-24">
-                        {
-                            Object.keys(videoDetails).length !== 0 && <VideoDetails details={videoDetails} />
-                        }
+                <div className="flex-1 shadow-2xl">
+                    <div className="container mx-auto px-6 py-6">
+                        <h1 className="text-left font-bold text-5xl">
+                            {videoDetails.title}
+                        </h1>
+                        <div className="pt-24">
+                            {
+                                Object.keys(videoDetails).length !== 0 ?
+                                    <VideoDetails details={videoDetails} /> :
+                                    <div></div>
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

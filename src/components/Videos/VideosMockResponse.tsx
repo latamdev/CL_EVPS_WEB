@@ -116,6 +116,62 @@ export const MOCK_VIDEO_RESPONSE: VideoListResponse = {
                     "name": "video"
                 }
             ]
+        },
+        {
+            "id": "9da377901a9d4d208d30c41bf8938c1x",
+            "title": "COMO PEDIR COMIDA",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque viverra mauris in aliquam sem. Imperdiet dui accumsan sit amet nulla facilisi morbi. Elementum integer enim neque volutpat ac. Tempus imperdiet nulla malesuada pellentesque elit. Ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt. Odio aenean sed adipiscing diam donec adipiscing tristique risus nec. Vulputate odio ut enim blandit. Et molestie ac feugiat sed lectus vestibulum mattis. Facilisis mauris sit amet massa vitae tortor condimentum. Quam viverra orci sagittis eu volutpat odio facilisis mauris sit. Lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt. Leo vel fringilla est ullamcorper eget nulla.",
+            "status": "ready",
+            "poster": "https://dmf9cnjua2s32.cloudfront.net/poster/9snDJCPhSmgOj.240.jpeg",
+            "totalSizeBytes": "72",
+            "duration": 15,
+            "teacher": "Paula Rojas",
+            "level": 0,
+            "courseId": 2,
+            "price": 10991.0,
+            "rating": 0.0,
+            "tags": [
+                {
+                    "id": 2,
+                    "name": "etiqueta"
+                },
+                {
+                    "id": 3,
+                    "name": "ingles"
+                },
+                {
+                    "id": 1,
+                    "name": "video"
+                }
+            ]
+        },
+        {
+            "id": "9da377901a9d4d208d30c41bf8938c1z",
+            "title": "COMO PEDIR TAXI",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque viverra mauris in aliquam sem. Imperdiet dui accumsan sit amet nulla facilisi morbi. Elementum integer enim neque volutpat ac. Tempus imperdiet nulla malesuada pellentesque elit. Ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt. Odio aenean sed adipiscing diam donec adipiscing tristique risus nec. Vulputate odio ut enim blandit. Et molestie ac feugiat sed lectus vestibulum mattis. Facilisis mauris sit amet massa vitae tortor condimentum. Quam viverra orci sagittis eu volutpat odio facilisis mauris sit. Lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt. Leo vel fringilla est ullamcorper eget nulla.",
+            "status": "ready",
+            "poster": "https://dmf9cnjua2s32.cloudfront.net/poster/9snDJCPhSmgOj.240.jpeg",
+            "totalSizeBytes": "72",
+            "duration": 15,
+            "teacher": "Paula Rojas",
+            "level": 0,
+            "courseId": 2,
+            "price": 10990.0,
+            "rating": 0.0,
+            "tags": [
+                {
+                    "id": 2,
+                    "name": "etiqueta"
+                },
+                {
+                    "id": 3,
+                    "name": "ingles"
+                },
+                {
+                    "id": 1,
+                    "name": "video"
+                }
+            ]
         }
     ]
   }
