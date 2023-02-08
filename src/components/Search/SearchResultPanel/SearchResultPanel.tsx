@@ -21,7 +21,7 @@ function SearchResultPanel(props: SearchResultProps) {
   }
 
   return props.resultsArray.results.length > 0 ? (
-    <div className="w-1/2 h-0 overflow-visible">
+    <div className="w-1/2 absolute z-10 top-[4.5rem] pl-[4.6rem] pr-[4.6rem]">
       <div className="bg-gray-100  border border-gray-300 border-t-0">
         {props.resultsArray.results.map((result: any) => {
           return (
@@ -37,7 +37,7 @@ function SearchResultPanel(props: SearchResultProps) {
                       onClick={() => {
                         console.log("click");
                       }}
-                      className="p-3 flex space-x-6 align-middle content-center items-center hover:cursor-pointer hover:bg-gray-50"
+                      className="p-3 flex space-x-6 align-middle content-center items-center hover:cursor-pointer hover:bg-yellow-500"
                     >
                       <img
                         src={resource.poster}
