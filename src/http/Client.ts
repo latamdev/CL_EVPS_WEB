@@ -2,12 +2,12 @@ import axios from "axios";
 
 const APPLICATION_JSON = "application/json";
 const client = axios.create({
-  baseURL: "",
+  baseURL: "http://localhost:8082",
 });
 
 export const httpGetRequest = async (
   url: string,
-  params: string,
+  params: {},
   headers: any = {}
 ) => {
   const response = await client.get(url, { params: params, headers: headers });
