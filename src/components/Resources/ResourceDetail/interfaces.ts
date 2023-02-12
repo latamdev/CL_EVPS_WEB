@@ -1,5 +1,3 @@
-import { type } from "os";
-
 export type Resource = {
   id: string;
   title: string;
@@ -17,4 +15,5 @@ export type Resource = {
   status?: string;
   poster?: string;
   courseId?: number;
+  _class?: string;
 };
