@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import debounce from "lodash.debounce";
 import { useMemo, useState } from "react";
+import { SearchResults } from "./SearchResultPanel/interfaces";
 import SearchResultPanel from "./SearchResultPanel/SearchResultPanel";
 import { getSearchResults } from "./SearchResultPanel/service";
 
@@ -20,9 +21,12 @@ function Search() {
     return debounce(handleBlurEvent, 500);
   }, []);
 
-  const { data, isLoading, isError } = useQuery(
-    ["searchResultsKey", searchQuery],
-    () => getSearchResults(searchQuery)
+  const {
+    data = { results: [] },
+    isLoading,
+    isError,
+  } = useQuery(["searchResultsKey", searchQuery], () =>
+    getSearchResults(searchQuery)
   );
 
   return (
@@ -77,7 +81,7 @@ function Search() {
       <SearchResultPanel
         isLoading={isLoading}
         isError={isError}
-        resultsArray={data}
+        resultsArray={data as SearchResults}
       />
     </div>
   );

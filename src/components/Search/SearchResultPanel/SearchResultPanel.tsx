@@ -1,7 +1,6 @@
 import { SearchResults } from "./interfaces";
-import logo from "../../../assets/images/plurality_logo.png";
 import SearchResultsSkeleton from "./SearchResultsSkeleton";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export interface SearchResultProps {
   resultsArray: SearchResults;
@@ -10,8 +9,6 @@ export interface SearchResultProps {
 }
 
 function SearchResultPanel(props: SearchResultProps) {
-  console.log(props);
-
   const navigate = useNavigate();
 
   const handleOnResourceClick = (result: any) => {
@@ -44,7 +41,7 @@ function SearchResultPanel(props: SearchResultProps) {
                       className="p-3 flex space-x-6 align-middle content-center items-center hover:cursor-pointer hover:bg-yellow-500"
                     >
                       <img
-                        src={resource.poster}
+                        src={resource.image}
                         alt="resource_img"
                         className="h-12 w-12"
                       />
