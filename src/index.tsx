@@ -8,6 +8,7 @@ import Login from "./components/Login/Login";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import Root from "./Root";
 import ResourceDetail from "./components/Resources/ResourceDetail";
+import Resources from "./components/Resources/Resources";
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
           },
           { path: "/platform/videos", element: <h1>Videos</h1> },
           { path: "/platform/videos/:id", element: <h1>Videos</h1> },
-          { path: "/platform/resources", element: <h1>Recursos</h1> },
+          { path: "/platform/resources", element: <Resources /> },
           {
             path: "/platform/resources/:id",
             element: <ResourceDetail />,

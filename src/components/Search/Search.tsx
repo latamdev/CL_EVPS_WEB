@@ -27,7 +27,7 @@ function Search() {
     data = { results: [] },
     isLoading,
     isError,
-  } = useQuery(["searchResultsKey", searchQuery], () =>
+  } = useQuery(["searchResultsKey", searchQuery, LIMIT_OF_RESULTS], () =>
     getSearchResults(searchQuery, LIMIT_OF_RESULTS)
   );
 
@@ -81,6 +81,7 @@ function Search() {
       </form>
 
       <SearchResultPanel
+        searchTerm={searchQuery}
         isLoading={isLoading}
         isError={isError}
         resultsArray={data as SearchResults}
