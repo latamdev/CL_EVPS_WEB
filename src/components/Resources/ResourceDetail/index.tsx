@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import SkeletonWrapper from "../../SkeletonWrapper";
 import ResourceDetailSkeleton from "./ResourceDetailSkeleton";
 import { useQuery } from "@tanstack/react-query";
-import { getResourceById } from "./servce";
+import { getResourceById } from "./service";
 import { formatCurrencyToCLP } from "./utils";
 
 const ResourceDetail = () => {

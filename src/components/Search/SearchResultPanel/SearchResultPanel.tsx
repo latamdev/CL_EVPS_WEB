@@ -1,18 +1,31 @@
 import { SearchResults } from "./interfaces";
 import SearchResultsSkeleton from "./SearchResultsSkeleton";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { QueryClient } from "@tanstack/react-query";
+import { getSearchResults } from "./service";
 
 export interface SearchResultProps {
   resultsArray: SearchResults;
   isLoading: boolean;
   isError: boolean;
+  searchTerm: string;
 }
 
 function SearchResultPanel(props: SearchResultProps) {
+  const queryClient = new QueryClient();
   const navigate = useNavigate();
 
   const handleOnResourceClick = (result: any) => {
     navigate(`/platform/resources/${result.id}`);
+  };
+
+  const handleQueryForAllResults = () => {
+    queryClient
+      .fetchQuery({
+        queryKey: ["searchResultsKey"],
+        queryFn: () => getSearchResults(props.searchTerm, 0),
+      })
+      .then((results) => navigate(`/platform/resources`, { state: results }));
   };
 
   if (props.isLoading) {
@@ -56,10 +69,15 @@ function SearchResultPanel(props: SearchResultProps) {
             </div>
           );
         })}
-        <div className="flex justify-center p-4">
-          <Link to={""} className="text-xl text-gray-600 font-semibold">
+        <div
+          onClick={() => {
+            handleQueryForAllResults();
+          }}
+          className="flex justify-center p-4 hover:bg-yellow-400 hover:cursor-pointer"
+        >
+          <h1 className="text-xl text-gray-600 font-semibold hover:border-b-2 hover:border-gray-600">
             Ver todos los resultados
-          </Link>
+          </h1>
         </div>
       </div>
     </div>
