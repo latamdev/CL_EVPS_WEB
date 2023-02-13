@@ -52,15 +52,15 @@ const ResourceDetail = () => {
               {showTypeOfResource()}
             </div>
           </div>
-          <div className="flex justify-between">
-            <div className="w-1/3 mt-10">
+          <div className="flex flex-col lg:flex-row md:justify-between">
+            <div className="mx-auto w-1/2 lg:w-1/3 mt-10">
               <img
                 src={data?.image}
                 alt="resource_img"
                 className="object-cover h-80 w-full border-2 border-gray-400 rounded-xl"
               />
             </div>
-            <div className="w-full mt-10 ml-10 mr-10 flex flex-col">
+            <div className="w-full mt-10 lg:ml-10 lg:mr-10 flex flex-col">
               <p>{data?.description ? data.description : "---"}</p>
 
               <div className="mt-10 flex space-x-5">
@@ -70,8 +70,8 @@ const ResourceDetail = () => {
                 </p>
                 <p>{showDurationOrTotalPages()}</p>
               </div>
-              <div className="text-center mt-auto w-full">
-                <button className="rounded-xl bg-blue-900 text-white font-bold w-1/2 text-2xl h-14 hover:bg-blue-800">
+              <div className="text-center pt-10 mt-auto w-full">
+                <button className="rounded-xl bg-blue-900 text-white font-bold w-1/2 lg:text-xl h-14 hover:bg-blue-800">
                   {data?.free
                     ? "Gratis"
                     : `Comprar ${
