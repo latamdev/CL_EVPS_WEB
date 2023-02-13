@@ -5,6 +5,8 @@ import { SearchResults } from "./SearchResultPanel/interfaces";
 import SearchResultPanel from "./SearchResultPanel/SearchResultPanel";
 import { getSearchResults } from "./SearchResultPanel/service";
 
+const LIMIT_OF_RESULTS = 3;
+
 function Search() {
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -26,7 +28,7 @@ function Search() {
     isLoading,
     isError,
   } = useQuery(["searchResultsKey", searchQuery], () =>
-    getSearchResults(searchQuery)
+    getSearchResults(searchQuery, LIMIT_OF_RESULTS)
   );
 
   return (

@@ -4,10 +4,14 @@ import { MOCK_SEARCH_RESULT_BLANK } from "./searchResultsStubs";
 const SEARCH_URL = "/resource/search/by-title";
 
 export const getSearchResults = async (
-  title: string
+  title: string,
+  limit: number
 ): Promise<SearchResults> => {
   if (title !== "") {
-    const result = await httpGetRequest(SEARCH_URL, { title: title });
+    const result = await httpGetRequest(SEARCH_URL, {
+      title: title,
+      limit: limit,
+    });
     let resultsQuery = { results: result } as SearchResults;
     return resultsQuery;
   }
