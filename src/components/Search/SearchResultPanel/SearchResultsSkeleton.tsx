@@ -2,7 +2,7 @@ import React from "react";
 
 function SearchResultsSkeleton() {
   return (
-    <div className=" w-1/2 absolute z-10  top-[4.5rem] pl-[4.6rem] pr-[4.6rem]">
+    <div className=" w-1/2 absolute z-10  top-[4.5rem] pl-[8.88rem] pr-[8.88rem]">
       <div className="bg-gray-100  flex p-3">
         <div className="rounded-md max-w-sm w-full">
           <div className="animate-pulse items-center">

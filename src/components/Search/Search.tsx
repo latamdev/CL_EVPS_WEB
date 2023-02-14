@@ -33,7 +33,7 @@ function Search() {
 
   return (
     <div
-      className="w-full flex flex-col justify-center items-center p-5"
+      className="w-5/6 flex flex-col justify-center items-center p-5"
       style={{ zIndex: 10 }}
     >
       <form onSubmit={(e) => e.preventDefault()} className="w-1/2">

@@ -3,7 +3,8 @@ import SkeletonWrapper from "../../SkeletonWrapper";
 import ResourceDetailSkeleton from "./ResourceDetailSkeleton";
 import { useQuery } from "@tanstack/react-query";
 import { getResourceById } from "./service";
-import { formatCurrencyToCLP } from "./utils";
+import CartButtonAdd from "../../Cart/CartButtonAdd/CartButtonAdd";
+import { Resource } from "./interfaces";
 
 const ResourceDetail = () => {
   const { id } = useParams();
@@ -71,13 +72,7 @@ const ResourceDetail = () => {
                 <p>{showDurationOrTotalPages()}</p>
               </div>
               <div className="text-center pt-10 mt-auto w-full">
-                <button className="rounded-xl bg-blue-900 text-white font-bold w-1/2 lg:text-xl h-14 hover:bg-blue-800">
-                  {data?.free
-                    ? "Gratis"
-                    : `Comprar ${
-                        formatCurrencyToCLP(data?.price as number) || 0
-                      }`}
-                </button>
+                <CartButtonAdd item={data as Resource} />
               </div>
             </div>
           </div>

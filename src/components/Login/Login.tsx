@@ -1,4 +1,4 @@
-import { Link, Navigate, redirect } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import "./Login.css";
 import SocialLogin from "./SocialLogin/SocialLogin";
 import logo from "../../assets/images/plurality_logo.png";
