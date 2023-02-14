@@ -4,9 +4,10 @@ import CheckoutSkeleton from "./CheckoutSkeleton/CheckoutSkeleton";
 import { useCart } from "react-use-cart";
 import { formatCurrencyToCLP } from "../Resources/ResourceDetail/utils";
 import PaymentBox from "./PaymentBox/PaymentBox";
+import CartButtonAdd from "../Cart/CartButtonAdd/CartButtonAdd";
 
 function Checkout() {
-  const { items, removeItem } = useCart();
+  const { items } = useCart();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -14,10 +15,6 @@ function Checkout() {
       setIsLoading(false);
     }, 1500);
   }, []);
-
-  const handleRemoveItem = (id: string) => {
-    removeItem(id);
-  };
 
   return (
     <div className="px-10 py-10">
@@ -27,7 +24,7 @@ function Checkout() {
           <div className="flex">
             <div className="w-1/2">
               <p className="mt-3 border-b-2 pb-2">
-                Tienes {items.length} artículos en el carro
+                Tienes <b>{items.length}</b> artículos en el carro
               </p>
               <div className="mt-10">
                 {items.map((item) => {
@@ -41,21 +38,15 @@ function Checkout() {
                         alt="resource_img"
                         className="object-cover flex-1 h-28 w-28 border-2 border-gray-400 rounded-xl"
                       />
-                      <div className="flex flex-1 flex-col">
-                        <h1 className="text-2xl">{item.name}</h1>
-                        <h1 className="text-xl font-light">
-                          {item.teacher ? item.teacher : "---"}
+                      <div className="flex flex-1 flex-col space-y-2">
+                        <h1 className="text-xl">{item.name}</h1>
+                        <h1 className="text-sm font-light">
+                          Profesor: {item.teacher ? item.teacher : "---"}
                         </h1>
                       </div>
                       <div className="flex-1">
-                        <h1
-                          onClick={() => handleRemoveItem(item.id)}
-                          className="text-customYellow w-fit h-fit hover:cursor-pointer hover:text-yellow-600 hover:border-b-2 hover:border-yellow-600"
-                        >
-                          Eliminar
-                        </h1>
+                        <CartButtonAdd item={item as any} asLink={true} />
                       </div>
-
                       <h1 className="text-xl font-bold flex-1 text-morazul">
                         {formatCurrencyToCLP(item.price)}
                       </h1>

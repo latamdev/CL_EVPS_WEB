@@ -57,11 +57,7 @@ const CartModal: React.FC<CartModalProps> = (props) => {
                     <div className="flex space-x-2 overflow-auto h-max justify-center lg:justify-start ">
                       {item.tags?.length > 0 ? (
                         item.tags?.map((tag: ITag) => {
-                          return (
-                            <>
-                              <Tag tagEl={tag} />
-                            </>
-                          );
+                          return <Tag key={tag.id} tagEl={tag} />;
                         })
                       ) : (
                         <span className="ml-1">---</span>
