@@ -16,4 +16,10 @@ export type Resource = {
   poster?: string;
   courseId?: number;
   _class?: string;
+  tags: Array<ITag>;
+};
+
+export type ITag = {
+  id: string;
+  name: string;
 };

@@ -7,6 +7,7 @@ module.exports = {
       spacing: {
         "4.6rem": "4.6rem",
         "4.5rem": "4.5rem",
+        "8.88rem": "8.88rem",
       },
     },
     colors: {
@@ -22,6 +23,8 @@ module.exports = {
       yellow: colors.yellow,
       blue: colors.blue,
       orange: colors.orange,
+      red: colors.red,
+      green: colors.green,
     },
   },
   plugins: [require("@tailwindcss/forms")],
