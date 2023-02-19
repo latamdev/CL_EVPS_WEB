@@ -3,6 +3,7 @@ import SearchResultsSkeleton from "./SearchResultsSkeleton";
 import { useNavigate } from "react-router-dom";
 import { QueryClient } from "@tanstack/react-query";
 import { getSearchResults } from "./service";
+import ResourceImage from "../../Resources/ResourceImage/ResourceImage";
 
 export interface SearchResultProps {
   resultsArray: SearchResults;
@@ -53,9 +54,8 @@ function SearchResultPanel(props: SearchResultProps) {
                       onClick={() => handleOnResourceClick(resource)}
                       className="p-3 flex space-x-6 align-middle content-center items-center hover:cursor-pointer hover:bg-yellow-500"
                     >
-                      <img
-                        src={resource.image}
-                        alt="resource_img"
+                      <ResourceImage
+                        img={resource.image}
                         className="h-12 w-12"
                       />
                       <div className="flex flex-col">

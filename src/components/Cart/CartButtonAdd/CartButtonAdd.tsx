@@ -48,7 +48,7 @@ const CartButtonAdd: React.FC<CartButtonProps> = (props) => {
       ) : (
         <button
           onClick={() => handleAddToCart()}
-          className="rounded-xl bg-blue-900 text-white font-bold w-1/2 lg:text-xl h-14 hover:bg-blue-800"
+          className="rounded-xl bg-morazul text-white font-bold w-1/2 lg:text-xl h-14 hover:bg-customYellow"
         >
           {data.free
             ? "Gratis"
