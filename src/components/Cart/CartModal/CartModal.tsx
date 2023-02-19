@@ -1,6 +1,7 @@
 import { FaCheckCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { ITag, Resource } from "../../Resources/ResourceDetail/interfaces";
+import ResourceImage from "../../Resources/ResourceImage/ResourceImage";
 import Tag from "../../Tag/Tag";
 
 interface CartModalProps {
@@ -48,9 +49,8 @@ const CartModal: React.FC<CartModalProps> = (props) => {
                   </div>
 
                   <div className="flex align-center  flex-col lg:w-fit  lg:flex-row lg:space-x-12 mt-2 text-[15px] leading-relaxed text-gray-500">
-                    <img
-                      src={item.image}
-                      alt="resource_img"
+                    <ResourceImage
+                      img={item.image as string}
                       className="object-cover h-32 w-32 border-2 border-gray-400 rounded-xl self-center"
                     />
 

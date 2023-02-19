@@ -5,6 +5,8 @@ import { useQuery } from "@tanstack/react-query";
 import { getResourceById } from "./service";
 import CartButtonAdd from "../../Cart/CartButtonAdd/CartButtonAdd";
 import { Resource } from "./interfaces";
+import Recommend from "../../Recommend/Recommend";
+import ResourceImage from "../ResourceImage/ResourceImage";
 
 const ResourceDetail = () => {
   const { id } = useParams();
@@ -55,9 +57,8 @@ const ResourceDetail = () => {
           </div>
           <div className="flex flex-col lg:flex-row md:justify-between">
             <div className="mx-auto w-1/2 lg:w-1/3 mt-10">
-              <img
-                src={data?.image}
-                alt="resource_img"
+              <ResourceImage
+                img={data?.image as string}
                 className="object-cover h-80 w-full border-2 border-gray-400 rounded-xl"
               />
             </div>
@@ -78,6 +79,8 @@ const ResourceDetail = () => {
           </div>
         </div>
       </SkeletonWrapper>
+
+      <Recommend ids={[id as string]} />
     </div>
   );
 };
