@@ -8,6 +8,10 @@ import Login from "./components/Login/Login";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import Root from "./Root";
 import Videos from "./components/Videos/Videos";
+import ResourceDetail from "./components/Resources/ResourceDetail";
+import Resources from "./components/Resources/Resources";
+import { CartProvider } from "react-use-cart";
+import Checkout from "./components/Checkout/Checkout";
 
 const router = createBrowserRouter([
   {
@@ -26,11 +30,20 @@ const router = createBrowserRouter([
       {
         errorElement: <h1>Error</h1>,
         children: [
-          { index: true, element: <h1>Index</h1> },
+          {
+            index: true,
+            element: <h1 style={{ zIndex: 0 }}>Index</h1>,
+          },
           { path: "/platform/videos", element: <Videos /> },
-          { path: "/platform/resources", element: <h1>Recursos</h1> },
+          { path: "/platform/videos/:id", element: <h1>Videos</h1> },
+          { path: "/platform/resources", element: <Resources /> },
+          {
+            path: "/platform/resources/:id",
+            element: <ResourceDetail />,
+          },
           { path: "/platform/messages", element: <h1>Mensajes</h1> },
           { path: "/platform/configuration", element: <h1>Configuracion</h1> },
+          { path: "/platform/checkout", element: <Checkout /> },
         ],
       },
     ],
@@ -45,9 +58,11 @@ const client = new QueryClient();
 
 root.render(
   <React.StrictMode>
-    <QueryClientProvider client={client}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <CartProvider>
+      <QueryClientProvider client={client}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    </CartProvider>
   </React.StrictMode>
 );
 

@@ -1,14 +1,20 @@
 /** @type {import('tailwindcss').Config} */
-const colors = require('tailwindcss/colors')
+const colors = require("tailwindcss/colors");
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        "4.6rem": "4.6rem",
+        "4.5rem": "4.5rem",
+        "8.88rem": "8.88rem",
+      },
+    },
     colors: {
-      customYellow: '#E1B42A',
-      morazul: '#150E3D',
-      transparent: 'transparent',
-      current: 'currentColor',
+      customYellow: "#E1B42A",
+      morazul: "#150E3D",
+      transparent: "transparent",
+      current: "currentColor",
       black: colors.black,
       white: colors.white,
       gray: colors.gray,
@@ -17,7 +23,9 @@ module.exports = {
       yellow: colors.yellow,
       blue: colors.blue,
       orange: colors.orange,
-    }
+      red: colors.red,
+      green: colors.green,
+    },
   },
   plugins: [require("@tailwindcss/forms")],
 };
