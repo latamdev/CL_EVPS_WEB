@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./components/Login/Login";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import Root from "./Root";
+import Videos from "./components/Videos/Videos";
 import ResourceDetail from "./components/Resources/ResourceDetail";
 import Resources from "./components/Resources/Resources";
 import { CartProvider } from "react-use-cart";
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
             index: true,
             element: <h1 style={{ zIndex: 0 }}>Index</h1>,
           },
-          { path: "/platform/videos", element: <h1>Videos</h1> },
+          { path: "/platform/videos", element: <Videos /> },
           { path: "/platform/videos/:id", element: <h1>Videos</h1> },
           { path: "/platform/resources", element: <Resources /> },
           {
