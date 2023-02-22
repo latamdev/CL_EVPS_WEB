@@ -34,9 +34,15 @@ const router = createBrowserRouter([
             index: true,
             element: <h1 style={{ zIndex: 0 }}>Index</h1>,
           },
-          { path: "/platform/videos", element: <Videos /> },
+          {
+            path: "/platform/videos",
+            element: <Videos />,
+          },
           { path: "/platform/videos/:id", element: <h1>Videos</h1> },
-          { path: "/platform/resources", element: <Resources /> },
+          {
+            path: "/platform/resources",
+            element: <Resources />,
+          },
           {
             path: "/platform/resources/:id",
             element: <ResourceDetail />,
