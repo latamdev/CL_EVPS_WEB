@@ -2,7 +2,7 @@ import React from "react";
 import noImage from "../../../assets/images/no-photo.svg";
 
 interface ResourceImageProps {
-  img: string;
+  img: string | undefined;
   className: string;
 }
 

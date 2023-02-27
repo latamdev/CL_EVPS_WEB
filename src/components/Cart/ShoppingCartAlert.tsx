@@ -1,5 +1,6 @@
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 import { useCart } from "react-use-cart";
 import { formatCurrencyToCLP } from "../Resources/ResourceDetail/utils";
@@ -8,7 +9,10 @@ function ShoppingCartAlert() {
   const { totalUniqueItems, cartTotal } = useCart();
 
   return (
-    <div className=" w-1/6 flex flex-row justify-end">
+    <Link
+      to={"/platform/checkout"}
+      className=" w-1/6 flex flex-row justify-end"
+    >
       <div className="self-center hover:cursor-pointer">
         <FaShoppingCart className="self-center text-3xl absolute text-gray-800" />
         {totalUniqueItems > 0 ? (
@@ -25,7 +29,7 @@ function ShoppingCartAlert() {
         <span className="font-bold">Total</span> :{" "}
         {formatCurrencyToCLP(cartTotal)}
       </div>
-    </div>
+    </Link>
   );
 }
 

@@ -36,12 +36,12 @@ const router = createBrowserRouter([
           },
           {
             path: "/platform/videos",
-            element: <Videos />,
+            element: <></>,
           },
           { path: "/platform/videos/:id", element: <h1>Videos</h1> },
           {
             path: "/platform/resources",
-            element: <Resources />,
+            element: <Videos />,
           },
           {
             path: "/platform/resources/:id",
