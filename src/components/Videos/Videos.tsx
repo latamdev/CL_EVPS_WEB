@@ -17,7 +17,7 @@ import { TooltipVideos } from "./TooltipVideos/TooltipVideos";
 
 const ALL_RESOURCE_QUERY = "ALL_RESOURCE_QUERY";
 
-const Videos = ({}) => {
+const Videos: React.FC<any> = ({ parent }) => {
   const navigate = useNavigate();
 
   const {
@@ -96,7 +96,7 @@ const Videos = ({}) => {
         </div> */}
 
             {!isLoading && !isPendingRequest ? (
-              <table className="border-b border-gray-200 flex-row w-3/4">
+              <table className="border-b border-gray-200 flex-row w-full">
                 <thead></thead>
                 <tbody>
                   {data?.items?.map((video: Resource) => {
