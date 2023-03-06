@@ -12,6 +12,8 @@ import ResourceDetail from "./components/Resources/ResourceDetail";
 import Resources from "./components/Resources/Resources";
 import { CartProvider } from "react-use-cart";
 import Checkout from "./components/Checkout/Checkout";
+import Dashboard from "./components/Dashboard/Dashboard";
+import './fonts/BalooBhai-Regular.ttf'
 
 const router = createBrowserRouter([
   {
@@ -32,11 +34,11 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <h1 style={{ zIndex: 0 }}>Index</h1>,
+            element: <Dashboard />,
           },
           {
             path: "/platform/videos",
-            element: <Videos />,
+            element: <Videos parent={'root'} />,
           },
           { path: "/platform/videos/:id", element: <h1>Videos</h1> },
           {

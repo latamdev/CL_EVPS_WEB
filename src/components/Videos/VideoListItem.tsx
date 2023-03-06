@@ -4,7 +4,9 @@ import { ClockIcon, ChartBarIcon } from "@heroicons/react/24/outline";
 
 import vidPlaceholder from '../../assets/images/video_placeholder.jpg'
 
-const VideoListItem: FC<{ video: VideoResponse, callbackHandleVideoDetails: any }> = ({ video, callbackHandleVideoDetails }) => {
+const VideoListItem: FC<{ video: VideoResponse, callbackHandleVideoDetails: any, parent: string }> = ({ video, callbackHandleVideoDetails, parent }) => {
+    const buttonText = parent !== 'Dashboard' ? 'Detalles' : 'Ver';
+    
     return (
         <tr className="hover:bg-yellow-100 transition-colors group gap-x-7">
             <td className="flex-row items-center py-4 px-4  pr-1">
@@ -31,7 +33,7 @@ const VideoListItem: FC<{ video: VideoResponse, callbackHandleVideoDetails: any 
                 </div>
             </td>
             <td className="flex-row font-medium text-center mt-auto mb-auto ">
-                <button onClick={callbackHandleVideoDetails} className="btn-custom btn-primary">Detalles</button>
+                <button onClick={callbackHandleVideoDetails} className="btn-custom btn-primary">{buttonText}</button>
             </td>
         </tr>
     )

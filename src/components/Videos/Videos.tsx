@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { MOCK_VIDEO_RESPONSE } from "./VideosMockResponse";
 import VideoListItem from "./VideoListItem";
 import { VideoResponse, Details } from "./interfaces";
@@ -6,27 +6,35 @@ import VideoDetails from "./VideoDetails";
 import "./Videos.css";
 import TopNavbar from "../TopNavbar/TopNavbar";
 
-const Videos = ({ }) => {
+const Videos: FC<{ parent: string }> = ({ parent }) => {
     const [videosList, setVideosList] = useState(MOCK_VIDEO_RESPONSE)
     const [videoDetails, setVideoDetails] = useState<Details>({})
     const [showModal, setShowModal] = useState(false);
 
     const handleDetails = (video: VideoResponse) => {
-        const details: Details = {
-            id: video.id,
-            title: video.title,
-            description: video.description,
-            price: video.price
+        if(parent !== 'Dashboard'){
+            const details: Details = {
+                id: video.id,
+                title: video.title,
+                description: video.description,
+                price: video.price
+            }
+    
+            setVideoDetails(details)
+            setShowModal(true)
         }
-
-        setVideoDetails(details)
-        setShowModal(true)
+        else {
+            //TODO: accion de ver video
+        }
     }
 
-    const filters = [
+    const filters = parent !== 'Dashboard' ? [
         { name: "Videos" },
         { name: "E-Books" },
         { name: "Otros Recursos" },
+    ] : [
+        { name: "Todos"},
+        { name: "Favoritos" }
     ];
 
     const subFilters = [
@@ -35,8 +43,8 @@ const Videos = ({ }) => {
     ]
 
     return (
-        <div className="flex-col pl-14 ">
-            <TopNavbar pathName={'Videos'} />
+        <div className="flex-col  ">
+            {parent !== 'Dashboard' ? <TopNavbar pathName={'Videos'} /> : <p className="font-face-bb text-2xl">Tus Videos</p>}
             <div className="flex flex-col">
                 <div className="flex items-center px-4 border-y border-gray-200">
                     {filters.map((filter) => {
@@ -53,21 +61,24 @@ const Videos = ({ }) => {
                     })
                     }
                 </div>
-                <div className="flex items-center px-4 border-y border-gray-200">
-                    {subFilters.map((filter) => {
-                        return (
-                            <button
-                                className="flex gap-x-2 items-center py-5 px-6 text-gray-500 hover:text-morazul relative group"
-                            >
-                                <span className="font-medium"> {filter.name} </span>
-                                <span
-                                    className="absolute w-full h-1 left-3 bg-customYellow rounded bottom-0 scale-x-0 group-hover:scale-x-100 transition-transform ease-in-out"
-                                />
-                            </button>
-                        )
-                    })
-                    }
-                </div>
+                {parent !== 'Dashboard' &&
+                    <div className="flex items-center px-4 border-y border-gray-200">
+                        {subFilters.map((filter) => {
+                            return (
+                                <button
+                                    className="flex gap-x-2 items-center py-5 px-6 text-gray-500 hover:text-morazul relative group"
+                                >
+                                    <span className="font-medium"> {filter.name} </span>
+                                    <span
+                                        className="absolute w-full h-1 left-3 bg-customYellow rounded bottom-0 scale-x-0 group-hover:scale-x-100 transition-transform ease-in-out"
+                                    />
+                                </button>
+                            )
+                        })
+                        }
+                    </div>
+                }
+
                 <table className="border-b border-gray-200 flex-row">
                     <thead>
                     </thead>
@@ -75,7 +86,7 @@ const Videos = ({ }) => {
                         {
                             videosList.items.map((video) => {
                                 return (
-                                    <VideoListItem video={video} callbackHandleVideoDetails={() => handleDetails(video)} />
+                                    <VideoListItem video={video} callbackHandleVideoDetails={() => handleDetails(video)} parent={parent}/>
                                 )
                             })
                         }
