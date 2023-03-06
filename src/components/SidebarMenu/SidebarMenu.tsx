@@ -5,9 +5,9 @@ import {
   FaVideo,
   FaBookReader,
   FaComment,
-  FaCogs,
   FaSignOutAlt,
 } from "react-icons/fa";
+import UserConfigurationMenu from "../UserConfiguration/UserConfigurationMenu/UserConfigurationMenu";
 
 function SidebarMenu() {
   const isTheSamePath = (currentPath: string, pathName: string) => {
@@ -74,23 +74,22 @@ function SidebarMenu() {
             />
             <span>Mensajes</span>
           </Link>
-          <Link
+          {/*           <Link
             to={"/platform/configuration"}
-            className={getCurrenLinkState(
+            className={`${getCurrenLinkState(
               currentPath,
               "/platform/configuration"
-            )}
+            )} w-full bottom-10 absolute `}
           >
-            <FaCogs />
             <span
-              className={getCurrentSpanState(
+              className={getCurrentUserOptionState(
                 currentPath,
                 "/platform/configuration"
               )}
             />
-            <span>Configuración</span>
-          </Link>
-          <Link
+            <UserConfigurationMenu />
+          </Link> */}
+          {/*           <Link
             to={"/platform/sign-out"}
             className={getCurrenLinkState(currentPath, "/platform/sign-out")}
           >
@@ -99,7 +98,7 @@ function SidebarMenu() {
               className={getCurrentSpanState(currentPath, "/platform/sign-out")}
             />
             <span>Salir</span>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

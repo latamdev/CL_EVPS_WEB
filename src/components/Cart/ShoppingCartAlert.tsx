@@ -8,7 +8,7 @@ function ShoppingCartAlert() {
   const { totalUniqueItems, cartTotal } = useCart();
 
   return (
-    <div className=" w-1/6 flex flex-row justify-end">
+    <div className=" flex flex-row justify-end">
       <div className="self-center hover:cursor-pointer">
         <FaShoppingCart className="self-center text-3xl absolute text-gray-800" />
         {totalUniqueItems > 0 ? (

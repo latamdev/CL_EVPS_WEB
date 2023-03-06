@@ -6,12 +6,16 @@ import { FormEvent } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { doLogin } from "./service";
 import { MOCK_LOGIN_REQUEST } from "./LoginStubs";
+import useUser from "../../hooks/useUser";
 
 function Login() {
+  const { login } = useUser();
+
   const mutation = useMutation({
     mutationFn: doLogin,
-    onSuccess: () => {
-      console.log("Login success");
+    onSuccess: (response) => {
+      login(response.token);
+      console.log("Login success", response);
     },
   });
 

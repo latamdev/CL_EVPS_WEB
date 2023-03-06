@@ -9,9 +9,12 @@ module.exports = {
         "4.5rem": "4.5rem",
         "8.88rem": "8.88rem",
       },
+      flex: {
+        3: "3 3 0",
+      },
     },
     colors: {
-      customYellow: "#E1B42A",
+      customYellow: "#FEF08A",
       morazul: "#150E3D",
       transparent: "transparent",
       current: "currentColor",

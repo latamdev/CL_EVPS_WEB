@@ -12,6 +12,8 @@ import ResourceDetail from "./components/Resources/ResourceDetail";
 import Resources from "./components/Resources/Resources";
 import { CartProvider } from "react-use-cart";
 import Checkout from "./components/Checkout/Checkout";
+import Logout from "./components/Logout/Logout";
+import UserConfiguration from "./components/UserConfiguration/UserConfiguration";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/sign-in",
     element: <Login />,
+  },
+  {
+    path: "/sign-out",
+    element: <Logout />,
   },
   {
     path: "/platform",
@@ -48,7 +54,7 @@ const router = createBrowserRouter([
             element: <ResourceDetail />,
           },
           { path: "/platform/messages", element: <h1>Mensajes</h1> },
-          { path: "/platform/configuration", element: <h1>Configuracion</h1> },
+          { path: "/platform/configuration", element: <UserConfiguration /> },
           { path: "/platform/checkout", element: <Checkout /> },
         ],
       },
