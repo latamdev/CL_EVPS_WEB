@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { MOCK_VIDEO_RESPONSE } from "./VideosMockResponse";
 import VideoListItem from "./VideoListItem";
 import { VideoResponse, Details } from "./interfaces";

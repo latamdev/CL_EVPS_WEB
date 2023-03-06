@@ -24,3 +24,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@font-face {
+  font-family: 'BalooBhaiRegular';
+  src: local('BalooBhaiRegular'), url('./fonts/BalooBhai-Regular.ttf') format('truetype');
+  font-weight: bold;
+}
