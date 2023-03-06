@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { SearchResults } from "./SearchResultPanel/interfaces";
 import SearchResultPanel from "./SearchResultPanel/SearchResultPanel";
 import { getSearchResults } from "./SearchResultPanel/service";
+import "./search.css";
 
 const LIMIT_OF_RESULTS = 3;
 
@@ -33,10 +34,13 @@ function Search() {
 
   return (
     <div
-      className="w-5/6 flex flex-col justify-center items-center p-5"
+      className="w-full lg:flex-3 flex flex-col justify-center items-center p-5"
       style={{ zIndex: 10 }}
     >
-      <form onSubmit={(e) => e.preventDefault()} className="w-1/2">
+      <form
+        onSubmit={(e) => e.preventDefault()}
+        className="w-full lg:w-3/5 lg:mx-auto"
+      >
         <label
           htmlFor="default-search"
           className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -67,11 +71,11 @@ function Search() {
             name="query-search"
             autoComplete="off"
             className={
-              "block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 " +
+              "block w-full p-4 pl-10 text-sm text-gray-900 border-2 border-black bg-customYellow " +
               (data?.results.length > 0
                 ? "rounded-lg rounded-b-none border-b-0"
                 : "rounded-lg ") +
-              " bg-gray-50 focus:ring-gray-300 focus:border-gray-300 dark:bg-gray-100  dark:placeholder-gray-500 dark:text-black dark:focus:ring-none dark:focus:border-none"
+              "  focus:ring-gray-300 focus:border-black focus:bg-gray-50 dark:placeholder-gray-500 dark:text-black dark:focus:ring-none dark:focus:border-black"
             }
             onBlur={(e) => debounceClickOutside(e)}
             placeholder="Busca videos, e-books, recursos..."

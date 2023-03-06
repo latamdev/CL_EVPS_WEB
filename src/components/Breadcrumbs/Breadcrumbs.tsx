@@ -28,7 +28,7 @@ function Breadcrumbs() {
   console.log(breadcrumbs);
 
   return (
-    <nav className="p-2 gap-3 flex flex-row last:af'ter:content-[''] w-fit rounded-lg rounded-l-none font-light bg-yellow-200">
+    <nav className="p-2 gap-3 flex flex-row last:af'ter:content-[''] w-full rounded-lg rounded-l-none font-light bg-yellow-200">
       {breadcrumbs
         .filter(({ match }) => match.pathname !== "/")
         .map(({ match, breadcrumb }) => (
