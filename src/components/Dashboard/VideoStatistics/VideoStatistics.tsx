@@ -19,24 +19,24 @@ const VideoStatistics = () => {
   ];
   return (
     <div>
-      <p className="font-face-bb">Your statistics</p>
+      <p className="font-face-bb">Tus estadísticas</p>
       <hr></hr>
       <div className="flex flex-row justify-between mt-3 mb-5">
-        <p className="font-face-bb mt-3">Hours of study</p>
+        <p className="font-face-bb mt-3">Horas de estudio</p>
         <select className="rounded-md font-face-bb">
           <option selected value="week1">
-            Week 1
+            Semana 1
           </option>
-          <option value="week2">Week 2</option>
-          <option value="week3">Week 3</option>
-          <option value="week4">Week 4</option>
+          <option value="week2">Semana 2</option>
+          <option value="week3">Semana 3</option>
+          <option value="week4">Semana 4</option>
         </select>
       </div>
       <LineChart
-        width={400}
+        width={450}
         height={400}
         data={data}
-        margin={{ top: 10, right: 20, left: 10, bottom: 5 }}
+        margin={{ top: 10, right: 0, left: 0, bottom: 5 }}
       >
         <XAxis dataKey="name" />
         <YAxis />

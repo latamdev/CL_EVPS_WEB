@@ -22,17 +22,22 @@ function SidebarMenu() {
 
   const getCurrentSpanState = (currentPath: string, pathName: string) => {
     return isTheSamePath(currentPath, pathName)
-      ? "absolute w-1.5 h-8 bg-customYellow rounded-r-full left-0  "
-      : "absolute w-1.5 h-8 bg-customYellow rounded-r-full left-0 scale-y-0 -translate-x-full group-hover:scale-y-100 group-hover:translate-x-0 transition-transform ease-in-out";
+      ? "absolute w-1.5 h-8 bg-yellow-500 rounded-r-full left-0  "
+      : "absolute w-1.5 h-8 bg-yellow-500 rounded-r-full left-0 scale-y-0 -translate-x-full group-hover:scale-y-100 group-hover:translate-x-0 transition-transform ease-in-out";
   };
 
   const { pathname: currentPath } = useLocation();
 
   return (
     <div className="flex">
-      <div className="py-6 px-10 w-64 border-r border-gray-200">
-        <img alt="logo" src={logo} className="w-40 mr-auto ml-auto" />
-        <div id="sidebar-menu" className="flex flex-col gap-y-6 pt-20">
+      <div className=" w-64">
+        <div className="bg-customYellow h-[8.6rem]">
+          <img alt="logo" src={logo} className="w-32 mr-auto ml-auto" />
+        </div>
+        <div
+          id="sidebar-menu"
+          className="flex flex-col gap-y-6 pt-10 py-6 px-10 border-r border-gray-200 h-full"
+        >
           <Link
             to={"/platform"}
             className={getCurrenLinkState(currentPath, "/platform")}
@@ -41,7 +46,7 @@ function SidebarMenu() {
             <span className={getCurrentSpanState(currentPath, "/platform")} />
             <span>Home</span>
           </Link>
-          <Link
+          {/*           <Link
             to={"/platform/videos"}
             className={getCurrenLinkState(currentPath, "/platform/videos")}
           >
@@ -50,7 +55,7 @@ function SidebarMenu() {
               className={getCurrentSpanState(currentPath, "/platform/videos")}
             />
             <span>Videos</span>
-          </Link>
+          </Link> */}
           <Link
             to={"/platform/resources"}
             className={getCurrenLinkState(currentPath, "/platform/resources")}

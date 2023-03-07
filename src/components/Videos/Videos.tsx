@@ -17,7 +17,7 @@ import { TooltipVideos } from "./TooltipVideos/TooltipVideos";
 
 const ALL_RESOURCE_QUERY = "ALL_RESOURCE_QUERY";
 
-const Videos: React.FC<any> = ({ parent }) => {
+const Videos: React.FC<any> = ({ parent, title }) => {
   const navigate = useNavigate();
 
   const {
@@ -67,8 +67,8 @@ const Videos: React.FC<any> = ({ parent }) => {
   return (
     <>
       {
-        <div className="flex-col pl-5 pr-5">
-          <TopNavbar pathName={"Recursos"} />
+        <div className="flex-col">
+          <TopNavbar pathName={title ? title : "Recursos"} />
           <div className="flex flex-col">
             <div className="flex items-center  border-y border-gray-200">
               {filters.map((filter) => {

@@ -24,7 +24,9 @@ function Checkout() {
     <div className="px-10 py-10">
       <SkeletonWrapper isLoading={isLoading} skeleton={<CheckoutSkeleton />}>
         <>
-          <h1 className="font-bold text-4xl self-center">Checkout</h1>
+          <h1 className="font-bold text-4xl font-face-bb self-center">
+            Checkout
+          </h1>
           <div className="flex">
             <div className="w-1/2">
               <div className="mt-3 border-b-2 pb-2 flex justify-between items-center">
@@ -34,7 +36,7 @@ function Checkout() {
                 <button
                   onClick={() => setShowEmptyCartModal(true)}
                   disabled={items.length === 0}
-                  className="text-customYellow disabled:text-gray-500 disabled:border-b-0 w-fit h-fit hover:cursor-pointer hover:text-yellow-600 hover:border-b-2  hover:border-yellow-600"
+                  className="text-yellow-500 disabled:text-gray-500 disabled:border-b-0 w-fit h-fit hover:cursor-pointer hover:text-yellow-600 hover:border-b-2  hover:border-yellow-600"
                 >
                   Vaciar carrito
                 </button>

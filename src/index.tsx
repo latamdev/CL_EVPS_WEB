@@ -49,7 +49,7 @@ const router = createBrowserRouter([
           { path: "/platform/videos/:id", element: <h1>Videos</h1> },
           {
             path: "/platform/resources",
-            element: <Videos parent={"root"} />,
+            element: <Resources />,
           },
           {
             path: "/platform/resources/:id",

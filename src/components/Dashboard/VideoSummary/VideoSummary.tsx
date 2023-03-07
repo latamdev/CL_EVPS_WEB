@@ -12,13 +12,13 @@ const VideoSummary = () => {
 
   return (
     <div className="flex flex-row gap-10  ">
-      <div className="flex flex-row ">
+      <div className="flex flex-row bg-gray-100 p-3 rounded-xl gap-2 items-center">
         <p className="font-face-bb text-6xl">{finishedVideos}</p>
-        <p className="pt-3">Videos completed</p>
+        <p className="">Videos completados</p>
       </div>
-      <div className="flex flex-row">
+      <div className="flex flex-row bg-gray-100 p-3 rounded-xl gap-2 items-center">
         <p className="font-face-bb text-6xl">{inProgressVideos}</p>
-        <p className="pt-3">Videos in progress</p>
+        <p className="">Videos en progreso</p>
       </div>
     </div>
   );

@@ -10,6 +10,7 @@ const UserConfiguration: React.FC = () => {
   return (
     <div className="bg-white h-screen">
       <div className=" px-10 py-10 divider">
+        <h1 className="text-4xl font-face-bb">Perfil</h1>
         <div className="flex flex-col items-center space-y-5 justify-center">
           <img
             src={IMG_USER_DEFAULT}
@@ -25,17 +26,21 @@ const UserConfiguration: React.FC = () => {
       <div className="px-10 py-10 bg-customYellow flex flex-col gap-5">
         <div className="flex flex-row gap-5">
           <div className="bg-white shadow-lg rounded-lg p-10 w-1/2 h-fit flex flex-col items-center space-y-4">
-            <h1 className="text-3xl text-morazul">Videos Comprados</h1>
+            <h1 className="text-3xl text-morazul font-face-bb">
+              Videos Comprados
+            </h1>
             <span className="text-2xl font-bold">2</span>
           </div>
           <div className="bg-white shadow-lg rounded-lg p-10 w-1/2 h-fit flex flex-col items-center space-y-4">
-            <h1 className="text-3xl text-morazul">Ebooks Comprados</h1>
+            <h1 className="text-3xl text-morazul font-face-bb">
+              Ebooks Comprados
+            </h1>
             <span className="text-2xl font-bold">5</span>
           </div>
         </div>
 
         <div className="bg-white shadow-lg rounded-lg p-10 w-full h-fit flex flex-col space-y-4">
-          <h1 className="text-3xl text-morazul">Tus preguntas</h1>
+          <h1 className="text-3xl text-morazul font-face-bb">Tus preguntas</h1>
           <ul className="flex flex-col space-y-5">
             <li>
               <p className="border border-black rounded-2xl p-3 flex flex-col gap-2">

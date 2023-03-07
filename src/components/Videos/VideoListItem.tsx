@@ -13,7 +13,7 @@ const VideoListItem: FC<{
   callbackHandleVideoDetails: any;
 }> = ({ video, callbackHandleVideoDetails }) => {
   return (
-    <tr className="hover:bg-yellow-100 transition-colors w-full flex flex-row justify-between  gap-x-7 mb-5">
+    <tr className="px-5 hover:bg-yellow-100 transition-colors w-full flex flex-row justify-between  gap-x-7 mb-5">
       <td className="flex-row items-center py-4 px-4  pr-1">
         <ResourceImage
           img={video.image}
