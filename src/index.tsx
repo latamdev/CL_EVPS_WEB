@@ -14,6 +14,7 @@ import { CartProvider } from "react-use-cart";
 import Checkout from "./components/Checkout/Checkout";
 import Logout from "./components/Logout/Logout";
 import UserConfiguration from "./components/UserConfiguration/UserConfiguration";
+import UserEditProfile from "./components/UserConfiguration/UserEditProflie/UserEditProfile";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
           },
           { path: "/platform/messages", element: <h1>Mensajes</h1> },
           { path: "/platform/configuration", element: <UserConfiguration /> },
+          {
+            path: "/platform/configuration/edit",
+            element: <UserEditProfile />,
+          },
           { path: "/platform/checkout", element: <Checkout /> },
         ],
       },

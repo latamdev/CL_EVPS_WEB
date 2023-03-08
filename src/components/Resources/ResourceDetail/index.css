@@ -1,3 +1,7 @@
+.container {
+  position: inherit;
+}
+
 .pattern-bg {
   background-color: #150e3d;
   opacity: 1;

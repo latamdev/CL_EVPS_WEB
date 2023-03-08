@@ -15,12 +15,13 @@ function Breadcrumbs() {
   };
 
   const routes = [
-    { path: "/platform", breadcrumb: "Home" },
+    { path: "/platform", breadcrumb: "Inicio" },
     { path: "/platform/videos", breadcrumb: "Videos" },
     { path: "/platform/resources", breadcrumb: "Recursos" },
     { path: "/platform/resources/:id", breadcrumb: GetResourceBreadcrumb },
     { path: "/platform/messages", breadcrumb: "Mensajes" },
     { path: "/platform/configuration", breadcrumb: "Configuración" },
+    { path: "/platform/configuration/edit", breadcrumb: "Editar Usuario" },
   ];
 
   const breadcrumbs = useBreadcrumbs(routes);
