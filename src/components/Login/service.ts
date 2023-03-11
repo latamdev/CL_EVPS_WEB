@@ -1,12 +1,13 @@
-import { httpPostRequest } from "../../http/Client";
+import { httpPostRequest } from "../../http/UserClient";
 import { LoginParameters, LoginResponse } from "./interfaces";
 import { MOCK_LOGIN_RESPONSE } from "./LoginStubs";
 
-const LOGIN_URL = "/login";
+const LOGIN_URL = "/user/login";
 
 export const doLogin = async (
   filters: LoginParameters
 ): Promise<LoginResponse> => {
-  //httpPostRequest<LoginResponse>(LOGIN_URL, filters);
-  return MOCK_LOGIN_RESPONSE;
+  console.log(filters);
+  return httpPostRequest<LoginResponse>(LOGIN_URL, filters);
+  //return MOCK_LOGIN_RESPONSE;
 };

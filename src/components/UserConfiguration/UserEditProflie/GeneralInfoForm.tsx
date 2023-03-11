@@ -1,19 +1,50 @@
+import { useMutation, useQuery } from "@tanstack/react-query";
 import React, { FormEvent, useState } from "react";
 import useUser from "../../../hooks/useUser";
+import { COUNTRIES_ENDPOINT, QUERY_KEY_COUNTRIES } from "../constants";
+import { updateUser } from "./service";
 
 function GeneralInfoForm() {
-  const { currentUser: user } = useUser();
+  const { currentUser: user, setCurrentUser } = useUser();
   const [email, setEmail] = useState(user.email);
   const [username, setUsername] = useState(user.username || "");
   const [birthday, setBirthday] = useState(user.birthday || "");
+  const [country, setCountry] = useState(user.country || "");
 
-  const handleUpdateUserInfo = (e: FormEvent) => {
+  const mutation = useMutation({
+    mutationFn: updateUser,
+    onSuccess: (response: any) => {
+      localStorage.removeItem("token");
+      localStorage.setItem("token", JSON.stringify(response.token));
+      setCurrentUser(response.user);
+      console.log("update success", user);
+    },
+  });
+
+  const getCountries = async () => {
+    const res = await fetch(COUNTRIES_ENDPOINT);
+    return res.json();
+  };
+
+  const { data: countries, isLoading: loadingCountries } = useQuery({
+    queryKey: [QUERY_KEY_COUNTRIES],
+    queryFn: getCountries,
+  });
+
+  const handleUpdateUserInfo = async (e: FormEvent) => {
     e.preventDefault();
 
     user.email = email;
     user.username = username;
+    user.birthday = birthday;
+    user.country = country;
 
-    console.log("new user", user);
+    console.log(country);
+
+    const { roles, ...newUser } = user;
+
+    await mutation.mutate(newUser);
+    console.log("new user", newUser);
   };
 
   return (
@@ -78,9 +109,18 @@ function GeneralInfoForm() {
             <label htmlFor="country">Pais:</label>
             <select
               id="country"
+              onChange={(event) => setCountry(event.target.value)}
               className="form-input px-4 py-3 focus:border-morazul rounded-lg"
+              value={country}
             >
-              <option value="cl">Chile</option>
+              {!loadingCountries &&
+                countries?.map((country: any) => {
+                  return (
+                    <option key={country.name} value={country.name}>
+                      {country.translations.es}
+                    </option>
+                  );
+                })}
             </select>
           </div>
         </div>

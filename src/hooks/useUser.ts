@@ -18,18 +18,26 @@ function useUser() {
   const navigate = useNavigate();
 
   function mapUserProperties({
-    _id,
+    id,
     first_name,
     last_name,
+    username,
+    birthday,
+    country,
     email,
     isAdmin,
+    roles,
   }: any) {
     return {
-      _id,
+      id,
       first_name,
       last_name,
+      username,
+      birthday,
+      country,
       email,
       isAdmin,
+      roles,
     };
   }
 
