@@ -14,16 +14,16 @@ const UserEditProfile: React.FC = () => {
           <div
             onClick={() => setEditOption(0)}
             className={`${
-              editOption === 0 ? "bg-customYellow font-bold" : "bg-gray-50"
-            } rounded-l-xl rounded-bl-none p-2 flex justify-center hover:bg-customYellow hover:font-bold hover:cursor-pointer ease-in transition-all duration-75`}
+              editOption === 0 ? "bg-secondary font-bold" : "bg-gray-50"
+            } rounded-l-xl rounded-bl-none p-2 flex justify-center hover:bg-secondary hover:font-bold hover:cursor-pointer ease-in transition-all duration-75`}
           >
             <h1 className="">Informacion General</h1>
           </div>
           <div
             onClick={() => setEditOption(1)}
             className={`${
-              editOption === 1 ? "bg-customYellow font-bold" : "bg-gray-50"
-            } p-2 flex justify-center border-l rounded-br-none ease-in transition-linear duration-75 rounded-r-xl hover:bg-customYellow hover:font-bold hover:cursor-pointer`}
+              editOption === 1 ? "bg-secondary font-bold" : "bg-gray-50"
+            } p-2 flex justify-center border-l rounded-br-none ease-in transition-linear duration-75 rounded-r-xl hover:bg-secondary hover:font-bold hover:cursor-pointer`}
           >
             <h1>Cambiar Contraseña</h1>
           </div>

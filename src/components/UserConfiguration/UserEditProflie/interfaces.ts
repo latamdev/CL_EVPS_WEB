@@ -1,4 +1,4 @@
-export interface User {
+export type User = {
   username: string;
   firstName: string;
   lastName: string;
@@ -6,4 +6,5 @@ export interface User {
   birthday: string;
   country: string;
   roles: Array<string>;
-}
+  avatar: string;
+};

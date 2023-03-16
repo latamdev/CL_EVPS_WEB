@@ -10,7 +10,7 @@ function ShoppingCartAlert() {
   return (
     <div className=" flex flex-row justify-end">
       <div className="self-center hover:cursor-pointer">
-        <FaShoppingCart className="self-center text-3xl absolute text-gray-800" />
+        <FaShoppingCart className="self-center text-3xl absolute text-white hover:text-secondary" />
         {totalUniqueItems > 0 ? (
           <span className="bg-red-600 text-white text-sm font-bold pl-1 pr-1 rounded-full relative left-7  bottom-3">
             {totalUniqueItems}

@@ -1,6 +1,8 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import React, { FormEvent, useState } from "react";
 import useUser from "../../../hooks/useUser";
+import SuccessAlert from "../../Alerts/SuccessAlert";
+import LoadingSpinner from "../../LoadingSpinner/LoadingSpinner";
 import { COUNTRIES_ENDPOINT, QUERY_KEY_COUNTRIES } from "../constants";
 import { updateUser } from "./service";
 
@@ -10,6 +12,7 @@ function GeneralInfoForm() {
   const [username, setUsername] = useState(user.username || "");
   const [birthday, setBirthday] = useState(user.birthday || "");
   const [country, setCountry] = useState(user.country || "");
+  const [showAlert, setShowAlert] = useState(false);
 
   const mutation = useMutation({
     mutationFn: updateUser,
@@ -17,6 +20,7 @@ function GeneralInfoForm() {
       localStorage.removeItem("token");
       localStorage.setItem("token", JSON.stringify(response.token));
       setCurrentUser(response.user);
+      setShowAlert(true);
       console.log("update success", user);
     },
   });
@@ -49,6 +53,13 @@ function GeneralInfoForm() {
 
   return (
     <div className="p-5">
+      {!mutation.isLoading && showAlert && (
+        <SuccessAlert
+          title="Datos actualizados"
+          description="Tus datos han sido actualizados exitosamente."
+        />
+      )}
+
       <form onSubmit={(e) => handleUpdateUserInfo(e)} className="mt-10">
         <div className="grid grid-cols-2  gap-4">
           <div className="flex flex-col gap-2 w-full">
@@ -126,8 +137,15 @@ function GeneralInfoForm() {
         </div>
 
         <div className="flex justify-center w-full mt-5">
-          <button className="ease-linear transition-all duration-150 rounded-lg w-1/2 font-bold text-lg bg-morazul text-white p-3 pl-4 pr-4 hover:bg-customYellow hover:text-black">
-            Actualizar Datos
+          <button
+            disabled={mutation.isLoading}
+            className="ease-linear transition-all duration-150 rounded-lg w-1/2 font-bold text-lg bg-morazul text-white p-3 pl-4 pr-4 hover:bg-secondary hover:text-black"
+          >
+            {mutation.isLoading ? (
+              <LoadingSpinner />
+            ) : (
+              <div> Actualizar Datos</div>
+            )}
           </button>
         </div>
       </form>

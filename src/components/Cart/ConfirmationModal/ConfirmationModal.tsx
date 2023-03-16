@@ -48,7 +48,7 @@ const ConfirmationModal: React.FC<ConfirmationModalProps> = ({
                   </button>
                   <button
                     onClick={() => handleAction()}
-                    className="text-md bg-red-600 text-white font-bold border-2 border-red-200 rounded-lg p-2 w-24"
+                    className="text-md bg-danger text-white font-bold border-2 border-red-200 rounded-lg p-2 w-24"
                   >
                     {confirmationButtonText}
                   </button>

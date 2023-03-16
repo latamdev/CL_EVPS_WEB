@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const APPLICATION_JSON = "application/json";
+
 const client = axios.create({
   baseURL: "http://localhost:8080",
 });
@@ -17,9 +18,15 @@ export const httpGetRequest = async (
 
 export const httpPostRequest = async <T>(
   url: string,
-  data: any
+  data: any,
+  contentType: string = APPLICATION_JSON
 ): Promise<T> => {
   return client
-    .post(url, data, { headers: { "Content-Type": APPLICATION_JSON } })
+    .post(url, data, {
+      headers: {
+        "Content-Type": contentType,
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
     .then(({ data }) => data);
 };

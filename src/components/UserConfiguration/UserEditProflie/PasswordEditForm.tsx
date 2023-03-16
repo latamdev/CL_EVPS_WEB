@@ -24,7 +24,7 @@ function PasswordEditForm() {
           className="form-input px-4 py-3 focus:border-morazul rounded-lg"
         />
         <div className="flex justify-center w-full">
-          <button className="ease-linear transition-all duration-150 rounded-lg w-1/2 font-bold text-lg bg-morazul text-white p-3 pl-4 pr-4 hover:bg-customYellow hover:text-black">
+          <button className="ease-linear transition-all duration-150 rounded-lg w-1/2 font-bold text-lg bg-morazul text-white p-3 pl-4 pr-4 hover:bg-secondary hover:text-black">
             Cambiar Contraseña
           </button>
         </div>

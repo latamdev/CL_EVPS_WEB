@@ -12,7 +12,7 @@ const PaymentBox: React.FC = () => {
       <h1 className="text-3xl font-bold">{formatCurrencyToCLP(cartTotal)}</h1>
       <button
         disabled={totalItems === 0}
-        className="bg-morazul disabled:bg-gray-400 disabled:cursor-default hover:bg-customYellow hover:cursor-pointer pt-2 pb-2 pl-5 pr-5 text-white text-xl font-bold rounded-xl w-1/2"
+        className="bg-primary disabled:bg-gray-400 disabled:cursor-default hover:bg-secondary hover:text-black hover:cursor-pointer pt-2 pb-2 pl-5 pr-5 text-white text-xl font-bold rounded-xl w-1/2 ease-linear transition-all duration-150"
       >
         Pagar
       </button>

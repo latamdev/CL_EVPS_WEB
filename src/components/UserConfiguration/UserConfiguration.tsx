@@ -1,35 +1,54 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaPen } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import useUser from "../../hooks/useUser";
-import { IMG_USER_DEFAULT } from "./constants";
+import { UserContext } from "../../Root";
+import { Tooltip } from "../Tooltip/Tooltip";
+import { IMG_USER_URL } from "./constants";
+import UpdateAvatarModal from "./UpdateAvatarModal/UpdateAvatarModal";
 import "./UserConfiguration.css";
 
 const UserConfiguration: React.FC = () => {
   const { currentUser: user } = useUser();
+  const [showModal, setShowModal] = useState(false);
+  const { currentUser } = useContext(UserContext);
 
   return (
     <div className=" h-full">
-      <div className="pattern-bg text-white p-10">
-        <div className="rounded flex flex-col items-center space-y-5 justify-center">
+      <div className="magicpattern text-white p-10">
+        <div className="rounded flex flex-col items-center justify-center">
           <div className="flex w-full justify-end">
             <Link
               to={"/platform/configuration/edit"}
-              className="bg-morazul p-2 rounded-xl shadow-sm text-white font-bold flex items-center gap-2 hover:cursor-pointer hover:bg-customYellow transit hover:text-morazul ease-linear transition-all duration-150"
+              className="bg-info p-2 rounded-xl shadow-sm text-white font-bold flex items-center gap-2 hover:cursor-pointer hover:bg-secondary transit hover:text-morazul ease-linear transition-all duration-150"
             >
               <FaPen />
               Editar
             </Link>
           </div>
+
           <img
-            src={IMG_USER_DEFAULT}
+            src={`${IMG_USER_URL}${currentUser.avatar}`}
             alt="user_profile_img"
-            className="rounded-full h-60 w-60 bg-cover border"
+            className="rounded-full h-60 w-60 bg-cover border absolute"
           />
-          <h1 className="text-2xl">{user.first_name + " " + user.last_name}</h1>
-          <h1 className="text-lg bg-customYellow text-morazul rounded-full p-2">
-            {user.isAdmin ? "Profesor" : "Alumno"}
-          </h1>
+          <Tooltip message="Editar Avatar">
+            <button
+              onClick={() => setShowModal(true)}
+              className="bg-info p-2 text-white text-sm font-bold rounded-full ease-linear transition-full duration-150 hover:cursor-pointer hover:text-lg relative left-28 top-16"
+            >
+              <FaPen />
+            </button>
+          </Tooltip>
+
+          <div className="mt-72">
+            <h1 className="text-2xl">
+              {user.first_name + " " + user.last_name}
+            </h1>
+            <h1 className="text-lg text-center font-bold bg-info text-white rounded-full p-2">
+              {user.isAdmin ? "Profesor" : "Alumno"}
+            </h1>
+          </div>
         </div>
       </div>
       <div className="px-10 py-10 flex flex-col gap-5">
@@ -89,6 +108,8 @@ const UserConfiguration: React.FC = () => {
           </ul>
         </div>
       </div>
+
+      <UpdateAvatarModal show={showModal} setShow={setShowModal} />
     </div>
   );
 };

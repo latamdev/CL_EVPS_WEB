@@ -39,7 +39,7 @@ function SearchResultPanel(props: SearchResultProps) {
 
   return props.resultsArray.results.length > 0 ? (
     <div className="w-1/2 absolute z-10 top-[4.5rem] pl-[8.88rem] pr-[8.88rem]">
-      <div className="bg-gray-100  border border-gray-300 border-t-0">
+      <div className="bg-gray-100 text-black  border border-gray-300 border-t-0">
         {props.resultsArray.results.map((result: any) => {
           return (
             <div key={result.resourceType}>

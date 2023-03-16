@@ -43,7 +43,7 @@ function Search() {
       >
         <label
           htmlFor="default-search"
-          className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+          className="mb-2 text-sm font-medium text-white sr-only dark:text-white"
         >
           Buscar
         </label>
@@ -51,7 +51,7 @@ function Search() {
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <svg
               aria-hidden="true"
-              className="w-6 h-6 text-gray-900 dark:text-gray-900"
+              className="w-6 h-6 text-gray-700 dark:text-gray-700"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -71,7 +71,7 @@ function Search() {
             name="query-search"
             autoComplete="off"
             className={
-              "block w-full p-4 pl-10 text-sm text-gray-900 border-2 border-black bg-customYellow " +
+              "block w-full p-4 pl-10 text-sm text-gray-900 border-1 border-white bg-primary " +
               (data?.results.length > 0
                 ? "rounded-lg rounded-b-none border-b-0"
                 : "rounded-lg ") +

@@ -26,6 +26,7 @@ function useUser() {
     country,
     email,
     isAdmin,
+    avatar,
     roles,
   }: any) {
     return {
@@ -37,6 +38,7 @@ function useUser() {
       country,
       email,
       isAdmin,
+      avatar,
       roles,
     };
   }

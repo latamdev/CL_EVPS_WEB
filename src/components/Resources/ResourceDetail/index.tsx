@@ -46,7 +46,7 @@ const ResourceDetail = () => {
     <>
       <div>
         {data?.link ? (
-          <div className="pattern-bg flex justify-center p-10">
+          <div className="magicpattern flex justify-center p-10">
             <div className="w-full lg:w-3/4 xl:w-1/2 h-96 ">
               <iframe
                 title="video"
@@ -67,7 +67,7 @@ const ResourceDetail = () => {
           isLoading={isLoading}
           skeleton={<ResourceDetailSkeleton />}
         >
-          <div>
+          <div className="bg-white border shadow-lg rounded-lg p-10  h-fit">
             <div className="flex flex-row space-x-3">
               <h1 className="font-bold text-4xl self-center">{data?.title}</h1>
               <div className="font-medium text-white align-middle self-center">

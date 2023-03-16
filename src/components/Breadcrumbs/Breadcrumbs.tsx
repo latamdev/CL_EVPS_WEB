@@ -29,7 +29,7 @@ function Breadcrumbs() {
   console.log(breadcrumbs);
 
   return (
-    <nav className="p-2 gap-3 flex flex-row last:af'ter:content-[''] w-full rounded-lg rounded-l-none font-light bg-yellow-200">
+    <nav className="pl-2 gap-3 flex flex-row last:af'ter:content-[''] w-full  font-light bg-primary">
       {breadcrumbs
         .filter(({ match }) => match.pathname !== "/")
         .map(({ match, breadcrumb }) => (
@@ -38,8 +38,8 @@ function Breadcrumbs() {
             to={match.pathname}
             className={
               match.pathname === location.pathname
-                ? "breadcrumb-active  font-semibold text-morazul "
-                : "after:content-['>'] after:font-bold after:relative after:left-1  text-morazul hover:border-b-morazul border-b-2 border-b-transparent hover:border-b-2 hover:font-semibold "
+                ? "breadcrumb-active  font-semibold text-white "
+                : "after:content-['>'] after:font-bold after:relative after:left-1  text-white hover:border-b-white border-b-2 border-b-transparent hover:border-b-2 hover:font-semibold "
             }
           >
             {breadcrumb}

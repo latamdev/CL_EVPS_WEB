@@ -68,7 +68,7 @@ const CartModal: React.FC<CartModalProps> = (props) => {
                   <div className="mt-2 flex justify-center lg:justify-end">
                     <div className="items-center gap-3 mt-3 sm:flex">
                       <button
-                        className=" mt-2 p-2.5  text-white bg-customYellow rounded-md outline-none ring-offset-2 ring-customYellow focus:ring-2"
+                        className=" mt-2 p-2.5  text-white bg-primary rounded-md outline-none ring-offset-2 ring-customYellow focus:ring-2"
                         onClick={() => handleCheckoutAction()}
                       >
                         Hacer Checkout

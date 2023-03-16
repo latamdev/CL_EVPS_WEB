@@ -34,7 +34,7 @@ function Checkout() {
                 <button
                   onClick={() => setShowEmptyCartModal(true)}
                   disabled={items.length === 0}
-                  className="text-customYellow disabled:text-gray-500 disabled:border-b-0 w-fit h-fit hover:cursor-pointer hover:text-yellow-600 hover:border-b-2  hover:border-yellow-600"
+                  className="text-danger font-bold disabled:text-gray-500 disabled:border-b-0 w-fit h-fit hover:cursor-pointer ease-in-out transition-all duration-150"
                 >
                   Vaciar carrito
                 </button>
