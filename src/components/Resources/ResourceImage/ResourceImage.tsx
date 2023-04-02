@@ -2,8 +2,8 @@ import React from "react";
 import noImage from "../../../assets/images/no-photo.svg";
 
 interface ResourceImageProps {
-  img: string;
-  className: string;
+  img: string | undefined;
+  className?: string;
 }
 
 const ResourceImage: React.FC<ResourceImageProps> = ({ img, className }) => {

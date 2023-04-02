@@ -23,7 +23,7 @@ const CartModal: React.FC<CartModalProps> = (props) => {
     <>
       {props.show ? (
         <>
-          <div className="fixed inset-0 z-10 overflow-y-auto">
+          <div className="fixed inset-0 z-50 overflow-y-auto">
             <div
               className="fixed inset-0 w-full h-full bg-black opacity-40"
               onClick={() => setShowModal(false)}
@@ -68,7 +68,7 @@ const CartModal: React.FC<CartModalProps> = (props) => {
                   <div className="mt-2 flex justify-center lg:justify-end">
                     <div className="items-center gap-3 mt-3 sm:flex">
                       <button
-                        className=" mt-2 p-2.5  text-white bg-customYellow rounded-md outline-none ring-offset-2 ring-customYellow focus:ring-2"
+                        className=" mt-2 p-2.5  text-white bg-primary rounded-md outline-none ring-offset-2 ring-customYellow focus:ring-2"
                         onClick={() => handleCheckoutAction()}
                       >
                         Hacer Checkout

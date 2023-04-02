@@ -39,8 +39,8 @@ const CartButtonAdd: React.FC<CartButtonProps> = (props) => {
           onClick={() => handleRemoveFromCart()}
           className={
             asLink
-              ? `text-customYellow w-fit h-fit hover:cursor-pointer hover:text-yellow-600 hover:border-b-2 hover:border-yellow-600`
-              : `rounded-xl bg-red-600 text-white font-bold w-1/2 lg:text-xl h-14 hover:bg-red-500`
+              ? ` bg-danger pl-2 pr-2 rounded font-bold  text-white w-fit h-fit hover:cursor-pointer hover:bg-red-400 ease-linear transition-all duration-150`
+              : `rounded-xl bg-danger text-white font-bold w-1/2 lg:text-xl h-14 hover:bg-red-400`
           }
         >
           {asLink ? "Eliminar" : "Quitar del carro"}
@@ -48,7 +48,7 @@ const CartButtonAdd: React.FC<CartButtonProps> = (props) => {
       ) : (
         <button
           onClick={() => handleAddToCart()}
-          className="rounded-xl bg-morazul text-white font-bold w-1/2 lg:text-xl h-14 hover:bg-customYellow"
+          className="rounded-xl bg-primary text-white font-bold w-1/2 lg:text-xl h-14 hover:bg-secondary hover:text-black ease-linear transition-all duration-150"
         >
           {data.free
             ? "Gratis"

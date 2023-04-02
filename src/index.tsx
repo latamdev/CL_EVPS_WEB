@@ -12,6 +12,13 @@ import ResourceDetail from "./components/Resources/ResourceDetail";
 import Resources from "./components/Resources/Resources";
 import { CartProvider } from "react-use-cart";
 import Checkout from "./components/Checkout/Checkout";
+import Logout from "./components/Logout/Logout";
+import UserConfiguration from "./components/UserConfiguration/UserConfiguration";
+import UserEditProfile from "./components/UserConfiguration/UserEditProflie/UserEditProfile";
+import { ProSidebarProvider } from "react-pro-sidebar";
+import Register from "./components/Register/Register";
+import ScrollToTop from "./hooks/ScrollToTop";
+import CheckPayment from "./components/Checkout/CheckPayment/CheckPayment";
 import Dashboard from "./components/Dashboard/Dashboard";
 import './fonts/BalooBhai-Regular.ttf'
 
@@ -25,8 +32,20 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
+    path: "/create-account",
+    element: <Register />,
+  },
+  {
+    path: "/sign-out",
+    element: <Logout />,
+  },
+  {
     path: "/platform",
-    element: <Root />,
+    element: (
+      <ProSidebarProvider>
+        <Root />
+      </ProSidebarProvider>
+    ),
     errorElement: <h1>Error</h1>,
     children: [
       {
@@ -50,8 +69,16 @@ const router = createBrowserRouter([
             element: <ResourceDetail />,
           },
           { path: "/platform/messages", element: <h1>Mensajes</h1> },
-          { path: "/platform/configuration", element: <h1>Configuracion</h1> },
+          { path: "/platform/configuration", element: <UserConfiguration /> },
+          {
+            path: "/platform/configuration/edit",
+            element: <UserEditProfile />,
+          },
           { path: "/platform/checkout", element: <Checkout /> },
+          {
+            path: "/platform/checkout/check-payment/:token",
+            element: <CheckPayment />,
+          },
         ],
       },
     ],

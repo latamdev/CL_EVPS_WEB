@@ -17,6 +17,8 @@ export type Resource = {
   courseId?: number;
   _class?: string;
   tags: Array<ITag>;
+  favourite?: boolean;
+  unlocked?: boolean;
 };
 
 export type ITag = {

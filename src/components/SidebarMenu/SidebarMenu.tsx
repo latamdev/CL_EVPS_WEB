@@ -5,9 +5,9 @@ import {
   FaVideo,
   FaBookReader,
   FaComment,
-  FaCogs,
   FaSignOutAlt,
 } from "react-icons/fa";
+import "./SidebarMenu.scss";
 
 function SidebarMenu() {
   const isTheSamePath = (currentPath: string, pathName: string) => {
@@ -16,22 +16,22 @@ function SidebarMenu() {
 
   const getCurrenLinkState = (currentPath: string, pathName: string) => {
     return isTheSamePath(currentPath, pathName)
-      ? "flex gap-x-4 items-center py-2 text-morazul group font-extrabold"
-      : "flex gap-x-4 items-center py-2 text-gray-500 hover:text-morazul group";
+      ? "flex gap-x-4 items-center py-2 text-white font-bold group font-extrabold"
+      : "flex gap-x-4 items-center py-2 text-gray-400 hover:font-bold group";
   };
 
   const getCurrentSpanState = (currentPath: string, pathName: string) => {
     return isTheSamePath(currentPath, pathName)
-      ? "absolute w-1.5 h-8 bg-customYellow rounded-r-full left-0  "
-      : "absolute w-1.5 h-8 bg-customYellow rounded-r-full left-0 scale-y-0 -translate-x-full group-hover:scale-y-100 group-hover:translate-x-0 transition-transform ease-in-out";
+      ? "absolute w-1.5 h-8 bg-info rounded-r-full left-0  "
+      : "absolute w-1.5 h-8 bg-info rounded-r-full left-0 scale-y-0 -translate-x-full group-hover:scale-y-100 group-hover:translate-x-0 transition-transform ease-in-out";
   };
 
   const { pathname: currentPath } = useLocation();
 
   return (
-    <div className="flex">
-      <div className="py-6 px-10 w-64 border-r border-gray-200">
-        <img alt="logo" src={logo} className="w-40 mr-auto ml-auto" />
+    <div className="flex bg-primary h-screen">
+      <div className="py-6 px-10 w-48">
+        <img alt="logo" src={logo} className="w-32 mr-auto ml-auto" />
         <div id="sidebar-menu" className="flex flex-col gap-y-6 pt-20">
           <Link
             to={"/platform"}
@@ -74,23 +74,22 @@ function SidebarMenu() {
             />
             <span>Mensajes</span>
           </Link>
-          <Link
+          {/*           <Link
             to={"/platform/configuration"}
-            className={getCurrenLinkState(
+            className={`${getCurrenLinkState(
               currentPath,
               "/platform/configuration"
-            )}
+            )} w-full bottom-10 absolute `}
           >
-            <FaCogs />
             <span
-              className={getCurrentSpanState(
+              className={getCurrentUserOptionState(
                 currentPath,
                 "/platform/configuration"
               )}
             />
-            <span>Configuración</span>
-          </Link>
-          <Link
+            <UserConfigurationMenu />
+          </Link> */}
+          {/*           <Link
             to={"/platform/sign-out"}
             className={getCurrenLinkState(currentPath, "/platform/sign-out")}
           >
@@ -99,7 +98,7 @@ function SidebarMenu() {
               className={getCurrentSpanState(currentPath, "/platform/sign-out")}
             />
             <span>Salir</span>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

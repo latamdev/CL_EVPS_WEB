@@ -2,22 +2,39 @@ import { Link, Navigate } from "react-router-dom";
 import "./Login.css";
 import SocialLogin from "./SocialLogin/SocialLogin";
 import logo from "../../assets/images/plurality_logo.png";
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { doLogin } from "./service";
-import { MOCK_LOGIN_REQUEST } from "./LoginStubs";
+import useUser from "../../hooks/useUser";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 function Login() {
+  const { login } = useUser();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
   const mutation = useMutation({
     mutationFn: doLogin,
-    onSuccess: () => {
-      console.log("Login success");
+    onSuccess: (response) => {
+      login(response.token);
+      console.log("Login success", response);
+    },
+    onError: ({ response: { data } }) => {
+      console.log(data);
+      setError(data.message);
     },
   });
 
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
-    await mutation.mutate(MOCK_LOGIN_REQUEST);
+    await mutation.mutate({ email, password });
+  };
+
+  const handleErrorMessage = (message: string) => {
+    return message.includes("Password")
+      ? "La contraseña es incorrecta"
+      : "El usuario no se ha encontrado";
   };
 
   if (mutation.isSuccess) {
@@ -51,18 +68,31 @@ function Login() {
             >
               <label htmlFor="email">Correo:</label>
               <input
+                required
                 type="text"
                 id="email"
-                className="form-input px-4 py-3 rounded-lg"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                className="form-input px-4 py-3 rounded-lg focus:border-morazul"
               />
               <label htmlFor="password">Contraseña:</label>
               <input
+                required
                 type="password"
                 id="password"
-                className="form-input px-4 py-3 rounded-lg"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                className="form-input px-4 py-3 rounded-lg focus:border-morazul"
               />
-              <button className="rounded-lg text-center font-bold bg-blue-800 text-white p-2 pl-4 pr-4 hover:bg-blue-700">
-                Ingresar
+
+              {error && (
+                <div className="bg-danger text-white border border-red-600 rounded-lg font-bold p-3">
+                  {handleErrorMessage(error)}
+                </div>
+              )}
+
+              <button className="rounded-lg flex items-center justify-center text-center font-bold bg-morazul text-white p-2 pl-4 pr-4 hover:bg-secondary hover:text-black ease-linear transition-all duration-150">
+                {mutation.isLoading ? <LoadingSpinner /> : <div>Ingresar</div>}
               </button>
 
               <SocialLogin />
