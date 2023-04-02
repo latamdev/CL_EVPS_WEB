@@ -19,6 +19,8 @@ import { ProSidebarProvider } from "react-pro-sidebar";
 import Register from "./components/Register/Register";
 import ScrollToTop from "./hooks/ScrollToTop";
 import CheckPayment from "./components/Checkout/CheckPayment/CheckPayment";
+import Dashboard from "./components/Dashboard/Dashboard";
+import './fonts/BalooBhai-Regular.ttf'
 
 const router = createBrowserRouter([
   {
@@ -51,11 +53,11 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <h1 style={{ zIndex: 0 }}>Index</h1>,
+            element: <Dashboard />,
           },
           {
             path: "/platform/videos",
-            element: <Videos />,
+            element: <Videos parent={'root'} />,
           },
           { path: "/platform/videos/:id", element: <h1>Videos</h1> },
           {
