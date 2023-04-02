@@ -1,4 +1,6 @@
+import { ReactNode } from "react";
+
 export interface AlertProps {
   title: string;
-  description: string;
+  children: ReactNode;
 }

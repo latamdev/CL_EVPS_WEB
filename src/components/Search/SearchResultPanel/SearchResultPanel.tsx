@@ -39,7 +39,7 @@ function SearchResultPanel(props: SearchResultProps) {
 
   return props.resultsArray.results.length > 0 ? (
     <div className="w-1/2 absolute z-10 top-[4.5rem] pl-[8.88rem] pr-[8.88rem]">
-      <div className="bg-gray-100 text-black  border border-gray-300 border-t-0">
+      <div className="bg-white text-black  border border-black border-t-0 rounded-b-lg">
         {props.resultsArray.results.map((result: any) => {
           return (
             <div key={result.resourceType}>
@@ -52,7 +52,7 @@ function SearchResultPanel(props: SearchResultProps) {
                     <div
                       key={resource.id}
                       onClick={() => handleOnResourceClick(resource)}
-                      className="p-3 flex space-x-6 align-middle content-center items-center hover:cursor-pointer hover:bg-yellow-500"
+                      className="p-3 flex space-x-6 align-middle content-center items-center hover:cursor-pointer hover:bg-danger hover:text-white"
                     >
                       <ResourceImage
                         img={resource.image}
@@ -73,9 +73,9 @@ function SearchResultPanel(props: SearchResultProps) {
           onClick={() => {
             handleQueryForAllResults();
           }}
-          className="flex justify-center p-4 hover:bg-yellow-400 hover:cursor-pointer"
+          className="flex justify-center p-4 hover:bg-danger text-gray-600  hover:text-white hover:cursor-pointer"
         >
-          <h1 className="text-xl text-gray-600 font-semibold hover:border-b-2 hover:border-gray-600">
+          <h1 className="text-xl font-semibold hover:border-b-2 hover:text-white">
             Ver todos los resultados
           </h1>
         </div>

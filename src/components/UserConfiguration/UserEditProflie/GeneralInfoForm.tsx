@@ -54,10 +54,9 @@ function GeneralInfoForm() {
   return (
     <div className="p-5">
       {!mutation.isLoading && showAlert && (
-        <SuccessAlert
-          title="Datos actualizados"
-          description="Tus datos han sido actualizados exitosamente."
-        />
+        <SuccessAlert title="Datos actualizados">
+          <p>Tus datos han sido actualizados exitosamente.</p>
+        </SuccessAlert>
       )}
 
       <form onSubmit={(e) => handleUpdateUserInfo(e)} className="mt-10">

@@ -14,7 +14,7 @@ const UserConfiguration: React.FC = () => {
   const { currentUser } = useContext(UserContext);
 
   return (
-    <div className=" h-full">
+    <div className="w-full h-full">
       <div className="magicpattern text-white p-10">
         <div className="rounded flex flex-col items-center justify-center">
           <div className="flex w-full justify-end">

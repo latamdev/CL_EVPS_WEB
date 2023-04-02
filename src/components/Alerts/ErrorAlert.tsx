@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaWindowClose } from "react-icons/fa";
 import { AlertProps } from "./interfaces";
 
-const SuccessAlert: React.FC<AlertProps> = (props) => {
+const ErrorAlert: React.FC<AlertProps> = (props) => {
   const { title, children } = props;
   const [showAlert, setShowAlert] = useState(true);
 
@@ -10,7 +10,7 @@ const SuccessAlert: React.FC<AlertProps> = (props) => {
     <>
       {showAlert && (
         <div
-          className="bg-green-400 border-t-4 border-green-700 text-green-900 rounded-lg text-teal-900 px-4 py-3 shadow-md"
+          className="bg-red-400 border-t-4 border-danger text-red-900 rounded-lg text-teal-900 px-4 py-3 shadow-md"
           role="alert"
         >
           <div className="flex">
@@ -42,4 +42,4 @@ const SuccessAlert: React.FC<AlertProps> = (props) => {
   );
 };
 
-export default SuccessAlert;
+export default ErrorAlert;

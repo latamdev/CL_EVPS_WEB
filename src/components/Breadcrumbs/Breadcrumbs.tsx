@@ -9,8 +9,6 @@ function Breadcrumbs() {
       getResourceById(match.params.id)
     );
 
-    console.log(data);
-
     return <span>{data?.title}</span>;
   };
 
@@ -22,14 +20,17 @@ function Breadcrumbs() {
     { path: "/platform/messages", breadcrumb: "Mensajes" },
     { path: "/platform/configuration", breadcrumb: "Configuración" },
     { path: "/platform/configuration/edit", breadcrumb: "Editar Usuario" },
+    {
+      path: "/platform/checkout/check-payment/:id",
+      breadcrumb: "Transacción",
+    },
   ];
 
   const breadcrumbs = useBreadcrumbs(routes);
   const location = useLocation();
-  console.log(breadcrumbs);
 
   return (
-    <nav className="pl-2 gap-3 flex flex-row last:af'ter:content-[''] w-full  font-light bg-primary">
+    <nav className="pl-2 gap-3 flex flex-row last:af'ter:content-[''] w-full z-50 font-light bg-primary">
       {breadcrumbs
         .filter(({ match }) => match.pathname !== "/")
         .map(({ match, breadcrumb }) => (

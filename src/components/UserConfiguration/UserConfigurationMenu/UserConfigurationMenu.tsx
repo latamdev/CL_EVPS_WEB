@@ -20,9 +20,9 @@ const UserConfigurationMenu: React.FC = () => {
         <div className="flex items-center">
           <ResourceImage
             img={`${IMG_USER_URL}${userContext.avatar}`}
-            className="h-16 w-16  rounded-full absolute self-center border-black border-2   hover:bg-gray-100"
+            className="h-16 w-16 rounded-full absolute self-center border-white border-2 hover:bg-gray-100"
           />
-          <span className="bg-red-600 text-white text-sm font-bold pl-1 pr-1 rounded-full relative left-14  bottom-6">
+          <span className="bg-danger text-white text-sm font-bold pl-1 pr-1 rounded-full relative left-14  bottom-6">
             0
           </span>
         </div>

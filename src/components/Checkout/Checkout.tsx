@@ -21,7 +21,7 @@ function Checkout() {
   }, []);
 
   return (
-    <div className="px-10 py-10">
+    <div className="px-10 w-full py-10">
       <SkeletonWrapper isLoading={isLoading} skeleton={<CheckoutSkeleton />}>
         <>
           <h1 className="font-bold text-4xl self-center">Checkout</h1>

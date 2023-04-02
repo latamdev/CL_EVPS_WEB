@@ -15,6 +15,10 @@ import Checkout from "./components/Checkout/Checkout";
 import Logout from "./components/Logout/Logout";
 import UserConfiguration from "./components/UserConfiguration/UserConfiguration";
 import UserEditProfile from "./components/UserConfiguration/UserEditProflie/UserEditProfile";
+import { ProSidebarProvider } from "react-pro-sidebar";
+import Register from "./components/Register/Register";
+import ScrollToTop from "./hooks/ScrollToTop";
+import CheckPayment from "./components/Checkout/CheckPayment/CheckPayment";
 
 const router = createBrowserRouter([
   {
@@ -26,12 +30,20 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
+    path: "/create-account",
+    element: <Register />,
+  },
+  {
     path: "/sign-out",
     element: <Logout />,
   },
   {
     path: "/platform",
-    element: <Root />,
+    element: (
+      <ProSidebarProvider>
+        <Root />
+      </ProSidebarProvider>
+    ),
     errorElement: <h1>Error</h1>,
     children: [
       {
@@ -61,6 +73,10 @@ const router = createBrowserRouter([
             element: <UserEditProfile />,
           },
           { path: "/platform/checkout", element: <Checkout /> },
+          {
+            path: "/platform/checkout/check-payment/:token",
+            element: <CheckPayment />,
+          },
         ],
       },
     ],
