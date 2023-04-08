@@ -39,7 +39,7 @@ function Search() {
     >
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="w-full lg:w-3/5 lg:mx-auto"
+        className="w-[20rem] sm:w-[30rem] lg:w-[20rem] xl:w-[30rem] 2xl:w-[50rem] lg:mx-auto"
       >
         <label
           htmlFor="default-search"

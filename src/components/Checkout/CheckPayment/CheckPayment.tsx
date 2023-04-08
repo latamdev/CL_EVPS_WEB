@@ -39,7 +39,7 @@ const CheckPayment = () => {
                   to={"/platform/"}
                   className="ml-1 flex gap-1 items-center hover:text-primary"
                 >
-                  <FaHome /> Dashboard
+                  <FaHome /> Inicio
                 </Link>
               </b>
             </p>

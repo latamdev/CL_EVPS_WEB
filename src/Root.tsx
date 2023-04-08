@@ -1,9 +1,8 @@
-import { createContext, useMemo, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { createContext, useMemo } from "react";
+import { Outlet } from "react-router-dom";
 import Breadcrumbs from "./components/Breadcrumbs/Breadcrumbs";
 import ShoppingCartAlert from "./components/Cart/ShoppingCartAlert";
 import Search from "./components/Search/Search";
-import SidebarMenu from "./components/SidebarMenu/SidebarMenu";
 import UserConfigurationMenu from "./components/UserConfiguration/UserConfigurationMenu/UserConfigurationMenu";
 import { User } from "./components/UserConfiguration/UserEditProflie/interfaces";
 import useUser from "./hooks/useUser";
@@ -12,6 +11,7 @@ import { useProSidebar } from "react-pro-sidebar";
 import { FaBars } from "react-icons/fa";
 import logo from "./assets/images/short_logo.png";
 import ScrollToTop from "./hooks/ScrollToTop";
+import withAuthentication from "./hocs/withAuthentication";
 
 export const UserContext = createContext({
   currentUser: {} as User,
@@ -80,4 +80,4 @@ function Root() {
   );
 }
 
-export default Root;
+export default withAuthentication(Root);

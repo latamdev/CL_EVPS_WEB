@@ -24,7 +24,9 @@ function Checkout() {
     <div className="px-10 w-full py-10">
       <SkeletonWrapper isLoading={isLoading} skeleton={<CheckoutSkeleton />}>
         <>
-          <h1 className="font-bold text-4xl self-center">Checkout</h1>
+          <h1 className="font-bold text-4xl self-center font-face-bb">
+            Finalizar compra
+          </h1>
           <div className="flex">
             <div className="w-1/2">
               <div className="mt-3 border-b-2 pb-2 flex justify-between items-center">

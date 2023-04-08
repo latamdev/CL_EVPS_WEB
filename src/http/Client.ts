@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { ResponseType } from "axios";
 
 const APPLICATION_JSON = "application/json";
 const client = axios.create({
@@ -17,9 +17,15 @@ export const httpGetRequest = async (
 
 export const httpPostRequest = async <T>(
   url: string,
-  data: any
+  data: any,
+  headers: any = { "Content-Type": APPLICATION_JSON },
+  responseType?: ResponseType
 ): Promise<T> => {
+  console.log(headers);
   return client
-    .post(url, data, { headers: { "Content-Type": APPLICATION_JSON } })
+    .post(url, data, {
+      responseType: (responseType as ResponseType) || "json",
+      headers: headers,
+    })
     .then(({ data }) => data);
 };

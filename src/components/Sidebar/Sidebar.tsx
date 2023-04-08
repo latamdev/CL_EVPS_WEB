@@ -50,7 +50,7 @@ const Sidebar = () => {
             <FaHome />
             <span className={getCurrentSpanState(currentPath, "/platform")} />
 
-            <span>Dashboard</span>
+            <span>Inicio</span>
           </div>
         </MenuItem>
         <MenuItem
