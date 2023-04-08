@@ -63,7 +63,7 @@ const ResourceDetail = () => {
               >
                 <div className="bg-white border shadow-lg rounded-lg p-10 h-fit">
                   <div className="flex flex-row space-x-3">
-                    <h1 className="font-bold text-4xl self-center">
+                    <h1 className="font-bold text-4xl self-center font-face-bb">
                       {data?.title}
                     </h1>
                     <div className="font-medium text-white align-middle self-center">

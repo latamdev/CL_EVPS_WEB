@@ -17,10 +17,9 @@ import UserConfiguration from "./components/UserConfiguration/UserConfiguration"
 import UserEditProfile from "./components/UserConfiguration/UserEditProflie/UserEditProfile";
 import { ProSidebarProvider } from "react-pro-sidebar";
 import Register from "./components/Register/Register";
-import ScrollToTop from "./hooks/ScrollToTop";
 import CheckPayment from "./components/Checkout/CheckPayment/CheckPayment";
 import Dashboard from "./components/Dashboard/Dashboard";
-import './fonts/BalooBhai-Regular.ttf'
+import "./fonts/BalooBhai-Regular.ttf";
 
 const router = createBrowserRouter([
   {
@@ -57,7 +56,7 @@ const router = createBrowserRouter([
           },
           {
             path: "/platform/videos",
-            element: <Videos parent={'root'} />,
+            element: <Videos parent={"root"} />,
           },
           { path: "/platform/videos/:id", element: <h1>Videos</h1> },
           {
