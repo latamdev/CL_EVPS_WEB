@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.content-container{
+    @apply ml-20 mt-40
+}
+.left-panel{
+    @apply  pl-20 pr-20 
+}
+.right-panel{
+    @apply  ml-auto mr-10
+}
+.btn-custom{
+    @apply px-6 py-2 rounded-md shadow-sm font-medium transition duration-200 ease-in-out transform hover:scale-105
+}
+.btn-primary{
+    @apply bg-morazul text-white hover:bg-customYellow
+}
+.list-row{
+    @apply shadow-sm 
+}
+.col-title{
+    @apply font-bold
+}
+.btn-buy{
+    @apply w-full h-16 px-6 text-2xl
+}
