@@ -1,5 +1,4 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
-import React, { useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { FaHome } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import { useCart } from "react-use-cart";
@@ -13,7 +12,7 @@ const CheckPayment = () => {
   const { token } = useParams();
   const { emptyCart } = useCart();
 
-  const { data, isLoading, isError, error } = useQuery(
+  const { data, isLoading } = useQuery(
     ["CHECK_PAYMENT_QUERY", token],
     () => doCheck(token as string),
     {

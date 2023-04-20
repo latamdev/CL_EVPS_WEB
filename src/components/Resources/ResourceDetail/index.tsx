@@ -11,7 +11,6 @@ import "./index.css";
 import TeacherCard from "../TeacherCard/TeacherCard";
 import TeacherCardSkeleton from "../TeacherCard/TeacherCardSkeleton/TeacherCardSkeleton";
 import UnlockedResource from "../UnlockedResource/UnlockedResource";
-import { IMG_RESOURCE_URL } from "./constants";
 
 const ResourceDetail = () => {
   const { id } = useParams();

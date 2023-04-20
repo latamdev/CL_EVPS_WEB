@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Stepper, Step } from "react-form-stepper";
+import { Stepper } from "react-form-stepper";
 import InformationResourceFormStep from "./InformationResourceFormStep";
 import { UploadResourceForm } from "./interface";
 import ResourceTypeFormStep from "./ResourceTypeFormStep";

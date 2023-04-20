@@ -17,7 +17,7 @@ const TagsSelect: React.FC<TagsSelectProps> = (props) => {
   const [selectedTags, setSelectedTags] = useState<any>(formData?.tags);
   const [options, setOptions] = useState();
 
-  const { data, isLoading, error } = useQuery({
+  useQuery({
     queryKey: ["GET_ALL_TAGS_QUERY"],
     queryFn: getAllTags,
     onSuccess: (data) => {
