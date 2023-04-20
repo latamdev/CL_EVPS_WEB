@@ -1,7 +1,5 @@
 import React, { FC } from "react";
-import { VideoResponse } from "./interfaces";
 import { ClockIcon, ChartBarIcon } from "@heroicons/react/24/outline";
-import vidPlaceholder from "../../assets/images/video_placeholder.jpg";
 import { useQuery } from "@tanstack/react-query";
 import { getResource } from "./service";
 import SkeletonWrapper from "../SkeletonWrapper";
@@ -21,7 +19,7 @@ const ResourceListItem: FC<ResourceListItemProps> = ({
   parent,
 }) => {
   const navigate = useNavigate();
-  const { data, isLoading, isError, error } = useQuery(
+  const { data, isLoading } = useQuery(
     ["RESOURCE_ITEM_QUERY", resourceId],
     () => getResource(resourceId)
   );

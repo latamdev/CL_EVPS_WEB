@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 import { SearchResults } from "../Search/SearchResultPanel/interfaces";
 import SkeletonWrapper from "../SkeletonWrapper";
 import ResourceTable from "../Videos/ResourceTable";
-import Videos from "../Videos/ResourceTable";
 import ResourcesSkeleton from "./ResourcesSkeleton";
 import { getAllResources } from "./service";
 
@@ -15,7 +14,7 @@ function Resources() {
     location.state !== null ? (location.state as SearchResults) : undefined;
   const [dataList, setDataList] = useState<any>([]);
 
-  const { data, isLoading, error } = useQuery(
+  const { data, isLoading } = useQuery(
     ["GET_ALL_RESOURCES", resourceType],
     () => getAllResources(resourceType)
   );

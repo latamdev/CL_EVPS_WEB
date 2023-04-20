@@ -7,7 +7,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./components/Login/Login";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import Root from "./Root";
-import Videos from "./components/Videos/ResourceTable";
 import ResourceDetail from "./components/Resources/ResourceDetail";
 import Resources from "./components/Resources/Resources";
 import { CartProvider } from "react-use-cart";
