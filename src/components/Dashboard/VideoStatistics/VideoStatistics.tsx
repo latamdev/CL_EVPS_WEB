@@ -18,7 +18,7 @@ const VideoStatistics = () => {
     { name: "sun", hr: 2 },
   ];
   return (
-    <div className="mx-auto">
+    <div className="mx-auto bg-white border shadow-lg rounded-lg p-10 h-fit">
       <p className="font-face-bb">Your statistics</p>
       <hr></hr>
       <div className="flex flex-row justify-between mt-3">

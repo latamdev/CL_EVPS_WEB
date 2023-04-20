@@ -2,6 +2,7 @@ import React from "react";
 import ResourceImage from "../ResourceImage/ResourceImage";
 import { doDownloadEbook } from "./service";
 import { useMutation } from "@tanstack/react-query";
+import LoadingSpinner from "../../LoadingSpinner/LoadingSpinner";
 
 const UnlockedEbook = ({ data }) => {
   const mutation = useMutation({
@@ -31,10 +32,11 @@ const UnlockedEbook = ({ data }) => {
         }
       />
       <button
+        disabled={mutation.isLoading}
         onClick={() => downloadEbook()}
         className="bg-info w-80 mx-auto text-white font-bold text-2xl rounded-lg p-2 hover:bg-secondary hover:text-black ease-in transition-all duration-150"
       >
-        Descargar Ebook
+        {mutation.isLoading ? <LoadingSpinner /> : <div>Descargar Ebook</div>}
       </button>
     </div>
   );

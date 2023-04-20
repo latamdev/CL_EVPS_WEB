@@ -21,6 +21,10 @@ function Breadcrumbs() {
     { path: "/platform/configuration", breadcrumb: "Configuración" },
     { path: "/platform/configuration/edit", breadcrumb: "Editar Usuario" },
     {
+      path: "/platform/checkout",
+      breadcrumb: "Finalizar compra",
+    },
+    {
       path: "/platform/checkout/check-payment/:id",
       breadcrumb: "Transacción",
     },

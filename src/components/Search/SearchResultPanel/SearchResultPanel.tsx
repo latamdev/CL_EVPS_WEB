@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { QueryClient } from "@tanstack/react-query";
 import { getSearchResults } from "./service";
 import ResourceImage from "../../Resources/ResourceImage/ResourceImage";
+import { IMG_RESOURCE_URL } from "../constants";
 
 export interface SearchResultProps {
   resultsArray: SearchResults;
