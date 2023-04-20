@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import React, { FormEvent, useContext, useState } from "react";
 import useUser from "../../../hooks/useUser";
 import { httpPostRequest } from "../../../http/UserClient";

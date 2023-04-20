@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaArrowDown } from "react-icons/fa";
-import useUser from "../../../hooks/useUser";
 import { UserContext } from "../../../Root";
 import ResourceImage from "../../Resources/ResourceImage/ResourceImage";
 import { IMG_USER_URL } from "../constants";
@@ -8,7 +7,6 @@ import UserConfigurationMenuOptions from "../UserConfigurationMenuOptions/UserCo
 
 const UserConfigurationMenu: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const { currentUser: user } = useUser();
   const { currentUser: userContext } = useContext(UserContext);
 
   return (

@@ -20,7 +20,10 @@ export const UserContext = createContext({
 
 function Root() {
   const { currentUser, setCurrentUser } = useUser();
-  const value = useMemo(() => ({ currentUser, setCurrentUser }), [currentUser]);
+  const value = useMemo(
+    () => ({ currentUser, setCurrentUser }),
+    [currentUser, setCurrentUser]
+  );
   const { collapseSidebar, collapsed } = useProSidebar();
 
   return (

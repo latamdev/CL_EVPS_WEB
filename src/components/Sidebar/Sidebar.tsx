@@ -1,11 +1,4 @@
-import React from "react";
-import {
-  FaBookReader,
-  FaComment,
-  FaHome,
-  FaStepBackward,
-  FaStepForward,
-} from "react-icons/fa";
+import { FaBookReader, FaComment, FaHome } from "react-icons/fa";
 import {
   Sidebar as ProSidebar,
   Menu,
@@ -13,12 +6,11 @@ import {
   useProSidebar,
 } from "react-pro-sidebar";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../../assets/images/plurality_logo.png";
 import "./Sidebar.css";
 
 const Sidebar = () => {
   const { pathname: currentPath } = useLocation();
-  const { collapseSidebar, collapsed } = useProSidebar();
+  const { collapsed } = useProSidebar();
 
   const isTheSamePath = (currentPath: string, pathName: string) => {
     return new RegExp(`^${currentPath}$`).test(pathName);

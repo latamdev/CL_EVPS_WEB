@@ -1,20 +1,17 @@
-import Videos from "../Videos/ResourceTable";
 import WelcomeMessage from "./WelcomeMessage/WelcomeMessage";
 import VideoSummary from "./VideoSummary/VideoSummary";
 import VideoStatistics from "./VideoStatistics/VideoStatistics";
 import { useQuery } from "@tanstack/react-query";
 import { getAllUserResources } from "./service";
-import useUser from "../../hooks/useUser";
 import { useContext } from "react";
 import { UserContext } from "../../Root";
 import SkeletonWrapper from "../SkeletonWrapper";
 import ResourceTable from "../Videos/ResourceTable";
 
-const Dashboard = ({}) => {
+const Dashboard = () => {
   const { currentUser } = useContext(UserContext);
-  const { data, isLoading, isError, error } = useQuery(
-    ["USER_RESOURCE_QUERY"],
-    () => getAllUserResources(currentUser.id)
+  const { data, isLoading } = useQuery(["USER_RESOURCE_QUERY"], () =>
+    getAllUserResources(currentUser.id)
   );
 
   return (

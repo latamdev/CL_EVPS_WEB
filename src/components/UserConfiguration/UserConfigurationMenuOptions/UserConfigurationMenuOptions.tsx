@@ -1,5 +1,4 @@
-import debounce from "lodash.debounce";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { FaSignOutAlt, FaUserAlt } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 
@@ -37,7 +36,7 @@ const UserConfigurationMenuOptions: React.FC<
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [menuRef]);
+  }, [menuRef, setShowMenu]);
 
   return (
     <>
