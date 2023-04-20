@@ -1,8 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { useCart } from "react-use-cart";
 import { formatCurrencyToCLP } from "../../Resources/ResourceDetail/utils";
 import logoFlow from "../../../assets/images/logo-flow.svg";
-import { Checkout } from "../interface";
 import {
   FLOW_FEES_PERCENTAGE,
   PAYMENT_PLATFORM,

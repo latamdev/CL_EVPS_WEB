@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import useUser from "../../hooks/useUser";
 
 function Logout() {
@@ -6,7 +6,7 @@ function Logout() {
 
   useEffect(() => {
     logout();
-  }, []);
+  }, [logout]);
 
   return <div></div>;
 }

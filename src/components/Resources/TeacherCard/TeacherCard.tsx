@@ -4,7 +4,7 @@ import { COUNTRY_FLAGS_API } from "./constants";
 import { TeacherCardProps } from "./interfaces";
 
 const TeacherCard: React.FC<TeacherCardProps> = (props) => {
-  const { name, picture, description, videosCount, languages } = props;
+  const { name, description, videosCount } = props;
 
   return (
     <div className="bg-white p-10 pb-2 flex flex-col space-y-2 shadow-lg rounded-lg border">
@@ -26,9 +26,21 @@ const TeacherCard: React.FC<TeacherCardProps> = (props) => {
         |
         <span className="flex flex-row gap-2 items-center">
           Idiomas:
-          <img src={`${COUNTRY_FLAGS_API}/US/flat/64.png`} className="w-6" />
-          <img src={`${COUNTRY_FLAGS_API}/BR/flat/64.png`} className="w-6" />
-          <img src={`${COUNTRY_FLAGS_API}/ES/flat/64.png`} className="w-6" />
+          <img
+            alt="image_flag_US"
+            src={`${COUNTRY_FLAGS_API}/US/flat/64.png`}
+            className="w-6"
+          />
+          <img
+            alt="image_flag_BR"
+            src={`${COUNTRY_FLAGS_API}/BR/flat/64.png`}
+            className="w-6"
+          />
+          <img
+            alt="image_flag_ES"
+            src={`${COUNTRY_FLAGS_API}/ES/flat/64.png`}
+            className="w-6"
+          />
         </span>
       </div>
 

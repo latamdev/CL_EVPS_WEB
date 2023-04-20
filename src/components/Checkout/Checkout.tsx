@@ -23,7 +23,7 @@ function Checkout() {
   return (
     <div className="px-10 w-full py-10">
       <SkeletonWrapper isLoading={isLoading} skeleton={<CheckoutSkeleton />}>
-        <>
+        <div className="bg-white border shadow-lg rounded-lg p-10 h-fit">
           <h1 className="font-bold text-4xl self-center font-face-bb">
             Finalizar compra
           </h1>
@@ -75,7 +75,7 @@ function Checkout() {
               <PaymentBox />
             </div>
           </div>
-        </>
+        </div>
       </SkeletonWrapper>
 
       <Recommend ids={items.map((item) => item.id)} />

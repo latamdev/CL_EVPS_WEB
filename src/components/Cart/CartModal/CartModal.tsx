@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { ITag, Resource } from "../../Resources/ResourceDetail/interfaces";
 import ResourceImage from "../../Resources/ResourceImage/ResourceImage";
 import Tag from "../../Tag/Tag";
-
 interface CartModalProps {
   show: boolean;
   setShowModal: (value: boolean) => void;

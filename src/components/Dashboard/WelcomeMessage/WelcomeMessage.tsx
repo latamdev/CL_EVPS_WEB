@@ -1,16 +1,20 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../../../Root";
 
 const WelcomeMessage = () => {
+  const { currentUser } = useContext(UserContext);
   const [name, setName] = useState("");
   useEffect(() => {
     //TODO: obtener name de context de sesion
     setName("Josh");
   }, []);
 
+  console.log(currentUser);
+
   return (
-    <div className="px-10 py-5 bg-gray-100 rounded-xl w-3/4">
-      <p className="font-face-bb text-6xl">Hello {name} 👋</p>
-      <p className="font-face-bb">It's good to see you again.</p>
+    <div className="px-10 py-5 w-3/4 bg-white border shadow-lg rounded-lg p-10 h-fit">
+      <p className="font-face-bb text-6xl">Hola {currentUser.first_name} 👋</p>
+      <p className="font-face-bb">Es bueno verte otra vez.</p>
     </div>
   );
 };

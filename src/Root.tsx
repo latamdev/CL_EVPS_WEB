@@ -20,7 +20,10 @@ export const UserContext = createContext({
 
 function Root() {
   const { currentUser, setCurrentUser } = useUser();
-  const value = useMemo(() => ({ currentUser, setCurrentUser }), [currentUser]);
+  const value = useMemo(
+    () => ({ currentUser, setCurrentUser }),
+    [currentUser, setCurrentUser]
+  );
   const { collapseSidebar, collapsed } = useProSidebar();
 
   return (
@@ -59,18 +62,18 @@ function Root() {
             <Breadcrumbs />
           </div>
         </div>
-        <div className="mt-[7.5rem]">
+        <div className="mt-[7.2rem]">
           <div className="fixed h-screen">
             <Sidebar />
           </div>
           <div
             className={
               (!collapsed
-                ? "ml-[15.56rem] ease-linear transition-all duration-150"
+                ? "ml-[15.5rem] ease-linear transition-all duration-150"
                 : "ml-20 ease-linear transition-all duration-150") + ""
             }
           >
-            <div className="flex w-[100%]">
+            <div className="flex w-[100%] h-screen bg-[#F2F4F7]">
               <Outlet />
             </div>
           </div>
