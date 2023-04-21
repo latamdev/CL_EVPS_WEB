@@ -74,10 +74,10 @@ const ResourceDetail = () => {
                     <div className="mx-auto w-1/2 lg:w-1/3 mt-10">
                       <ResourceImage
                         img={data?.image as string}
-                        className="object-cover h-80 w-full border-2 border-gray-400 rounded-xl"
+                        className="object-contain h-80 w-full border-2 border-gray-400 rounded-xl inset-0 z-20 "
                       />
                     </div>
-                    <div className="w-full mt-10 lg:ml-10 lg:mr-10 flex flex-col">
+                    <div className="w-full mt-10 flex-1 lg:ml-10 lg:mr-10 flex flex-col">
                       <p>{data?.description ? data.description : "---"}</p>
 
                       <div className="mt-10 flex space-x-5">

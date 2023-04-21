@@ -1,5 +1,4 @@
 import { httpPostRequest } from "../../../http/UserClient";
-import { User } from "./interfaces";
 
 const UPDATE_URL = "/user/update-user";
 

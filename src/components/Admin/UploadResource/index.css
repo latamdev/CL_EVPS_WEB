@@ -1,0 +1,13 @@
+.mt-0-i {
+  margin-top: 0 !important;
+}
+
+.select-focused-border {
+  border-color: #150e3c !important;
+}
+
+.tag-selector__control {
+  padding: 0.5em;
+  border-radius: 0.5em !important;
+  border-color: #000 !important;
+}

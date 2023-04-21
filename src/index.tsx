@@ -7,7 +7,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./components/Login/Login";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import Root from "./Root";
-import Videos from "./components/Videos/Videos";
 import ResourceDetail from "./components/Resources/ResourceDetail";
 import Resources from "./components/Resources/Resources";
 import { CartProvider } from "react-use-cart";
@@ -20,6 +19,7 @@ import Register from "./components/Register/Register";
 import CheckPayment from "./components/Checkout/CheckPayment/CheckPayment";
 import Dashboard from "./components/Dashboard/Dashboard";
 import "./fonts/BalooBhai-Regular.ttf";
+import UploadResource from "./components/Admin/UploadResource/UploadResource";
 
 const router = createBrowserRouter([
   {
@@ -55,8 +55,12 @@ const router = createBrowserRouter([
             element: <Dashboard />,
           },
           {
-            path: "/platform/videos",
-            element: <Videos parent={"root"} />,
+            path: "/platform/admin/dashboard",
+            element: <h1>Admin dashboard</h1>,
+          },
+          {
+            path: "/platform/admin/new-resource",
+            element: <UploadResource />,
           },
           { path: "/platform/videos/:id", element: <h1>Videos</h1> },
           {

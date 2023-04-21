@@ -22,8 +22,8 @@ const CartButtonAdd: React.FC<CartButtonProps> = (props) => {
       name: data.title,
       price: data.price as number,
       quantity: 1,
-      ["teacher"]: data.teacher,
-      ["image"]: data.image,
+      teacher: data.teacher,
+      image: data.image,
     });
     setshowModal(true);
   };

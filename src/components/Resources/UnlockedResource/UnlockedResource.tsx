@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Resource } from "../ResourceDetail/interfaces";
 import UnlockedVideo from "./UnlockedVideo";
 import UnlockedEbook from "./UnlockedEbook";
