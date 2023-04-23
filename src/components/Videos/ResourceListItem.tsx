@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getResource } from "./service";
 import SkeletonWrapper from "../SkeletonWrapper";
 //import ResourceImage from "../Resources/ResourceImage/ResourceImage";
-import { Link, useNavigate } from "react-router-dom";
+import { Link /* useNavigate */ } from "react-router-dom";
 import ResourceListItemSkeleton from "./ResourceListItemSkeleton";
 import student from "../../assets/images/login_page_bg.jpg";
 import { Tooltip } from "../Tooltip/Tooltip";
