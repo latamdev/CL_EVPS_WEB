@@ -34,7 +34,7 @@ const Sidebar = () => {
   return (
     <ProSidebar
       backgroundColor="#1B2C3F"
-      className="h-screen text-white font-light"
+      className="h-screen text-white font-light z-50"
     >
       <Menu>
         <MenuItem

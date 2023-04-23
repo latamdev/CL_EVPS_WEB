@@ -63,7 +63,7 @@ function Root() {
           </div>
         </div>
         <div className="mt-[7.2rem]">
-          <div className="fixed h-screen">
+          <div className="fixed h-screen z-50">
             <Sidebar />
           </div>
           <div

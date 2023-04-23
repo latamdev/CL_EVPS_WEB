@@ -31,18 +31,18 @@ const CartModal: React.FC<CartModalProps> = (props) => {
               <div className="relative w-full max-w-lg p-4 mx-auto bg-white rounded-md shadow-lg">
                 <div className=" flex flex-col">
                   <div className="flex flex-row w-full space-x-8">
-                    <div className="h-12 w-12 flex  bg-green-100 rounded-full">
-                      <FaCheckCircle className="text-green-800 text-2xl  mx-auto self-center" />
+                    <div className="h-8 w-8 md:h-12 md:w-12 flex  bg-green-100 rounded-full">
+                      <FaCheckCircle className="text-green-800 text-base md:text-2xl  mx-auto self-center" />
                     </div>
 
-                    <h4 className="text-lg font-medium text-gray-800 self-center">
+                    <h4 className="text-sm md:text-lg font-medium text-gray-800 self-center">
                       Has añadido <b>{item.title}</b> al carro
                     </h4>
                   </div>
 
                   <div className="flex mb-2 ">
                     <div className="w-0 lg:w-1/3"></div>
-                    <h1 className="text-2xl text-black w-full lg:w-1/2">
+                    <h1 className="text-base md:text-2xl text-black w-full lg:w-1/2">
                       Temas relacionados
                     </h1>
                   </div>
@@ -50,7 +50,7 @@ const CartModal: React.FC<CartModalProps> = (props) => {
                   <div className="flex align-center  flex-col lg:w-fit  lg:flex-row lg:space-x-12 mt-2 text-[15px] leading-relaxed text-gray-500">
                     <ResourceImage
                       img={item.image as string}
-                      className="object-cover h-32 w-32 border-2 border-gray-400 rounded-xl self-center"
+                      className="object-cover invisible md:visible h-0 w-0 md:h-32 md:w-32 border-2 border-gray-400 rounded-xl self-center"
                     />
 
                     <div className="flex space-x-2 overflow-auto h-max justify-center lg:justify-start ">
@@ -65,7 +65,7 @@ const CartModal: React.FC<CartModalProps> = (props) => {
                   </div>
 
                   <div className="mt-2 flex justify-center lg:justify-end">
-                    <div className="items-center gap-3 mt-3 sm:flex">
+                    <div className="items-center space-x-3  mt-3 sm:flex">
                       <button
                         className=" mt-2 p-2.5  text-white bg-primary rounded-md outline-none ring-offset-2 ring-customYellow focus:ring-2"
                         onClick={() => handleCheckoutAction()}

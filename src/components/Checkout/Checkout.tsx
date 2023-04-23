@@ -21,22 +21,22 @@ function Checkout() {
   }, []);
 
   return (
-    <div className="px-10 w-full py-10">
+    <div className="px-2 md:px-10 w-full py-10">
       <SkeletonWrapper isLoading={isLoading} skeleton={<CheckoutSkeleton />}>
-        <div className="bg-white border shadow-lg rounded-lg p-10 h-fit">
-          <h1 className="font-bold text-4xl self-center font-face-bb">
+        <div className="bg-white border shadow-lg rounded-lg p-5 md:p-10 h-fit">
+          <h1 className="font-bold text-lg md:text-3xl lg:text-4xl self-center font-face-bb">
             Finalizar compra
           </h1>
-          <div className="flex">
-            <div className="w-1/2">
-              <div className="mt-3 border-b-2 pb-2 flex justify-between items-center">
-                <p>
+          <div className="flex flex-col lg:flex-row">
+            <div className="w-full lg:w-1/2">
+              <div className="mt-3 border-b-2 pb-2 flex flex-col md:flex-row justify-between items-center">
+                <p className="md:text-base text-sm">
                   Tienes <b>{items.length}</b> artículos en el carro
                 </p>
                 <button
                   onClick={() => setShowEmptyCartModal(true)}
                   disabled={items.length === 0}
-                  className="text-danger font-bold disabled:text-gray-500 disabled:border-b-0 w-fit h-fit hover:cursor-pointer ease-in-out transition-all duration-150"
+                  className="text-danger font-bold disabled:text-gray-500 text-sm md:text-base disabled:border-b-0 w-fit h-fit hover:cursor-pointer ease-in-out transition-all duration-150"
                 >
                   Vaciar carrito
                 </button>
@@ -47,7 +47,7 @@ function Checkout() {
                   return (
                     <div
                       key={item.id}
-                      className="flex justify-between space-x-14 items-center border-b-2 pb-5 mb-5"
+                      className="flex flex-col xl:flex-row xl:justify-between space-y-3 xl:space-y-0 xl:space-x-14 items-center border-b-2 pb-5 mb-5"
                     >
                       <ResourceImage
                         img={item?.image}
@@ -60,18 +60,18 @@ function Checkout() {
                           Profesor: {item.teacher ? item.teacher : "---"}
                         </h1>
                       </div>
-                      <div className="flex-1">
-                        <CartButtonAdd item={item as any} asLink={true} />
-                      </div>
                       <h1 className="text-xl font-bold flex-1 text-morazul">
                         {formatCurrencyToCLP(item.price)}
                       </h1>
+                      <div className="flex-1">
+                        <CartButtonAdd item={item as any} asLink={true} />
+                      </div>
                     </div>
                   );
                 })}
               </div>
             </div>
-            <div className="w-1/2 pl-20">
+            <div className="w-full lg:w-1/2 lg:pl-20">
               <PaymentBox />
             </div>
           </div>

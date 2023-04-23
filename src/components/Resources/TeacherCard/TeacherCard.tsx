@@ -7,23 +7,22 @@ const TeacherCard: React.FC<TeacherCardProps> = (props) => {
   const { name, description, videosCount } = props;
 
   return (
-    <div className="bg-white p-10 pb-2 flex flex-col space-y-2 shadow-lg rounded-lg border">
-      <span className="text-xl">Profesor: {name}</span>
+    <div className="bg-white p-5 md:p-10 pb-2 flex flex-col space-y-2 shadow-lg rounded-lg border">
+      <span className="text-sm font-semibold md:text-lg">Profesor: {name}</span>
       <img
         src=""
         alt="teacher_picture"
         className="h-60 xl:w-full mx-auto w-60 rounded bg-gray-400"
       />
 
-      <div className="flex flex-row gap-2 items-center justify-between">
+      <div className="flex flex-col md:flex-row gap-2 items-center justify-between pb-2 border-b">
         <Link
           to={"#"}
           className="text-primary border-b border-b-primary font-bold
-           hover:border-b-blue-500 hover:cursor-pointer hover:text-blue-500"
+           hover:border-b-blue-500 hover:cursor-pointer hover:text-blue-500 text-sm"
         >
           {videosCount} videos
         </Link>
-        |
         <span className="flex flex-row gap-2 items-center">
           Idiomas:
           <img

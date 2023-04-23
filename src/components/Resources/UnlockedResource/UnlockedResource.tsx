@@ -14,7 +14,7 @@ const UnlockedResource: React.FC<UnlockedResourceProps> = (props) => {
   return (
     <>
       <div className="magicpattern flex flex-col gap-4 p-10">
-        <h1 className="text-white font-bold text-3xl font-face-bb">
+        <h1 className="text-white font-bold text-2xl lg:text-3xl font-face-bb">
           {data.title}
         </h1>
         <div className="w-full lg:w-3/4 xl:w-1/2 h-fit mx-auto">

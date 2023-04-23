@@ -46,11 +46,11 @@ const Recommend: React.FC<RecommendProps> = ({ ids }) => {
 
   return (
     <SkeletonWrapper isLoading={isLoading} skeleton={<RecommendSkeleton />}>
-      <div className="bg-white border shadow-lg rounded-lg p-10 h-fit mt-14">
-        <h1 className="text-4xl font-bold font-face-bb">
+      <div className="bg-white border shadow-lg rounded-lg p-5 md:p-10 h-fit mt-5 md:mt-10">
+        <h1 className="text-lg md:text-3xl lg:text-4xl font-bold font-face-bb">
           También podría gustarte
         </h1>
-        <div className=" gap-4 grid grid-cols-2 lg:grid lg:grid-cols-4 2xl:grid-cols-5 justify-between mt-10">
+        <div className=" gap-4 grid grid-cols-1 lg:grid md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 justify-between mt-5 md:mt-10">
           {data?.map((resource: Resource, index) => {
             return (
               <div

@@ -34,7 +34,7 @@ const UnlockedEbook = ({ data }) => {
       <button
         disabled={mutation.isLoading}
         onClick={() => downloadEbook()}
-        className="bg-info w-80 mx-auto text-white font-bold text-2xl rounded-lg p-2 hover:bg-secondary hover:text-black ease-in transition-all duration-150"
+        className="bg-info w-full lg:w-80 mx-auto text-white font-bold text-xl lg:text-2xl rounded-lg p-2 hover:bg-secondary hover:text-black ease-in transition-all duration-150"
       >
         {mutation.isLoading ? <LoadingSpinner /> : <div>Descargar Ebook</div>}
       </button>
