@@ -31,7 +31,7 @@ function Resources() {
   }, [results, data]);
 
   return (
-    <div className="w-full py-10  px-10">
+    <div className="w-full py-10 px-2 md:px-10">
       <SkeletonWrapper isLoading={isLoading} skeleton={<ResourcesSkeleton />}>
         <ResourceTable
           parent="resources"

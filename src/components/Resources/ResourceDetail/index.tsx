@@ -39,9 +39,9 @@ const ResourceDetail = () => {
 
   const showTypeOfResource = () => {
     return data?._class?.includes("Video") ? (
-      <span className="bg-blue-600 p-2 rounded-full">Video</span>
+      <span className="bg-blue-600 p-1 lg:p-2 rounded-full">Video</span>
     ) : (
-      <span className="bg-orange-600 p-2 rounded-full">Ebook</span>
+      <span className="bg-orange-600 p-1  lg:p-2 rounded-full">Ebook</span>
     );
   };
 
@@ -55,32 +55,32 @@ const ResourceDetail = () => {
         {data?.unlocked ? (
           <UnlockedResource data={data} />
         ) : (
-          <div className="flex items-stretch xl:flex-row flex-col gap-10 px-10 py-10 w-full">
+          <div className="flex items-stretch xl:flex-row flex-col gap-10 px-2 md:px-10 py-10 w-full">
             <div className="flex-3">
               <SkeletonWrapper
                 isLoading={isLoading}
                 skeleton={<ResourceDetailSkeleton />}
               >
-                <div className="bg-white border shadow-lg rounded-lg p-10 h-fit">
-                  <div className="flex flex-row space-x-3">
-                    <h1 className="font-bold text-4xl self-center font-face-bb">
+                <div className="bg-white border shadow-lg rounded-lg p-5 md:p-10 h-fit">
+                  <div className="flex flex-col lg:flex-row space-y-3 lg:space-y-0 lg:space-x-3">
+                    <h1 className="font-bold text-lg md:text-3xl text-center lg:text-4xl font-face-bb">
                       {data?.title}
                     </h1>
-                    <div className="font-medium text-white align-middle self-center">
+                    <div className="text-sm lg:text-base lg:font-medium text-white align-middle self-center">
                       {showTypeOfResource()}
                     </div>
                   </div>
                   <div className="flex flex-col lg:flex-row md:justify-between">
-                    <div className="mx-auto w-1/2 lg:w-1/3 mt-10">
+                    <div className="mx-auto w-full md:w-1/2 lg:w-1/3 mt-5 md:mt-10">
                       <ResourceImage
                         img={data?.image as string}
-                        className="object-contain h-80 w-full border-2 border-gray-400 rounded-xl inset-0 z-20 "
+                        className="object-contain h-fit md:h-80 w-full border-2 border-gray-400 rounded-xl inset-0 z-20 "
                       />
                     </div>
-                    <div className="w-full mt-10 flex-1 lg:ml-10 lg:mr-10 flex flex-col">
+                    <div className="w-full mt-5 md:mt-10 flex-1 lg:ml-10 lg:mr-10 flex flex-col">
                       <p>{data?.description ? data.description : "---"}</p>
 
-                      <div className="mt-10 flex space-x-5">
+                      <div className="mt-5 md:mt-10 flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-5">
                         <p>
                           <span className="font-bold">Profesor:</span>{" "}
                           {data?.teacher ? data.teacher : "--"}
@@ -107,7 +107,7 @@ const ResourceDetail = () => {
           </div>
         )}
       </div>
-      <div className="px-10 py-10 w-full">
+      <div className="px-2 md:px-10 w-full">
         <Recommend ids={[id as string]} />
       </div>
     </div>

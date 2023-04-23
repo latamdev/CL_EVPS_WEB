@@ -15,7 +15,7 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="flex flex-col flex-3 lg:flex-row gap-10 px-10 py-10 w-full ">
+    <div className="flex flex-col flex-3 lg:flex-row gap-10 px-2 md:px-10 py-10 w-full ">
       <div className="w-full lg:w-3/4">
         <div className="flex ">
           <WelcomeMessage />
@@ -31,7 +31,7 @@ const Dashboard = () => {
         </div>
       </div>
       <div className="flex flex-col flex-1 w-full mx-auto lg:w-fit py-2">
-        <div className="flex mt-10 justify-center">
+        <div className="flex lg:mt-10 justify-center">
           <VideoSummary />
         </div>
         <div className="flex mt-10">

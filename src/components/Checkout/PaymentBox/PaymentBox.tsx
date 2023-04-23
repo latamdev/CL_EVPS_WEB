@@ -52,7 +52,7 @@ const PaymentBox: React.FC = () => {
   return (
     <>
       {totalItems > 0 ? (
-        <div className="flex flex-col space-y-3">
+        <div className="flex flex-col items-center lg:items-start space-y-3">
           <h1 className="text-xl">Total:</h1>
           <h1 className="text-3xl font-bold">
             {formatCurrencyToCLP(Math.round(cartTotal * FLOW_FEES_PERCENTAGE))}
@@ -60,12 +60,12 @@ const PaymentBox: React.FC = () => {
           <button
             onClick={doCheckout}
             disabled={mutation.isLoading}
-            className="bg-primary disabled:bg-gray-400 disabled:hover:bg-gray-400 disabled:cursor-wait hover:bg-secondary hover:text-black hover:cursor-pointer pt-2 pb-2 pl-5 pr-5 text-white text-xl font-bold rounded-xl w-1/2 ease-linear transition-all duration-150"
+            className="bg-primary disabled:bg-gray-400 disabled:hover:bg-gray-400 disabled:cursor-wait hover:bg-secondary hover:text-black hover:cursor-pointer pt-2 pb-2 pl-5 pr-5 text-white text-xl font-bold rounded-xl w-full lg:w-1/2 ease-linear transition-all duration-150"
           >
             {mutation.isLoading ? <LoadingSpinner /> : <div>Pagar</div>}
           </button>
 
-          <div className="flex flex-row w-1/2 space-x-5 items-center">
+          <div className="flex flex-row w-full lg:w-1/2 space-x-5 items-center">
             <h1 className="text-md font-bold">Paga usando:</h1>
             <img className="w-1/2" src={logoFlow} alt="flow" />
           </div>

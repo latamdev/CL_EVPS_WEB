@@ -15,24 +15,26 @@ const UnlockedResourceInfoRow = ({ data }) => {
   };
 
   return (
-    <div className="flex flex-row items-center justify-center mt-5 gap-5">
-      <button className="border border-black  bg-white rounded-lg p-2 pl-4 pr-4">
+    <div className="flex flex-row lg:flex-row items-center justify-center mt-5 gap-2 lg:gap-5">
+      <button className="border w-fit lg:w-fit border-black  bg-white rounded-lg p-2 pl-4 pr-4">
         <Heart
           isActive={isClick}
           onClick={() => setIsClick(!isClick)}
           animationScale={1.25}
           activeColor="#D63B6C"
-          className="w-fit h-9"
+          className="h-6 lg:h-8"
           style={{ margin: "0 auto" }}
         />
       </button>
       <button className="border border-black  bg-secondary  rounded-lg py-2 px-4">
-        <span className="w-fit h-10 text-2xl">{getLevelInfo(data.level)}</span>
+        <span className="w-fit h-10 text-base lg:text-2xl">
+          {getLevelInfo(data.level)}
+        </span>
       </button>
 
       {data._class?.includes("Ebook") ? (
         <button className="border border-black  bg-white  rounded-lg py-2 px-4">
-          <span className="w-fit h-10 text-2xl">
+          <span className="w-fit h-10 text-base lg:text-2xl">
             Páginas: {data.totalPages}
           </span>
         </button>

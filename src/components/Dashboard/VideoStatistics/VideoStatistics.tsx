@@ -18,7 +18,7 @@ const VideoStatistics = () => {
     { name: "sun", hr: 2 },
   ];
   return (
-    <div className="mx-auto bg-white border shadow-lg rounded-lg p-10 h-fit">
+    <div className="mx-auto bg-white w-full border shadow-lg rounded-lg p-5 md:p-10 h-fit">
       <p className="font-face-bb">Your statistics</p>
       <hr></hr>
       <div className="flex flex-row justify-between mt-3">
@@ -32,18 +32,15 @@ const VideoStatistics = () => {
           <option value="week4">Week 4</option>
         </select>
       </div>
-      <LineChart
-        width={400}
-        height={400}
-        data={data}
-        margin={{ top: 10, right: 20, left: 10, bottom: 5 }}
-      >
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <CartesianGrid stroke="gray" />
-        <Line type="monotone" dataKey="hr" stroke="#ff7300" yAxisId={0} />
-      </LineChart>
+      <div className="mx-auto w-full p-2 overflow-auto">
+        <LineChart width={400} height={400} data={data}>
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <CartesianGrid stroke="gray" />
+          <Line type="monotone" dataKey="hr" stroke="#ff7300" yAxisId={0} />
+        </LineChart>
+      </div>
     </div>
   );
 };

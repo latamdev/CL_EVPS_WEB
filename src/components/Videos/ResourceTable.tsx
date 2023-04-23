@@ -27,14 +27,14 @@ const ResourceTable: FC<ResourcesProps> = ({
       : [{ name: "Todos" }, { name: "Favoritos" }];
 
   return (
-    <div className="flex-col w-full bg-white border shadow-lg rounded-lg p-10 h-fit">
+    <div className="flex-col w-full bg-white border shadow-lg z-10 rounded-lg p-5 md:p-10 h-fit">
       {parent !== "Dashboard" ? (
         <TopNavbar pathName={"Recursos"} />
       ) : (
         <p className="font-face-bb text-2xl">Tus Recursos</p>
       )}
       <div className="flex flex-col">
-        <div className="flex items-center space-x-10 border-y border-gray-200">
+        <div className="flex z-auto items-center space-x-10 border-y border-gray-200">
           {filters.map((filter) => {
             return (
               <button
@@ -44,7 +44,7 @@ const ResourceTable: FC<ResourcesProps> = ({
                 }}
                 className="flex gap-x-2 items-center py-5  text-gray-500 hover:text-morazul relative group"
               >
-                <span className="font-medium"> {filter.name} </span>
+                <span className="font-medium z-0"> {filter.name} </span>
 
                 {tabSelected === filter.value ? (
                   <span className="absolute w-full h-1 bg-customYellow rounded bottom-0 scale-x-100 group-hover:scale-x-100 transition-transform ease-in-out" />
@@ -56,22 +56,19 @@ const ResourceTable: FC<ResourcesProps> = ({
           })}
         </div>
 
-        <table className="border-b border-gray-200 flex-row">
-          <thead></thead>
-          <tbody>
-            {resourceList?.map((resource: any) => {
-              return (
-                <ResourceListItem
-                  key={resource.id}
-                  resourceId={
-                    resource.resourceId ? resource.resourceId : resource.id
-                  }
-                  parent={parent}
-                />
-              );
-            })}
-          </tbody>
-        </table>
+        <div className="gap-4 grid grid-cols-1 xl:grids-cols-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 justify-between mt-10">
+          {resourceList?.map((resource: any) => {
+            return (
+              <ResourceListItem
+                key={resource.id}
+                resourceId={
+                  resource.resourceId ? resource.resourceId : resource.id
+                }
+                parent={parent}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );
