@@ -3,7 +3,7 @@ import axios from "axios";
 const APPLICATION_JSON = "application/json";
 
 const client = axios.create({
-  baseURL: "http://localhost:8081",
+  baseURL: process.env.REACT_APP_PAYMENT_SERVICE_URL,
 });
 
 export const httpGetRequest = async (
