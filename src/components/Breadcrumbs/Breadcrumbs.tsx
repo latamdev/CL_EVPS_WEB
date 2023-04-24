@@ -34,22 +34,24 @@ function Breadcrumbs() {
   const location = useLocation();
 
   return (
-    <nav className="pl-2 gap-3 flex flex-row last:af'ter:content-[''] w-full z-50 font-light bg-primary">
-      {breadcrumbs
-        .filter(({ match }) => match.pathname !== "/")
-        .map(({ match, breadcrumb }) => (
-          <Link
-            key={match.pathname}
-            to={match.pathname}
-            className={
-              match.pathname === location.pathname
-                ? "breadcrumb-active  font-semibold text-white "
-                : "after:content-['>'] after:font-bold after:relative after:left-1  text-white hover:border-b-white border-b-2 border-b-transparent hover:border-b-2 hover:font-semibold "
-            }
-          >
-            {breadcrumb}
-          </Link>
-        ))}
+    <nav className="pl-2 gap-3 flex  h-[1.4rem] flex-row last:af'ter:content-[''] w-full z-50 font-light bg-primary">
+      <div className="hidden md:flex gap-3">
+        {breadcrumbs
+          .filter(({ match }) => match.pathname !== "/")
+          .map(({ match, breadcrumb }) => (
+            <Link
+              key={match.pathname}
+              to={match.pathname}
+              className={
+                match.pathname === location.pathname
+                  ? "breadcrumb-active  font-semibold text-white "
+                  : "after:content-['>'] after:font-bold after:relative after:left-1  text-white hover:border-b-white border-b-2 border-b-transparent hover:border-b-2 hover:font-semibold "
+              }
+            >
+              {breadcrumb}
+            </Link>
+          ))}
+      </div>
     </nav>
   );
 }
