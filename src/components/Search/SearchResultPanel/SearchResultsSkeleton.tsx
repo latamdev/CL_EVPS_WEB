@@ -2,8 +2,8 @@ import React from "react";
 
 function SearchResultsSkeleton() {
   return (
-    <div className="w-[20rem] sm:w-[30rem] lg:w-[20rem] xl:w-[30rem] 2xl:w-[50rem] absolute z-10  top-[4.5rem]">
-      <div className="bg-gray-100  flex p-3">
+    <div className="w-[25rem] sm:w-[30rem] lg:w-[20rem] xl:w-[30rem] 2xl:w-[50rem] absolute z-10  top-[4.5rem]">
+      <div className="bg-gray-100 w-3/4 md:w-full  flex p-3">
         <div className="rounded-md max-w-sm w-full">
           <div className="animate-pulse items-center">
             {[0, 1, 2, 3].map((index) => {
