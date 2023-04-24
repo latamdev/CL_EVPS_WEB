@@ -37,8 +37,8 @@ function SearchResultPanel(props: SearchResultProps) {
   }
 
   return props.resultsArray.results.length > 0 ? (
-    <div className="w-[20rem] sm:w-[30rem] lg:w-[20rem] xl:w-[30rem] 2xl:w-[50rem] absolute z-10 top-[4.5rem]">
-      <div className="bg-white text-black  border border-black border-t-0 rounded-b-lg">
+    <div className="w-[25rem] sm:w-[30rem] lg:w-[20rem] xl:w-[30rem] 2xl:w-[50rem] absolute z-20 top-[4.5rem]">
+      <div className="bg-white w-3/4 md:w-full text-black  border border-black border-t-0 rounded-b-lg">
         {props.resultsArray.results.map((result: any) => {
           return (
             <div key={result.resourceType}>

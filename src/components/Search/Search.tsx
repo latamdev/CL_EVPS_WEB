@@ -39,7 +39,7 @@ function Search() {
     >
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="w-[20rem] sm:w-[30rem] lg:w-[20rem] xl:w-[30rem] 2xl:w-[50rem] lg:mx-auto"
+        className="w-[25rem] sm:w-[30rem] lg:w-[20rem] xl:w-[30rem] 2xl:w-[50rem] lg:mx-auto"
       >
         <label
           htmlFor="default-search"
@@ -71,7 +71,7 @@ function Search() {
             name="query-search"
             autoComplete="off"
             className={
-              "block w-full p-4 pl-10 text-sm text-gray-900 border-1 border-white bg-primary " +
+              "block w-3/4 md:w-full p-4 pl-10 text-sm text-gray-900 border-1 border-white bg-primary " +
               (data?.results.length > 0
                 ? "rounded-lg rounded-b-none border-b-0"
                 : "rounded-lg ") +
