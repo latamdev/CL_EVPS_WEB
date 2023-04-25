@@ -13,7 +13,7 @@ const LevelResourceForm: React.FC<ResourceTypeFormStepProps> = (props) => {
 
   return (
     <div className="py-5 px-5">
-      <div className="flex flex-row gap-[5rem]">
+      <div className="flex flex-col md:flex-row gap-3 md:gap-[5rem]">
         <div
           onClick={() => {
             setFormData({ ...formData, level: 0 });

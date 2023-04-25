@@ -9,7 +9,7 @@ function PasswordEditForm() {
     <div className="p-5">
       <form
         onSubmit={(e) => handleChangePassword(e)}
-        className="mt-10 flex flex-col space-y-4"
+        className="mt-5 md:mt-10 flex flex-col space-y-4"
       >
         <label htmlFor="password">Nueva Contraseña:</label>
         <input
@@ -24,7 +24,7 @@ function PasswordEditForm() {
           className="form-input px-4 py-3 focus:border-morazul rounded-lg"
         />
         <div className="flex justify-center w-full">
-          <button className="ease-linear transition-all duration-150 rounded-lg w-1/2 font-bold text-lg bg-morazul text-white p-3 pl-4 pr-4 hover:bg-secondary hover:text-black">
+          <button className="ease-linear transition-all duration-150 rounded-lg w-full md:w-1/2 font-bold text-lg bg-morazul text-white p-3 pl-4 pr-4 hover:bg-secondary hover:text-black">
             Cambiar Contraseña
           </button>
         </div>

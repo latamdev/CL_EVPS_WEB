@@ -13,11 +13,11 @@ const ResourceTypeFormStep: React.FC<ResourceTypeFormStepProps> = (props) => {
   const [selected, setSelected] = useState(formData?.resourceType);
 
   return (
-    <div className="py-5 px-5 mx-auto h-[25rem]">
-      <h1 className="text-3xl text-center font-bold mb-10 text-gray-700">
+    <div className="py-5 px-5 mx-auto h-[16rem] md:h-[25rem]">
+      <h1 className="text-base md:text-3xl text-center font-bold mb-10 text-gray-700">
         ¿Qué tipo de recurso quieres subir?
       </h1>
-      <div className="flex flex-row gap-[5rem] justify-center">
+      <div className="flex flex-row gap-5 md:gap-[5rem] justify-center">
         <div
           onClick={() => {
             setFormData({ ...formData, resourceType: 0 });
@@ -27,7 +27,7 @@ const ResourceTypeFormStep: React.FC<ResourceTypeFormStepProps> = (props) => {
             selected === 0
               ? "text-info border-info"
               : "text-gray-400 border-gray-400 "
-          } border-2 p-20 rounded-lg hover:p-[5.2rem] hover:text-lg ease-in-out transition-all duration-200 hover:text-info hover:border-info hover:cursor-pointer`}
+          } border-2 p-5 md:p-20 rounded-lg hover:p-6 hover:md:p-[5.2rem] hover:text-lg ease-in-out transition-all duration-200 hover:text-info hover:border-info hover:cursor-pointer`}
         >
           <div className="flex flex-col gap-2 font-bold justify-center items-center">
             <span className="text-3xl">
@@ -46,7 +46,7 @@ const ResourceTypeFormStep: React.FC<ResourceTypeFormStepProps> = (props) => {
             selected === 1
               ? "text-info border-info"
               : "text-gray-400 border-gray-400 "
-          } border-2 p-20 rounded-lg  hover:p-[5.2rem] hover:text-lg ease-in-out transition-all duration-200 hover:text-info hover:border-info hover:cursor-pointer`}
+          } border-2 p-5 md:p-20 rounded-lg  hover:p-6 hover:md:p-[5.2rem] hover:text-lg ease-in-out transition-all duration-200 hover:text-info hover:border-info hover:cursor-pointer`}
         >
           <div className="flex flex-col gap-2 font-bold justify-center items-center">
             <span className="text-3xl">

@@ -45,7 +45,7 @@ const UserConfiguration: React.FC = () => {
             <h1 className="text-2xl">
               {user.first_name + " " + user.last_name}
             </h1>
-            <h1 className="text-lg text-center font-bold bg-info text-white rounded-full p-2">
+            <h1 className="text-lg text-center mt-3 font-bold bg-info text-white rounded-full p-2">
               {user.isAdmin ? "Profesor" : "Alumno"}
             </h1>
           </div>
@@ -54,11 +54,15 @@ const UserConfiguration: React.FC = () => {
       <div className="px-10 py-10 flex flex-col gap-5">
         <div className="grid grid-cols-2 gap-4">
           <div className="bg-white border shadow-lg rounded-lg p-10  h-fit flex flex-col items-center space-y-4">
-            <h1 className="text-3xl text-morazul">Videos Comprados</h1>
+            <h1 className="text-lg text-center md:text-3xl text-morazul">
+              Videos Comprados
+            </h1>
             <span className="text-2xl font-bold">2</span>
           </div>
           <div className="bg-white border shadow-lg rounded-lg p-10  h-fit flex flex-col items-center space-y-4">
-            <h1 className="text-3xl text-morazul">Ebooks Comprados</h1>
+            <h1 className="text-lg text-center md:text-3xl text-morazul">
+              Ebooks Comprados
+            </h1>
             <span className="text-2xl font-bold">5</span>
           </div>
         </div>

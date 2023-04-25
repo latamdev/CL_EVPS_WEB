@@ -4,6 +4,7 @@ import makeAnimated from "react-select/animated";
 import { UploadResourceForm } from "./interface";
 import { useQuery } from "@tanstack/react-query";
 import { getAllTags } from "./service";
+import useScreenSize from "../../../hooks/useScreenSize";
 
 const animatedComponents = makeAnimated();
 
@@ -16,6 +17,7 @@ const TagsSelect: React.FC<TagsSelectProps> = (props) => {
   const { formData, setFormData } = props;
   const [selectedTags, setSelectedTags] = useState<any>(formData?.tags);
   const [options, setOptions] = useState();
+  const isDesktop = useScreenSize();
 
   useQuery({
     queryKey: ["GET_ALL_TAGS_QUERY"],
@@ -47,7 +49,7 @@ const TagsSelect: React.FC<TagsSelectProps> = (props) => {
       options={options}
       value={selectedTags}
       onChange={(value: any) => handleOnChange(value)}
-      placeholder="Agrega un tag y presiona enter..."
+      placeholder={isDesktop ? "Agrega un tag y presiona enter..." : ""}
       classNames={{
         control: (state) =>
           state.isFocused ? "select-focused-border" : "border-gray-300",

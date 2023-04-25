@@ -91,7 +91,7 @@ const UploadResource = () => {
           </p>
         </SuccessAlert>
       ) : (
-        <div>
+        <div className=" bg-white border shadow-lg rounded-lg md:p-10">
           <Stepper
             steps={[
               { label: "Tipo de recurso" },
@@ -101,7 +101,7 @@ const UploadResource = () => {
             activeStep={activeStep}
             styleConfig={STEPS_STYLE_CONFIG}
             connectorStyleConfig={STEPS_CONNECTOR_STYLE_CONFIG}
-            stepClassName={"bg-primary py-10"}
+            stepClassName={"bg-primary md:py-10 px-0"}
           />
 
           {activeStep === 0 && (
@@ -123,7 +123,7 @@ const UploadResource = () => {
             />
           )}
 
-          <div className="flex flex-row justify-between items-center px-24">
+          <div className="flex flex-row justify-center gap-5 md:justify-between items-center px-10 pb-10 md:pb-0 md:px-24">
             <button
               disabled={activeStep === 0}
               onClick={() => handleSteps("prev")}
