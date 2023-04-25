@@ -31,7 +31,7 @@ const ResourceTable: FC<ResourcesProps> = ({
       {parent !== "Dashboard" ? (
         <TopNavbar pathName={"Recursos"} />
       ) : (
-        <p className="font-face-bb text-2xl">Tus Recursos</p>
+        <p className="font-face-bb text-lg md:text-2xl">Tus Recursos</p>
       )}
       <div className="flex flex-col">
         <div className="flex z-auto items-center space-x-10 border-y border-gray-200">

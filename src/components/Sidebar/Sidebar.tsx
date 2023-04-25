@@ -6,11 +6,19 @@ import {
   useProSidebar,
 } from "react-pro-sidebar";
 import { Link, useLocation } from "react-router-dom";
+import useScreenSize from "../../hooks/useScreenSize";
+import UserConfigurationMenu from "../UserConfiguration/UserConfigurationMenu/UserConfigurationMenu";
 import "./Sidebar.css";
 
-const Sidebar = () => {
+interface SidebarProps {
+  onClose?: () => void;
+}
+
+const Sidebar: React.FC<SidebarProps> = (props) => {
+  const { onClose } = props;
   const { pathname: currentPath } = useLocation();
   const { collapsed } = useProSidebar();
+  const isDesktop = useScreenSize();
 
   const isTheSamePath = (currentPath: string, pathName: string) => {
     return new RegExp(`^${currentPath}$`).test(pathName);
@@ -36,7 +44,14 @@ const Sidebar = () => {
       backgroundColor="#1B2C3F"
       className="h-screen text-white font-light z-50"
     >
-      <Menu>
+      <Menu className="">
+        {!isDesktop && (
+          <Link to={"/platform/configuration"}>
+            <MenuItem className="mt-5" onClick={onClose}>
+              <UserConfigurationMenu />
+            </MenuItem>
+          </Link>
+        )}
         <MenuItem
           component={
             <Link
@@ -44,6 +59,7 @@ const Sidebar = () => {
               className={getCurrenLinkState(currentPath, "/platform") + " mt-5"}
             />
           }
+          onClick={onClose}
         >
           <div className="flex flex-row gap-4 items-center">
             <span className={getCurrentSpanState(currentPath, "/platform")} />
@@ -67,6 +83,7 @@ const Sidebar = () => {
               className={getCurrenLinkState(currentPath, "/platform/resources")}
             />
           }
+          onClick={onClose}
         >
           <div className="flex flex-row gap-4 items-center">
             <span
@@ -94,6 +111,7 @@ const Sidebar = () => {
               className={getCurrenLinkState(currentPath, "/platform/messages")}
             />
           }
+          onClick={onClose}
         >
           <div className="flex flex-row gap-4 items-center w-full">
             <span

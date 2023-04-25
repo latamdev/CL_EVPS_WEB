@@ -7,8 +7,8 @@ const UserEditProfile: React.FC = () => {
   const [editOption, setEditOption] = useState(0);
 
   return (
-    <div className="py-10 w-full px-5 md:px-10">
-      <h1 className="text-lg md:text-3xl font-face-bb">Editar perfil</h1>
+    <div className="py-5 md:py-10 w-full px-2 md:px-10">
+      {/* <h1 className="text-lg md:text-3xl font-face-bb">Editar perfil</h1> */}
 
       <div className="rounded-xl bg-white border w-full mt-5 md:mt-10 shadow-lg">
         <div className="grid grid-cols-2 border-b">

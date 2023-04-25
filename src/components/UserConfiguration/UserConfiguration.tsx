@@ -51,15 +51,15 @@ const UserConfiguration: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="px-10 py-10 flex flex-col gap-5">
+      <div className="px-2 md:px-10 py-10 flex flex-col gap-5">
         <div className="grid grid-cols-2 gap-4">
-          <div className="bg-white border shadow-lg rounded-lg p-10  h-fit flex flex-col items-center space-y-4">
+          <div className="bg-white border shadow-lg rounded-lg p-2 md:p-10  h-fit flex flex-col items-center space-y-4">
             <h1 className="text-lg text-center md:text-3xl text-morazul">
               Videos Comprados
             </h1>
             <span className="text-2xl font-bold">2</span>
           </div>
-          <div className="bg-white border shadow-lg rounded-lg p-10  h-fit flex flex-col items-center space-y-4">
+          <div className="bg-white border shadow-lg rounded-lg p-2 md:p-10  h-fit flex flex-col items-center space-y-4">
             <h1 className="text-lg text-center md:text-3xl text-morazul">
               Ebooks Comprados
             </h1>
@@ -67,7 +67,7 @@ const UserConfiguration: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-white border shadow-lg rounded-lg p-10 w-full h-fit flex flex-col space-y-4">
+        <div className="bg-white border shadow-lg rounded-lg p-5 md:p-10 w-full h-fit flex flex-col space-y-4">
           <h1 className="text-3xl text-morazul">Tus preguntas</h1>
           <ul className="flex flex-col space-y-5">
             <li>

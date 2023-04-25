@@ -1,4 +1,4 @@
-import { createContext, useEffect, useMemo, useState } from "react";
+import { createContext, useMemo, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Breadcrumbs from "./components/Breadcrumbs/Breadcrumbs";
 import ShoppingCartAlert from "./components/Cart/ShoppingCartAlert";
@@ -15,6 +15,7 @@ import withAuthentication from "./hocs/withAuthentication";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import SidebarDrawer from "./components/Sidebar/Drawer/SidebarDrawer";
+import useScreenSize from "./hooks/useScreenSize";
 
 export const UserContext = createContext({
   currentUser: {} as User,
@@ -28,25 +29,8 @@ function Root() {
     [currentUser, setCurrentUser]
   );
   const { collapseSidebar, collapsed } = useProSidebar();
-  const [isDesktop, setIsDesktop] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
-  useEffect(() => {
-    if (window.innerWidth > 768) {
-      setIsDesktop(true);
-    } else {
-      setIsDesktop(false);
-    }
-    const updateMedia = () => {
-      if (window.innerWidth > 768) {
-        setIsDesktop(true);
-      } else {
-        setIsDesktop(false);
-      }
-    };
-    window.addEventListener("resize", updateMedia);
-    return () => window.removeEventListener("resize", updateMedia);
-  }, []);
+  const isDesktop = useScreenSize();
 
   const toggleDrawer = () => {
     setIsDrawerOpen((prevState) => !prevState);
@@ -117,7 +101,7 @@ function Root() {
               enableOverlay={true}
               className="mt-[7.2rem]"
             >
-              <SidebarDrawer />
+              <SidebarDrawer onClose={toggleDrawer} />
             </Drawer>
           )}
 

@@ -5,7 +5,7 @@ const WelcomeMessage = () => {
   const { currentUser } = useContext(UserContext);
 
   return (
-    <div className="px-10 py-5 w-full xl:w-3/4 bg-white border shadow-lg rounded-lg p-10 h-fit">
+    <div className="px-10 py-5 w-full  bg-white border shadow-lg rounded-lg p-10 h-fit">
       <p className="font-face-bb text-4xl lg:text-6xl">
         Hola {currentUser.first_name} 👋
       </p>

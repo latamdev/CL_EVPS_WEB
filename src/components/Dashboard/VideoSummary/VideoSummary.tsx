@@ -11,14 +11,14 @@ const VideoSummary = () => {
   }, []);
 
   return (
-    <div className="flex flex-col lg:flex-row justify-center gap-10 w-full">
-      <div className="flex flex-row bg-white border shadow-lg rounded-lg p-10 h-fit  py-2 px-5 gap-3">
-        <p className="font-face-bb text-6xl">{finishedVideos}</p>
-        <p className="pt-3">Videos completed</p>
+    <div className="flex lg:flex-row justify-center gap-2 md:gap-10 w-full">
+      <div className="flex text-center items-center flex-row bg-white border shadow-lg rounded-lg p-10 h-fit  py-2 px-5 gap-3">
+        <p className="font-face-bb text-3xl md:text-6xl">{finishedVideos}</p>
+        <p className="">Videos completed</p>
       </div>
-      <div className="flex flex-row bg-white border shadow-lg rounded-lg p-10 h-fit py-2 px-5 gap-3">
-        <p className="font-face-bb text-6xl">{inProgressVideos}</p>
-        <p className="pt-3">Videos in progress</p>
+      <div className="flex text-center items-center flex-row bg-white border shadow-lg rounded-lg p-10 h-fit py-2 px-5 gap-3">
+        <p className="font-face-bb text-3xl md:text-6xl">{inProgressVideos}</p>
+        <p className="">Videos in progress</p>
       </div>
     </div>
   );
