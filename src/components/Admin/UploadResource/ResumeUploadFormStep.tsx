@@ -20,15 +20,15 @@ const ResumeUploadFormStep: React.FC<ResumeUploadFormProps> = (props) => {
   };
 
   return (
-    <div className="py-5 px-20 mx-auto mb-5">
-      <h1 className="text-3xl text-center font-bold mb-10 text-gray-700">
+    <div className="py-5 px-5 md:px-20 mx-auto mb-5">
+      <h1 className="text-base md:text-3xl text-center font-bold mb-10 text-gray-700">
         Resumen y subida del recurso
       </h1>
 
       <div className="flex flex-wrap">
         <div className="w-full md:w-1/2 flex px-5 flex-col space-y-3">
           <div className="flex flex-row space-x-4 items-center">
-            <span className="text-3xl">
+            <span className="text-lg md:text-3xl">
               <b>{formData?.title}</b>
             </span>
             {showTypeOfResource()}
@@ -43,7 +43,7 @@ const ResumeUploadFormStep: React.FC<ResumeUploadFormProps> = (props) => {
             <b>Profesor:</b> {formData?.teacher}
           </span>
 
-          <div className="flex space-x-2 overflow-auto h-max justify-center lg:justify-start ">
+          <div className="flex space-x-2 overflow-auto h-max justify-start lg:justify-start ">
             {(formData?.tags?.length as number) > 0 ? (
               formData?.tags?.map((tag: SelectTag, index: number) => {
                 return <Tag key={index} tagEl={tag} />;

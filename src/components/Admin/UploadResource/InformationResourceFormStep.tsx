@@ -15,11 +15,11 @@ const InformationResourceFormStep: React.FC<InformationResourceFormProps> = (
   const { formData, setFormData } = props;
   return (
     <div className="py-5 px-5 mx-auto">
-      <h1 className="text-3xl text-center font-bold mb-10 text-gray-700">
+      <h1 className="text-base md:text-3xl text-center font-bold mb-10 text-gray-700">
         Completa la información
       </h1>
 
-      <div className="mt-10 flex flex-wrap -mx-3 mb-6 px-20 items-center space-y-10">
+      <div className="mt-10 flex flex-wrap -mx-3 mb-6 px-5 md:px-20 items-center space-y-10">
         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <label
             className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -97,7 +97,7 @@ const InformationResourceFormStep: React.FC<InformationResourceFormProps> = (
           <TeacherSelect formData={formData} setFormData={setFormData} />
         </div>
 
-        <div className="w-full h-20 flex flex-row items-center px-3 mb-6 md:mb-0">
+        <div className="w-full md:h-20 flex flex-col md:flex-row items-center px-3 mb-6 md:mb-0">
           <label
             className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
             htmlFor=""

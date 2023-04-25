@@ -59,8 +59,8 @@ function GeneralInfoForm() {
         </SuccessAlert>
       )}
 
-      <form onSubmit={(e) => handleUpdateUserInfo(e)} className="mt-10">
-        <div className="grid grid-cols-2  gap-4">
+      <form onSubmit={(e) => handleUpdateUserInfo(e)} className="mt-5 md:mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2  gap-4">
           <div className="flex flex-col gap-2 w-full">
             <label htmlFor="first_name">Nombres:</label>
             <input
@@ -138,7 +138,7 @@ function GeneralInfoForm() {
         <div className="flex justify-center w-full mt-5">
           <button
             disabled={mutation.isLoading}
-            className="ease-linear transition-all duration-150 rounded-lg w-1/2 font-bold text-lg bg-morazul text-white p-3 pl-4 pr-4 hover:bg-secondary hover:text-black"
+            className="ease-linear transition-all duration-150 rounded-lg w-full md:w-1/2 font-bold text-lg bg-morazul text-white p-3 pl-4 pr-4 hover:bg-secondary hover:text-black"
           >
             {mutation.isLoading ? (
               <LoadingSpinner />
