@@ -1,4 +1,4 @@
-import { FaBookReader, FaComment, FaHome } from "react-icons/fa";
+import { FaBookReader, FaComment, FaHome, FaSignOutAlt } from "react-icons/fa";
 import {
   Sidebar as ProSidebar,
   Menu,
@@ -129,6 +129,25 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
             )}
           </div>
         </MenuItem>
+        {!isDesktop && (
+          <MenuItem
+            component={
+              <Link
+                to={"/sign-out"}
+                className={getCurrenLinkState(currentPath, "/sign-out")}
+              />
+            }
+            onClick={onClose}
+          >
+            <div className="flex flex-row gap-4 items-center w-full">
+              <span className={getCurrentSpanState(currentPath, "/sign-out")} />
+
+              <span className="flex flex-row items-center gap-4">
+                <FaSignOutAlt /> Cerrar sesión
+              </span>
+            </div>
+          </MenuItem>
+        )}
       </Menu>
     </ProSidebar>
   );

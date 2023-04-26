@@ -1,9 +1,12 @@
 import "./LandingMenu.css";
 import logo from "../../assets/images/plurality_logo.png";
 import { Link } from "react-router-dom";
+import useScreenSize from "../../hooks/useScreenSize";
 
 function LandingMenu() {
-  const renderWaves = () => {
+  const isDesktop = useScreenSize();
+
+  /* const renderWaves = () => {
     return (
       <div className="waves">
         <svg
@@ -29,35 +32,38 @@ function LandingMenu() {
         </svg>
       </div>
     );
-  };
+  }; */
 
   return (
-    <div className="bg-gradient-to-r from-blue-800 to-sky-500">
-      <div className="container mx-auto flex items-center justify-between">
+    <div className="bg-gradient-to-r from-indigo-950 to-indigo-500">
+      <div className="container mx-auto gap-2 flex px-2 items-center h-20 justify-between">
         <Link to={"/"} className="flex items-center">
-          <img alt="logo" src={logo} className="object-contain h-20 mr-3" />
+          <img alt="logo" src={logo} className="object-contain h-16 mr-3" />
           <h3 className="text-white">
             Plurality <b>idiomas</b>
           </h3>
         </Link>
 
-        <div className="flex items-center space-x-8">
+        <div className="flex items-center space-x-2 md:space-x-8">
           <Link
             to={"/sign-in"}
-            className="text-white pr-3 pl-3 rounded-full font-semibold  hover:bg-gray-100 hover:text-black"
+            className="text-white pr-3 pl-3 rounded-full bg-indigo-800 px-2 py-2 text-sm md:text-base font-semibold  hover:bg-gray-100 hover:text-black"
           >
             Ingresar
           </Link>
-          <Link
-            to={"/create-account"}
-            className="rounded-full font-bold bg-gray-200  p-2 pl-4 pr-4 hover:bg-gray-100"
-          >
-            Comienza Ahora
-          </Link>
+
+          {isDesktop && (
+            <Link
+              to={"/create-account"}
+              className="rounded-full font-bold bg-gray-200 text-xs md:text-base  py-2  md:p-2 md:pl-4 md:pr-4 hover:bg-gray-100"
+            >
+              Comienza Ahora
+            </Link>
+          )}
         </div>
       </div>
 
-      {renderWaves()}
+      {/* {renderWaves()} */}
     </div>
   );
 }
