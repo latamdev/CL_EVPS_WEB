@@ -43,7 +43,7 @@ const Register = () => {
 
   return (
     <div className="flex flex-col h-screen">
-      <div className="mx-auto my-auto flex flex-col w-96 justify-center">
+      <div className="px-10 py-10 md:mx-auto my-auto flex flex-col w-96 justify-center">
         <img src={pluralityLogo} className="w-60 mx-auto" alt={"logo"} />
         <h1 className="mx-auto text-xl">
           Registra una cuenta en <b>Plurality</b>

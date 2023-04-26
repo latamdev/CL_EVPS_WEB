@@ -43,9 +43,9 @@ function Login() {
 
   return (
     <div className="w-screen">
-      <div className="columns-2 flex">
-        <div className="h-screen w-4/12 flex justify-center items-center">
-          <div className="w-10/12">
+      <div className="px-10 md:px-0 md:columns-2 flex">
+        <div className="h-screen w-full md:w-4/12 flex justify-center items-center">
+          <div className="w-full md:w-10/12">
             <Link to={"/"} className="flex items-center">
               <img alt="logo" src={logo} className="h-20  relative -left-4" />
               <h3 className="text-gray-900">
@@ -99,7 +99,7 @@ function Login() {
             </form>
           </div>
         </div>
-        <div className="h-screen w-8/12 gradient-bg blur-[1px]"></div>
+        <div className="h-screen md:w-8/12 gradient-bg blur-[1px]"></div>
       </div>
     </div>
   );
