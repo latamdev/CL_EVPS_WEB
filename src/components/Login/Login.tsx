@@ -7,12 +7,14 @@ import { useMutation } from "@tanstack/react-query";
 import { doLogin } from "./service";
 import useUser from "../../hooks/useUser";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import useScreenSize from "../../hooks/useScreenSize";
 
 function Login() {
   const { login } = useUser();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const isDesktop = useScreenSize();
 
   const mutation = useMutation({
     mutationFn: doLogin,
@@ -43,10 +45,18 @@ function Login() {
 
   return (
     <div className="w-screen">
-      <div className="px-10 md:px-0 md:columns-2 flex">
+      <div
+        className={
+          (!isDesktop ? "bg-gradient-to-tr from-primary to-indigo-800" : "") +
+          " px-10 md:px-0 md:columns-2 flex"
+        }
+      >
         <div className="h-screen w-full md:w-4/12 flex justify-center items-center">
-          <div className="w-full md:w-10/12">
-            <Link to={"/"} className="flex items-center">
+          <div className="w-full md:w-10/12 bg-white bg-opacity-50 p-5 md:p-0 rounded-xl shadow-xl md:shadow-none">
+            <Link
+              to={"/"}
+              className="flex justify-center md:justify-normal items-center"
+            >
               <img alt="logo" src={logo} className="h-20  relative -left-4" />
               <h3 className="text-gray-900">
                 Plurality <b>idiomas</b>

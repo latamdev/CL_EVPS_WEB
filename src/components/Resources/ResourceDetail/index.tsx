@@ -107,7 +107,7 @@ const ResourceDetail = () => {
           </div>
         )}
       </div>
-      <div className="px-2 md:px-10 w-full">
+      <div className="px-2 md:px-10 py-2 md:py-5 w-full">
         <Recommend ids={[id as string]} />
       </div>
     </div>

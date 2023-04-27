@@ -35,9 +35,9 @@ function LandingPage() {
         <div className="flex pt-10 h-[32rem] text-center">
           <div className="container p-10">
             <h1 className="text-4xl md:text-8xl font-light">
-              <span className="font-bold text-blue-800">Comienza</span> ahora{" "}
+              <span className="font-bold text-indigo-800">Comienza</span> ahora{" "}
               <br></br>a mejorar tu{" "}
-              <span className="underline decoration-dashed decoration-blue-800">
+              <span className="underline decoration-dashed decoration-indigo-800">
                 futuro
               </span>
             </h1>
@@ -59,7 +59,7 @@ function LandingPage() {
         </div>
       </div>
 
-      <div className="bg-gradient-to-bl from-indigo-950 to-indigo-500 pb-10">
+      <div className="bg-gradient-to-br from-primary to-indigo-800 pb-10">
         {printDownArrow()}
 
         <div className="container mx-auto mb-auto max-h-fit">
@@ -108,7 +108,7 @@ function LandingPage() {
         </div>
       </div>
 
-      <div className="bg-gradient-to-bl from-indigo-950 to-indigo-500 pb-10">
+      <div className="bg-gradient-to-br from-primary to-indigo-800 pb-10">
         {printDownArrow()}
 
         <div className="container mx-auto mb-auto">

@@ -35,7 +35,7 @@ function LandingMenu() {
   }; */
 
   return (
-    <div className="bg-gradient-to-r from-indigo-950 to-indigo-500">
+    <div className="bg-gradient-to-r from-primary to-indigo-800">
       <div className="container mx-auto gap-2 flex px-2 items-center h-20 justify-between">
         <Link to={"/"} className="flex items-center">
           <img alt="logo" src={logo} className="object-contain h-16 mr-3" />
