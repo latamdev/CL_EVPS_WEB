@@ -20,7 +20,7 @@ const UnlockedVideo = ({ data }) => {
         title="video"
         src={`${data?.link}`}
         loading="eager"
-        className="p-0 border-none top-0 w-full h-[10rem] lg:h-[30rem]"
+        className="p-0 border-none top-0 w-full h-[13.8rem] md:h-[30rem]"
         allow="accelerometer; gyroscope; encrypted-media; picture-in-picture;"
         allowFullScreen={true}
       ></iframe>

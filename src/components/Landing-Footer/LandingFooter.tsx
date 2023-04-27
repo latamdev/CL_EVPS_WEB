@@ -24,7 +24,7 @@ function LandingFooter() {
     <>
       {renderWaves()}
 
-      <div className="bg-indigo-900 text-white bg-gradient-to-l from-indigo-900 to-indigo-500 ">
+      <div className="bg-indigo-900 text-white bg-gradient-to-br from-primary to-indigo-800 ">
         <div className="container mx-auto flex justify-between p-5">
           <div className="flex flex-col space-y-2">
             <Link to={"/about"}> Quienes somos</Link>
