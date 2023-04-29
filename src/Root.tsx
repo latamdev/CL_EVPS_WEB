@@ -16,6 +16,10 @@ import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import SidebarDrawer from "./components/Sidebar/Drawer/SidebarDrawer";
 import useScreenSize from "./hooks/useScreenSize";
+import { Fab } from "react-tiny-fab";
+import "react-tiny-fab/dist/styles.css";
+import { useCart } from "react-use-cart";
+import DrawerCheckout from "./components/Checkout/DrawerCheckout/DrawerCheckout";
 
 export const UserContext = createContext({
   currentUser: {} as User,
@@ -30,10 +34,16 @@ function Root() {
   );
   const { collapseSidebar, collapsed } = useProSidebar();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isCartDrawerOpen, setIsCartDrawerOpen] = useState(false);
   const isDesktop = useScreenSize();
+  const { totalUniqueItems } = useCart();
 
   const toggleDrawer = () => {
     setIsDrawerOpen((prevState) => !prevState);
+  };
+
+  const toggleCartDrawer = () => {
+    setIsCartDrawerOpen((prevState) => !prevState);
   };
 
   const handleSidebarMenu = () => {
@@ -51,9 +61,9 @@ function Root() {
       <UserContext.Provider value={value}>
         <div className="fixed flex top-0 flex-col justify-between z-40 text-white">
           <div className="flex flex-row bg-primary w-screen">
-            <div className="p-3 pl-5 md:pl-10 flex flex-row items-center space-x-5">
+            <div className="md:p-3 pl-3 md:pl-10 flex flex-row items-center space-x-5">
               <FaBars
-                className="lg:text-2xl text-3xl hover:cursor-pointer"
+                className="md:text-2xl text-xl hover:cursor-pointer"
                 onClick={() => {
                   handleSidebarMenu();
                 }}
@@ -67,7 +77,7 @@ function Root() {
             </div>
             <Search />
             <div className="flex flex-row lg:flex-1 lg:justify-end lg:pr-10 lg:visible w-0 invisible">
-              <ShoppingCartAlert />
+              <ShoppingCartAlert onClick={toggleCartDrawer} />
               <UserConfigurationMenu />
             </div>
           </div>
@@ -105,6 +115,24 @@ function Root() {
             </Drawer>
           )}
 
+          {!isDesktop && totalUniqueItems > 0 && (
+            <Fab
+              mainButtonStyles={{ background: "#150e3d" }}
+              icon={<ShoppingCartAlert />}
+              style={{ bottom: 0, right: 0 }}
+              onClick={toggleCartDrawer}
+            ></Fab>
+          )}
+
+          <Drawer
+            open={isCartDrawerOpen}
+            direction={"right"}
+            onClose={toggleCartDrawer}
+            enableOverlay={true}
+          >
+            <DrawerCheckout toggleDrawer={toggleCartDrawer} />
+          </Drawer>
+
           <div
             className={
               (!collapsed && isDesktop
@@ -113,7 +141,7 @@ function Root() {
               (!isDesktop ? " ml-0-important" : "")
             }
           >
-            <div className="flex w-[100%] h-screen bg-[#F2F4F7]">
+            <div className="flex w-[100%] z-0 h-screen bg-[#F2F4F7]">
               <Outlet />
             </div>
           </div>

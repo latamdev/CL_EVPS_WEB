@@ -20,10 +20,8 @@ function Login() {
     mutationFn: doLogin,
     onSuccess: (response) => {
       login(response.token);
-      console.log("Login success", response);
     },
     onError: ({ response: { data } }) => {
-      console.log(data);
       setError(data.message);
     },
   });
