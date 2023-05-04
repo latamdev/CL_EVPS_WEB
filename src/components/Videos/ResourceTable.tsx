@@ -1,7 +1,8 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import "./Videos.css";
 import TopNavbar from "../TopNavbar/TopNavbar";
 import ResourceListItem from "./ResourceListItem";
+import Paginate from "../Paginate/Paginate";
 
 interface ResourcesProps {
   parent: string;
@@ -10,6 +11,8 @@ interface ResourcesProps {
   resourceType?: string;
 }
 
+const ITEMS_PER_PAGE = 3;
+
 const ResourceTable: FC<ResourcesProps> = ({
   parent,
   resourceList,
@@ -17,6 +20,12 @@ const ResourceTable: FC<ResourcesProps> = ({
   resourceType,
 }) => {
   const [tabSelected, setTabSelected] = useState(resourceType);
+  const [currentData, setCurrentData] = useState(resourceList);
+
+  console.log(currentData);
+  useEffect(() => {
+    setCurrentData(resourceList);
+  }, [tabSelected, resourceList]);
 
   const filters =
     parent !== "Dashboard"
@@ -57,7 +66,7 @@ const ResourceTable: FC<ResourcesProps> = ({
         </div>
 
         <div className="gap-4 grid grid-cols-1 xl:grids-cols-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 justify-between mt-10">
-          {resourceList?.map((resource: any) => {
+          {currentData?.slice(0, ITEMS_PER_PAGE).map((resource: any) => {
             return (
               <ResourceListItem
                 key={resource.id}
@@ -70,6 +79,11 @@ const ResourceTable: FC<ResourcesProps> = ({
           })}
         </div>
       </div>
+      <Paginate
+        itemsPerPage={ITEMS_PER_PAGE}
+        items={resourceList as Array<any>}
+        setCurrentData={setCurrentData}
+      />
     </div>
   );
 };

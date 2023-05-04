@@ -25,6 +25,7 @@
     "react-heart": "^1.0.6",
     "react-icons": "^4.8.0",
     "react-modern-drawer": "^1.2.0",
+    "react-paginate": "^8.2.0",
     "react-pro-sidebar": "^1.0.0",
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
@@ -43,7 +44,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:dev": "env-cmd -f ./.env.dev npm run-script build"
+    "build:dev": "env-cmd -f ./.env.dev npm run-script build CI=false"
   },
   "eslintConfig": {
     "extends": [
