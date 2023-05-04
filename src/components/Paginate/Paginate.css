@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.previous-next-link {
+  @apply hover:border-danger  hover:text-danger hover:border-2  border-gray-500 text-primary font-bold rounded-full py-1 px-2 flex items-center justify-center;
+  border-width: 0.15rem;
+}
+
+.page-number {
+  @apply border-2 hover:border-2 border-gray-500 rounded-full py-1 font-bold px-3 text-black hover:text-danger hover:border-danger;
+}
+
+.page-number-active {
+  @apply border-2 px-3 py-1 text-danger font-bold border-danger rounded-full;
+}
