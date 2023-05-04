@@ -22,7 +22,6 @@ const ResourceTable: FC<ResourcesProps> = ({
   const [tabSelected, setTabSelected] = useState(resourceType);
   const [currentData, setCurrentData] = useState(resourceList);
 
-  console.log(currentData);
   useEffect(() => {
     setCurrentData(resourceList);
   }, [tabSelected, resourceList]);
@@ -36,7 +35,7 @@ const ResourceTable: FC<ResourcesProps> = ({
       : [{ name: "Todos" }, { name: "Favoritos" }];
 
   return (
-    <div className="flex-col w-full bg-white border shadow-lg z-10 rounded-lg p-5 md:p-10 h-fit">
+    <div className="flex-col w-full bg-white border shadow-lg z-10 rounded-lg p-5 md:p-10 ">
       {parent !== "Dashboard" ? (
         <TopNavbar pathName={"Recursos"} />
       ) : (
@@ -56,9 +55,9 @@ const ResourceTable: FC<ResourcesProps> = ({
                 <span className="font-medium z-0"> {filter.name} </span>
 
                 {tabSelected === filter.value ? (
-                  <span className="absolute w-full h-1 bg-customYellow rounded bottom-0 scale-x-100 group-hover:scale-x-100 transition-transform ease-in-out" />
+                  <span className="absolute w-full h-1 bg-danger rounded bottom-0 scale-x-100 group-hover:scale-x-100 transition-transform ease-in-out" />
                 ) : (
-                  <span className="absolute w-full h-1 bg-customYellow rounded bottom-0 scale-x-0 group-hover:scale-x-100 transition-transform ease-in-out" />
+                  <span className="absolute w-full h-1 bg-danger rounded bottom-0 scale-x-0 group-hover:scale-x-100 transition-transform ease-in-out" />
                 )}
               </button>
             );

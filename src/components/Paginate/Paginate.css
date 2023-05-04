@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .previous-next-link {
-  @apply hover:border-danger  hover:text-danger hover:border-2  border-gray-500 text-primary font-bold rounded-full py-1 px-2 flex items-center justify-center;
+  @apply md:hover:border-danger  md:hover:text-danger hover:border-2  border-gray-500 text-primary font-bold rounded-full py-1 px-2 flex items-center justify-center;
   border-width: 0.15rem;
 }
 
@@ -13,4 +13,8 @@
 
 .page-number-active {
   @apply border-2 px-3 py-1 text-danger font-bold border-danger rounded-full;
+}
+
+.navigation-button-disabled {
+  visibility: hidden;
 }

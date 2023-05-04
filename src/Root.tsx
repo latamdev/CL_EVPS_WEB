@@ -141,7 +141,7 @@ function Root() {
               (!isDesktop ? " ml-0-important" : "")
             }
           >
-            <div className="flex w-[100%] z-0 h-screen bg-[#F2F4F7]">
+            <div className="flex w-[100%] z-0">
               <Outlet />
             </div>
           </div>
