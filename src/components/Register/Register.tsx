@@ -52,10 +52,10 @@ const Register = () => {
     >
       <div
         className={
-          " px-10 py-10 md:mx-auto my-auto flex flex-col md:w-96 justify-center"
+          " px-10 py-10 md:mx-auto my-auto flex flex-col md:w-[35rem] justify-center"
         }
       >
-        <div className="bg-white bg-opacity-50 p-5 md:p-0 rounded-xl shadow-xl md:shadow-none">
+        <div className="bg-opacity-50 p-5 md:p-10 card">
           <img src={pluralityLogo} className="w-60 mx-auto" alt={"logo"} />
           <h1 className="mx-auto text-lg md:text-xl">
             Registra una cuenta en <b>Plurality</b>

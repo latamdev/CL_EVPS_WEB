@@ -50,7 +50,7 @@ function Login() {
         }
       >
         <div className="h-screen w-full md:w-4/12 flex justify-center items-center">
-          <div className="w-full md:w-10/12 bg-white bg-opacity-50 p-5 md:p-0 rounded-xl shadow-xl md:shadow-none">
+          <div className="w-full card md:w-10/12 bg-opacity-50 p-5 md:p-10 ">
             <Link
               to={"/"}
               className="flex justify-center md:justify-normal items-center"
