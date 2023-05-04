@@ -29,8 +29,6 @@ function Resources() {
     }
   }, [results, data]); */
 
-  console.log(data);
-
   return (
     <div className="w-full py-10 px-2 md:px-10">
       <SkeletonWrapper isLoading={isLoading} skeleton={<ResourcesSkeleton />}>

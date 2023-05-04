@@ -32,6 +32,7 @@ const Paginate: React.FC<PaginateProps> = (props) => {
       items.slice(newOffset, newOffset + itemsPerPage) as Array<any>
     );
 
+    window.scrollTo(0, 0);
     setItemOffset(newOffset);
   };
 
