@@ -32,7 +32,7 @@ const ResourceTable: FC<ResourcesProps> = ({
           { name: "Videos", value: "video" },
           { name: "E-Books", value: "ebook" },
         ]
-      : [{ name: "Todos" }, { name: "Favoritos" }];
+      : [{ name: "Todos" }];
 
   return (
     <div className="flex-col w-full bg-white border shadow-lg z-10 rounded-lg p-5 md:p-10 ">

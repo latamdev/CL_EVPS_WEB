@@ -4,11 +4,14 @@ import {
   Menu,
   MenuItem,
   useProSidebar,
+  SubMenu,
 } from "react-pro-sidebar";
 import { Link, useLocation } from "react-router-dom";
 import useScreenSize from "../../hooks/useScreenSize";
 import UserConfigurationMenu from "../UserConfiguration/UserConfigurationMenu/UserConfigurationMenu";
 import "./Sidebar.css";
+import { useContext } from "react";
+import { UserContext } from "../../Root";
 
 interface SidebarProps {
   onClose?: () => void;
@@ -19,6 +22,7 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
   const { pathname: currentPath } = useLocation();
   const { collapsed } = useProSidebar();
   const isDesktop = useScreenSize();
+  const { currentUser } = useContext(UserContext);
 
   const isTheSamePath = (currentPath: string, pathName: string) => {
     return new RegExp(`^${currentPath}$`).test(pathName);
@@ -147,6 +151,38 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
               </span>
             </div>
           </MenuItem>
+        )}
+        {currentUser.roles.includes("ROLE_ADMIN") && (
+          <SubMenu className="submenu" label={"Adminstración"}>
+            <MenuItem
+              component={
+                <Link
+                  to={"/platform/admin/dashboard"}
+                  className={getCurrenLinkState(
+                    currentPath,
+                    "/platform/admin/dashboard"
+                  )}
+                />
+              }
+              onClick={onClose}
+            >
+              Dashboard
+            </MenuItem>
+            <MenuItem
+              component={
+                <Link
+                  to={"/platform/admin/new-resource"}
+                  className={getCurrenLinkState(
+                    currentPath,
+                    "/platform/admin/new-resource"
+                  )}
+                />
+              }
+              onClick={onClose}
+            >
+              Subir Recurso
+            </MenuItem>
+          </SubMenu>
         )}
       </Menu>
     </ProSidebar>

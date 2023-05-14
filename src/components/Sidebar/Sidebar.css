@@ -2,12 +2,16 @@
   background-color: #1b2c3f !important;
 }
 
+.ps-submenu-content {
+  background-color: #2d4056 !important;
+}
+
 /* .bg-selected-item {
   background-color: rgba(220, 110, 90, 0.5);
 } */
 
 .bg-selected-item {
-  background-color: rgba(21, 14, 61, 0.5);
+  background-color: rgb(21, 14, 61, 0.5);
 }
 
 .bg-selected-item:hover {
