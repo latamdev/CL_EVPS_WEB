@@ -20,6 +20,7 @@ import CheckPayment from "./components/Checkout/CheckPayment/CheckPayment";
 import Dashboard from "./components/Dashboard/Dashboard";
 import "./fonts/BalooBhai-Regular.ttf";
 import UploadResource from "./components/Admin/UploadResource/UploadResource";
+import ProtectedRoutes from "./ProtectedRoutes";
 
 const router = createBrowserRouter([
   {
@@ -55,13 +56,19 @@ const router = createBrowserRouter([
             element: <Dashboard />,
           },
           {
-            path: "/platform/admin/dashboard",
-            element: <h1>Admin dashboard</h1>,
+            element: <ProtectedRoutes />,
+            children: [
+              {
+                path: "/platform/admin/dashboard",
+                element: <h1>Admin dashboard</h1>,
+              },
+              {
+                path: "/platform/admin/new-resource",
+                element: <UploadResource />,
+              },
+            ],
           },
-          {
-            path: "/platform/admin/new-resource",
-            element: <UploadResource />,
-          },
+
           { path: "/platform/videos/:id", element: <h1>Videos</h1> },
           {
             path: "/platform/resources",

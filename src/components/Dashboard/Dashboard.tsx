@@ -1,6 +1,6 @@
 import WelcomeMessage from "./WelcomeMessage/WelcomeMessage";
 import VideoSummary from "./VideoSummary/VideoSummary";
-import VideoStatistics from "./VideoStatistics/VideoStatistics";
+//import VideoStatistics from "./VideoStatistics/VideoStatistics";
 import { useQuery } from "@tanstack/react-query";
 import { getAllUserResources } from "./service";
 import { useContext } from "react";
@@ -16,9 +16,12 @@ const Dashboard = () => {
 
   return (
     <div className="flex flex-col flex-3 lg:flex-row gap-10 px-2 md:px-10 py-10 w-full ">
-      <div className="w-full lg:w-3/4">
-        <div className="flex ">
+      <div className="w-full">
+        <div className="flex flex-col lg:flex-row  align-center gap-10">
           <WelcomeMessage />
+          <div className="flex lg:mt-10 justify-center">
+            <VideoSummary />
+          </div>
         </div>
         <div className="flex  mt-10">
           <SkeletonWrapper isLoading={isLoading} skeleton={<h1>Cargando</h1>}>
@@ -30,14 +33,11 @@ const Dashboard = () => {
           </SkeletonWrapper>
         </div>
       </div>
-      <div className="flex flex-col flex-1 w-full mx-auto lg:w-fit py-2">
-        <div className="flex lg:mt-10 justify-center">
-          <VideoSummary />
-        </div>
-        <div className="flex mt-10">
+      {/*       <div className="flex flex-col flex-1 w-full mx-auto lg:w-fit py-2">
+         <div className="flex mt-10">
           <VideoStatistics />
-        </div>
-      </div>
+        </div> 
+      </div> */}
     </div>
   );
 };
