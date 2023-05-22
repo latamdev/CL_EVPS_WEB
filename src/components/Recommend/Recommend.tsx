@@ -46,7 +46,7 @@ const Recommend: React.FC<RecommendProps> = ({ ids }) => {
 
   return (
     <SkeletonWrapper isLoading={isLoading} skeleton={<RecommendSkeleton />}>
-      <div className="bg-white border shadow-lg rounded-lg p-5 md:p-10 h-fit mt-5 md:mt-10">
+      <div className="bg-white border shadow-lg rounded-lg p-5 md:p-10 h-fit mt-5 md:mt-0">
         <h1 className="text-lg md:text-3xl lg:text-4xl font-bold font-face-bb">
           También podría gustarte
         </h1>

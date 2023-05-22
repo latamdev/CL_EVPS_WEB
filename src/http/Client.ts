@@ -29,3 +29,26 @@ export const httpPostRequest = async <T>(
     })
     .then(({ data }) => data);
 };
+
+export const httpPatchRequest = async <T>(
+  url: string,
+  params: any,
+  headers: any = { "Content-Type": APPLICATION_JSON },
+  responseType?: ResponseType
+): Promise<T> => {
+  console.log(headers);
+  return client
+    .patch(
+      url,
+      {},
+      {
+        responseType: (responseType as ResponseType) || "json",
+        headers: headers,
+        params: params,
+      }
+    )
+    .then(({ data }) => {
+      console.log({ data });
+      return data;
+    });
+};

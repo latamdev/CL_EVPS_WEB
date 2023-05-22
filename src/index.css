@@ -9,6 +9,14 @@
     padding: theme("spacing.6");
     box-shadow: theme("boxShadow.xl");
   }
+
+  .font-face-bb {
+    font-family: "BalooBhaiRegular";
+  }
+
+  .page-title {
+    @apply text-lg md:text-4xl font-semibold font-face-bb leading-relaxed text-gray-800;
+  }
 }
 
 body {
@@ -26,7 +34,12 @@ code {
 }
 
 @font-face {
-  font-family: 'BalooBhaiRegular';
-  src: local('BalooBhaiRegular'), url('./fonts/BalooBhai-Regular.ttf') format('truetype');
+  font-family: "BalooBhaiRegular";
+  src: local("BalooBhaiRegular"),
+    url("./fonts/BalooBhai-Regular.ttf") format("truetype");
   font-weight: bold;
+}
+
+.card {
+  @apply flex-col w-full bg-white border shadow-lg z-10 rounded-lg p-5 md:p-10;
 }

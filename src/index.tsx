@@ -21,6 +21,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import "./fonts/BalooBhai-Regular.ttf";
 import UploadResource from "./components/Admin/UploadResource/UploadResource";
 import ProtectedRoutes from "./ProtectedRoutes";
+import Messages from "./components/Messages/Messages";
 
 const router = createBrowserRouter([
   {
@@ -78,7 +79,7 @@ const router = createBrowserRouter([
             path: "/platform/resources/:id",
             element: <ResourceDetail />,
           },
-          { path: "/platform/messages", element: <h1>Mensajes</h1> },
+          { path: "/platform/messages", element: <Messages criteria="user" /> },
           { path: "/platform/configuration", element: <UserConfiguration /> },
           {
             path: "/platform/configuration/edit",

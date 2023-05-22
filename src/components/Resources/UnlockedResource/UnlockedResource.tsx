@@ -3,6 +3,8 @@ import { Resource } from "../ResourceDetail/interfaces";
 import UnlockedVideo from "./UnlockedVideo";
 import UnlockedEbook from "./UnlockedEbook";
 import UnlockedResourceInfoRow from "./UnlockedResourceInfoRow";
+import MessageForm from "../../Messages/MessageForm";
+import Messages from "../../Messages/Messages";
 
 interface UnlockedResourceProps {
   data: Resource;
@@ -30,6 +32,8 @@ const UnlockedResource: React.FC<UnlockedResourceProps> = (props) => {
         </div>
       </div>
       <UnlockedResourceInfoRow data={data} />
+      <MessageForm resourceId={data.id} />
+      <Messages resourceId={data.id} criteria="resource" />
     </>
   );
 };
