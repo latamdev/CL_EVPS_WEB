@@ -14,9 +14,6 @@ const UnlockedEbook = ({ data }) => {
       link.download = `${data.title}-${+new Date()}.pdf`;
       link.click();
     },
-    onError: (error: any) => {
-      console.log(error);
-    },
   });
 
   const downloadEbook = async () => {

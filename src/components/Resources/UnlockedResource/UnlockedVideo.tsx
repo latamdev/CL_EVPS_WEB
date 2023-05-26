@@ -4,8 +4,6 @@ const UnlockedVideo = ({ data }) => {
   const videoFrame = useRef(null);
   const [loading, setLoading] = useState(true);
 
-  console.log(videoFrame);
-
   useEffect(() => {
     if (videoFrame.current !== null) {
       setLoading(false);

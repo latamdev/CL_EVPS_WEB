@@ -16,11 +16,7 @@ const ResourceDetail = () => {
   const { id } = useParams();
   const { isLoading, isError, data } = useQuery(
     ["getResourceByIdKey", id],
-    () => getResourceById(id as string),
-    {
-      refetchOnWindowFocus: false,
-      retry: false,
-    }
+    () => getResourceById(id as string)
   );
 
   const showDurationOrTotalPages = () => {

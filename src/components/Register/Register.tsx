@@ -19,8 +19,6 @@ const Register = () => {
     mutationFn: doRegister,
     onSuccess: (response) => {
       navigate("/sign-in");
-
-      console.log(response);
     },
     onError: (err: any) => {
       const errorCode = err.response.data.code;

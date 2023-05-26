@@ -21,7 +21,6 @@ export const httpPostRequest = async <T>(
   headers: any = { "Content-Type": APPLICATION_JSON },
   responseType?: ResponseType
 ): Promise<T> => {
-  console.log(headers);
   return client
     .post(url, data, {
       responseType: (responseType as ResponseType) || "json",
@@ -36,7 +35,6 @@ export const httpPatchRequest = async <T>(
   headers: any = { "Content-Type": APPLICATION_JSON },
   responseType?: ResponseType
 ): Promise<T> => {
-  console.log(headers);
   return client
     .patch(
       url,
@@ -48,7 +46,6 @@ export const httpPatchRequest = async <T>(
       }
     )
     .then(({ data }) => {
-      console.log({ data });
       return data;
     });
 };

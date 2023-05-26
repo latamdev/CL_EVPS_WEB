@@ -65,7 +65,6 @@ const UpdateAvatarModal: React.FC<UpdateAvatarModalProps> = (props) => {
                     type="file"
                     onChange={(e) => {
                       if (e.target.files) {
-                        console.log(e.target.files[0]);
                         setAvatarFile(e.target.files[0]);
                       }
                     }}

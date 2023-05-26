@@ -22,12 +22,9 @@ const PaymentBox: React.FC = () => {
     mutationKey: ["PAYMENT_QUERY"],
     mutationFn: doPayment,
     onSuccess: (data) => {
-      console.log(data);
       window.location.href = data.urlToPayment;
     },
-    onError: (error) => {
-      console.log(error);
-    },
+    onError: (error) => {},
   });
 
   const doCheckout = () => {
@@ -45,7 +42,6 @@ const PaymentBox: React.FC = () => {
       commerceOrder: Date.now().toString(),
     };
 
-    //console.log(payload);
     mutation.mutate(payload);
   };
 

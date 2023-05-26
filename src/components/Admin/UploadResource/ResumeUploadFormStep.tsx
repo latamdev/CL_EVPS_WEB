@@ -69,7 +69,6 @@ const ResumeUploadFormStep: React.FC<ResumeUploadFormProps> = (props) => {
               type="file"
               onChange={(e) => {
                 if (e.target.files) {
-                  console.log(e.target.files[0]);
                   setFormData({ ...formData, poster: e.target.files[0] });
                 }
               }}
@@ -92,7 +91,6 @@ const ResumeUploadFormStep: React.FC<ResumeUploadFormProps> = (props) => {
               type="file"
               onChange={(e) => {
                 if (e.target.files) {
-                  console.log(e.target.files[0]);
                   setFormData({ ...formData, file: e.target.files[0] });
                 }
               }}

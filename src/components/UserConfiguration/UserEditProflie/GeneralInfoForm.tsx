@@ -21,7 +21,6 @@ function GeneralInfoForm() {
       localStorage.setItem("token", JSON.stringify(response.token));
       setCurrentUser(response.user);
       setShowAlert(true);
-      console.log("update success", user);
     },
   });
 
@@ -43,12 +42,9 @@ function GeneralInfoForm() {
     user.birthday = birthday;
     user.country = country;
 
-    console.log(country);
-
     const { roles, ...newUser } = user;
 
     await mutation.mutate(newUser);
-    console.log("new user", newUser);
   };
 
   return (

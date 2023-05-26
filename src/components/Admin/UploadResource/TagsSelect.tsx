@@ -28,11 +28,8 @@ const TagsSelect: React.FC<TagsSelectProps> = (props) => {
           return { value: tag.name, label: tag.name };
         })
       );
-      console.log(data);
     },
-    onError: (error) => {
-      console.log(error);
-    },
+    onError: (error) => {},
   });
 
   const handleOnChange = (value: any) => {

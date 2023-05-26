@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import React, { useContext, useState } from "react";
-import { getUserInfo, updateCommentCount } from "./Service";
+import { getAllResponses, getUserInfo, updateCommentCount } from "./Service";
 import { IMG_USER_URL } from "../UserConfiguration/constants";
 import { FaComments, FaRegThumbsUp } from "react-icons/fa";
 import { UserContext } from "../../Root";
@@ -13,6 +13,7 @@ interface MessageItemProps {
   votes: number;
   isUserVoted: boolean;
   showCommentsNumber?: boolean;
+  showEntireComment?: boolean;
   onClick: (messageId: string) => void;
 }
 
@@ -26,6 +27,7 @@ const MessageItem: React.FC<MessageItemProps> = (props) => {
     isUserVoted = false,
     onClick,
     showCommentsNumber = true,
+    showEntireComment = false,
   } = props;
   const [commentVotes, setCommentVotes] = useState(votes);
   const [userVoted, setUserVoted] = useState(isUserVoted);
@@ -35,6 +37,16 @@ const MessageItem: React.FC<MessageItemProps> = (props) => {
     getUserInfo(userId)
   );
 
+  const {
+    data: dataMessage,
+    isLoading,
+    error,
+  } = useQuery(["GET_ALL_RESPONSES_QUERY", messageId], () =>
+    getAllResponses(messageId as string)
+  );
+
+  console.log("commment id : " + messageId + " count : " + dataMessage?.length);
+
   const updateMessageVotes = () => {
     mutation.mutate();
   };
@@ -43,7 +55,6 @@ const MessageItem: React.FC<MessageItemProps> = (props) => {
     mutationKey: ["UPDATE_MESSAGE_VOTES", messageId],
     mutationFn: () => updateCommentCount(messageId!, currentUser.id),
     onSuccess(data, variables, context) {
-      console.log(data);
       setCommentVotes(data.votes!);
       setUserVoted(!userVoted);
     },
@@ -58,7 +69,11 @@ const MessageItem: React.FC<MessageItemProps> = (props) => {
           alt="user_avatar"
         />
       </div>
-      <div className="flex flex-col gap-5 flex-1 truncate">
+      <div
+        className={
+          `flex flex-col gap-5 flex-1 ` + (!showEntireComment ? "truncate" : "")
+        }
+      >
         <p className="font-bold">
           {data?.username}{" "}
           <span className="font-light text-sm">
@@ -68,7 +83,13 @@ const MessageItem: React.FC<MessageItemProps> = (props) => {
             {new Date(date).toLocaleString().split(",")[0]}
           </p>
         </p>
-        <p className="text-ellipsis overflow-hidden ..."> {message}</p>
+        <p
+          className={
+            !showEntireComment ? `text-ellipsis overflow-hidden ...` : ""
+          }
+        >
+          {message}
+        </p>
       </div>
       <div className="flex flex-col items-center justify-center">
         <span className="flex flex-row gap-2 items-center text-lg">
@@ -82,7 +103,7 @@ const MessageItem: React.FC<MessageItemProps> = (props) => {
         </span>
         {showCommentsNumber && (
           <span className="flex flex-row gap-2 items-center text-lg">
-            <span>4</span>
+            <span>{dataMessage?.length}</span>
             <FaComments
               onClick={() => onClick(messageId!)}
               className="hover:text-danger hover:cursor-pointer"

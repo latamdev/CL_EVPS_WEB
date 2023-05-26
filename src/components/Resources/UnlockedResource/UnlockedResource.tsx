@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Resource } from "../ResourceDetail/interfaces";
 import UnlockedVideo from "./UnlockedVideo";
 import UnlockedEbook from "./UnlockedEbook";
 import UnlockedResourceInfoRow from "./UnlockedResourceInfoRow";
 import MessageForm from "../../Messages/MessageForm";
 import Messages from "../../Messages/Messages";
+import { Message } from "../../Messages/Interfces";
 
 interface UnlockedResourceProps {
   data: Resource;
@@ -12,6 +13,8 @@ interface UnlockedResourceProps {
 
 const UnlockedResource: React.FC<UnlockedResourceProps> = (props) => {
   const { data } = props;
+  const [isResponseForm, setIsResponseForm] = useState(false);
+  const [commentFather, setCommentFather] = useState<Message>();
 
   return (
     <>
@@ -32,8 +35,17 @@ const UnlockedResource: React.FC<UnlockedResourceProps> = (props) => {
         </div>
       </div>
       <UnlockedResourceInfoRow data={data} />
-      <MessageForm resourceId={data.id} />
-      <Messages resourceId={data.id} criteria="resource" />
+      <Messages
+        isResponse={setIsResponseForm}
+        resourceId={data.id}
+        criteria="resource"
+        setFatherComment={setCommentFather}
+      />
+      <MessageForm
+        isResponse={isResponseForm}
+        resourceId={data.id}
+        commentFather={commentFather}
+      />
     </>
   );
 };

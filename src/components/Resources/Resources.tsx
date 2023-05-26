@@ -18,17 +18,6 @@ function Resources() {
     () => getAllResources(resourceType)
   );
 
-  /*   useEffect(() => {
-    if (results) {
-      setDataList(
-        results.results[0].resourceList.concat(results.results[1].resourceList)
-      );
-    } else {
-      console.log("No resources", data);
-      setDataList(data?.items);
-    }
-  }, [results, data]); */
-
   return (
     <div className="w-full py-10 px-2 md:px-10">
       <SkeletonWrapper isLoading={isLoading} skeleton={<ResourcesSkeleton />}>
